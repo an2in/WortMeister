@@ -1,0 +1,208 @@
+# 🇩🇪 WortMeister — Ứng dụng Học Từ Vựng Tiếng Đức
+
+> **Personal Project** — German Vocabulary Learning App
+
+WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ từ vựng tiếng Đức cấp độ A1–B1 thông qua hệ thống **Spaced Repetition (SM-2)**, tìm kiếm **Autocomplete (Binary Search)**, và kiểm tra bản dịch bằng **Regex**. Hỗ trợ song ngữ 🇻🇳 Tiếng Việt / 🇬🇧 English.
+
+---
+
+## 📐 Kiến trúc hệ thống
+
+```
+┌──────────────────┐       HTTP/JSON        ┌──────────────────────┐
+│   Web Frontend   │  ◄──────────────────►  │  FastAPI Backend     │
+│  (HTML/CSS/JS)   │     fetch() calls      │  (Python + uvicorn)  │
+└──────────────────┘                        └─────────┬────────────┘
+                                                      │
+                                          ┌───────────┴───────────┐
+                                          │   In-Memory Store     │
+                                          │   (loaded from JSON)  │
+                                          └───────────────────────┘
+```
+
+## 🛠 Tech Stack
+
+| Layer     | Technology                                  |
+|-----------|---------------------------------------------|
+| Backend   | Python 3.10+, FastAPI, uvicorn              |
+| Frontend  | HTML / Tailwind CSS / Vanilla JS            |
+| Database  | In-memory (RAM), load từ `data.json`        |
+| TTS       | `edge-tts` (Microsoft Edge TTS API)         |
+| Algorithm | `bisect`, `heapq`, `re` (built-in)          |
+| i18n      | Custom `data-i18n` + JS translation map     |
+
+## 📁 Cấu trúc thư mục
+
+```
+DSA_BTL/
+├── main.py              # FastAPI server — 5 API endpoints
+├── data.json            # Vocabulary dataset (597 từ A1, Goethe-Zertifikat, song ngữ VI/EN)
+├── README.md            # Project Wiki (file này)
+├── test_sync.py         # Script test tự động (local)
+└── frontend/
+    └── index.html       # SPA — Search, Flashcards, Translate (i18n VI/EN)
+```
+
+## 📡 API Reference
+
+Base URL: `http://localhost:8000`
+
+| Method | Endpoint                       | Mô tả                         | Algorithm         |
+|--------|--------------------------------|--------------------------------|-------------------|
+| GET    | `/api/search?q={prefix}&lang=` | Autocomplete từ vựng           | `bisect_left`     |
+| GET    | `/api/next-card?lang=`         | Lấy flashcard cần ôn nhất      | `heapq.heappop`   |
+| POST   | `/api/update-card`             | Cập nhật kết quả ôn tập (SM-2) | `heapq.heappush`  |
+| POST   | `/api/check-translation`       | Kiểm tra bản dịch tiếng Đức    | `re.search`       |
+| GET    | `/api/audio?word={word}`       | Phát âm từ vựng (MP3)          | `edge-tts` async  |
+
+> **`lang` parameter:** `vi` (mặc định — nghĩa tiếng Việt) hoặc `en` (nghĩa tiếng Anh).
+
+<details>
+<summary><strong>Chi tiết Request/Response</strong></summary>
+
+### GET `/api/search?q=ha&lang=vi`
+```json
+// Response
+{ "results": [{ "word": "Haus", "meaning": "ngôi nhà", "meaning_en": "house", "example": "...", "translation": "...", "level": "A1" }] }
+```
+
+### GET `/api/next-card?lang=en`
+```json
+// Response
+{ "word": "lernen", "meaning": "to learn, to study", "meaning_en": "to learn, to study", "example": "...", "translation": "...", "level": "A1", "interval": 1.0, "repetitions": 0, "easiness": 2.5, "due": 1712700000.0 }
+```
+
+### POST `/api/update-card`
+```json
+// Request
+{ "word": "lernen", "quality": 4 }
+// Response
+{ "success": true, "word": "lernen", "new_interval": 6.0, "new_due": "2026-04-16 23:00", "message": "Next review in 6.0 day(s)" }
+```
+
+### POST `/api/check-translation`
+```json
+// Request
+{ "target_word": "Haus", "user_sentence": "Das ist mein Haus." }
+// Response
+{ "correct": true, "target_word": "Haus", "feedback": "✅ Richtig! ..." }
+```
+
+### GET `/api/audio?word=Hallo`
+→ Returns `audio/mpeg` file (MP3).
+
+</details>
+
+## 🚀 Hướng dẫn chạy
+
+### 1. Cài đặt thư viện
+
+```bash
+pip install fastapi uvicorn edge-tts
+```
+
+### 2. Chạy server
+
+```bash
+cd DSA_BTL
+uvicorn main:app --reload --port 8000
+```
+
+Server chạy tại: [http://localhost:8000](http://localhost:8000)  
+API Docs (tự động): [http://localhost:8000/docs](http://localhost:8000/docs)
+
+### 3. Mở frontend
+
+Mở file `frontend/index.html` trong trình duyệt (Chrome/Firefox/Edge).  
+Bấm nút **🇻🇳 VI ↔ 🇬🇧 EN** ở góc trên bên phải để chuyển ngôn ngữ giao diện.
+
+## 🧪 Hướng dẫn Test (Local)
+
+### Test tự động — `test_sync.py`
+
+Script kiểm tra tất cả 5 endpoint trên server đang chạy:
+
+```bash
+# Terminal 1: Khởi động server
+uvicorn main:app --reload --port 8000
+
+# Terminal 2: Chạy test
+python test_sync.py
+```
+
+**Nội dung test:**
+
+| Test                     | Kiểm tra                                              |
+|--------------------------|-------------------------------------------------------|
+| `test_search_vi`         | Search "ha" → trả về "Haus" (meaning = "ngôi nhà")   |
+| `test_search_en`         | Search "ha" + lang=en → meaning = "house"             |
+| `test_next_card`         | Lấy flashcard từ heap → trả về word, meaning, level   |
+| `test_update_card`       | Rate quality=4 → trả về new_interval, success=true    |
+| `test_check_translation` | "Das ist mein Haus." chứa "Haus" → correct=true       |
+| `test_audio`             | `/api/audio?word=Hallo` → status 200, content-type=audio |
+
+### Test thủ công — `curl`
+
+```bash
+# Search (Vietnamese)
+curl "http://localhost:8000/api/search?q=ha&lang=vi"
+
+# Search (English)
+curl "http://localhost:8000/api/search?q=ha&lang=en"
+
+# Flashcard
+curl "http://localhost:8000/api/next-card?lang=vi"
+
+# Update card
+curl -X POST "http://localhost:8000/api/update-card" \
+  -H "Content-Type: application/json" \
+  -d '{"word": "Haus", "quality": 4}'
+
+# Check translation
+curl -X POST "http://localhost:8000/api/check-translation" \
+  -H "Content-Type: application/json" \
+  -d '{"target_word": "Haus", "user_sentence": "Das ist mein Haus."}'
+
+# Audio
+curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
+```
+
+### Test frontend — Trình duyệt
+
+1. Mở `frontend/index.html` → kiểm tra tab **Search** (gõ "ha" → "Haus" xuất hiện)
+2. Chuyển tab **Flashcards** → lật thẻ, bấm đánh giá 0-5
+3. Chuyển tab **Translate** → nhập câu tiếng Đức, bấm "Kiểm tra"
+4. Bấm toggle **VI ↔ EN** → toàn bộ UI chuyển ngôn ngữ
+5. Bấm 🔊 → nghe phát âm
+
+## 📋 Roadmap & Tiến độ
+
+### Phase 1 — Cài đặt môi trường ✅
+- [x] Cài Python 3.10+, pip
+- [x] Cài thư viện: `fastapi`, `uvicorn`, `edge-tts`
+
+### Phase 2 — Code Backend ✅
+- [x] Chuẩn bị dataset `data.json` (597 từ A1, Goethe-Zertifikat)
+- [x] Implement FastAPI server `main.py`
+- [x] Endpoint `/api/search` — bisect autocomplete + `?lang=vi|en`
+- [x] Endpoint `/api/next-card` + `/api/update-card` — heapq SRS + `?lang=vi|en`
+- [x] Endpoint `/api/check-translation` — regex
+- [x] Endpoint `/api/audio` — edge-tts
+
+### Phase 3 — Build UI ✅
+- [x] Tạo giao diện bằng Google Stitch
+- [x] Kết nối frontend với backend API (fetch)
+- [x] Hệ thống i18n — toggle 🇻🇳 VI ↔ 🇬🇧 EN toàn bộ UI
+
+### Phase 4 — Tích hợp & Hoàn thiện ✅
+- [x] Test end-to-end tất cả tính năng
+- [x] Script test tự động (`test_sync.py`)
+
+### Phase 5 — Mở rộng (Tương lai)
+- [ ] Mở rộng dataset (1000+ từ vựng)
+- [ ] Viết báo cáo đồ án
+- [ ] Deploy (tuỳ chọn)
+
+---
+
+*WortMeister — Wort (từ) + Meister (bậc thầy) 🧠*

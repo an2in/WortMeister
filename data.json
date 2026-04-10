@@ -1,0 +1,5052 @@
+[
+  {
+    "word": "ab",
+    "meaning": "từ, kể từ",
+    "meaning_en": "from, starting from",
+    "example": "Das Wort ist \"ab\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "aber",
+    "meaning": "nhưng, tuy nhiên",
+    "meaning_en": "but, however",
+    "example": "Ich bin müde, aber ich muss arbeiten.",
+    "translation": "I am tired, but I have to work.",
+    "level": "A1"
+  },
+  {
+    "word": "Abfahrt",
+    "meaning": "sự khởi hành",
+    "meaning_en": "departure",
+    "example": "Das Wort ist \"Abfahrt\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "abfliegen",
+    "meaning": "cất cánh, bay đi",
+    "meaning_en": "to take off, to fly away",
+    "example": "Das Wort ist \"abfliegen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Abflug",
+    "meaning": "chuyến bay đi",
+    "meaning_en": "departure (flight)",
+    "example": "Das Wort ist \"Abflug\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "abgeben",
+    "meaning": "nộp, giao",
+    "meaning_en": "to hand in, to submit",
+    "example": "Das Wort ist \"abgeben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "abholen",
+    "meaning": "đón, lấy",
+    "meaning_en": "to pick up, to collect",
+    "example": "Das Wort ist \"abholen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Absender",
+    "meaning": "người gửi",
+    "meaning_en": "sender",
+    "example": "Das Wort ist \"Absender\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Achtung",
+    "meaning": "chú ý",
+    "meaning_en": "attention, caution",
+    "example": "Das Wort ist \"Achtung\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Adresse",
+    "meaning": "địa chỉ",
+    "meaning_en": "address",
+    "example": "Das Wort ist \"Adresse\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "all-",
+    "meaning": "tất cả",
+    "meaning_en": "all, every",
+    "example": "Das Wort ist \"all-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "allein",
+    "meaning": "một mình",
+    "meaning_en": "alone",
+    "example": "Das Wort ist \"allein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "also",
+    "meaning": "vậy, vì vậy",
+    "meaning_en": "so, therefore",
+    "example": "Das Wort ist \"also\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "alt",
+    "meaning": "già, cũ",
+    "meaning_en": "old",
+    "example": "Das Haus ist sehr alt.",
+    "translation": "The house is very old.",
+    "level": "A1"
+  },
+  {
+    "word": "Alter",
+    "meaning": "tuổi",
+    "meaning_en": "age",
+    "example": "Das Wort ist \"Alter\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "an",
+    "meaning": "ở, tại, vào",
+    "meaning_en": "at, on, to",
+    "example": "Das Wort ist \"an\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "an sein",
+    "meaning": "đang bật",
+    "meaning_en": "to be on",
+    "example": "Das Wort ist \"an sein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "anbieten",
+    "meaning": "mời, đề nghị",
+    "meaning_en": "to offer",
+    "example": "Das Wort ist \"anbieten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "ander-",
+    "meaning": "khác",
+    "meaning_en": "other, different",
+    "example": "Das Wort ist \"ander-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Anfang",
+    "meaning": "sự bắt đầu",
+    "meaning_en": "beginning, start",
+    "example": "Das Wort ist \"Anfang\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "anfangen",
+    "meaning": "bắt đầu",
+    "meaning_en": "to begin, to start",
+    "example": "Das Wort ist \"anfangen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Angebot",
+    "meaning": "lời đề nghị, khuyến mãi",
+    "meaning_en": "offer, deal",
+    "example": "Das Wort ist \"Angebot\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "anklicken",
+    "meaning": "nhấp chuột",
+    "meaning_en": "to click on",
+    "example": "Das Wort ist \"anklicken\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "ankommen",
+    "meaning": "đến nơi",
+    "meaning_en": "to arrive",
+    "example": "Das Wort ist \"ankommen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "ankreuzen",
+    "meaning": "đánh dấu chéo",
+    "meaning_en": "to mark with a cross",
+    "example": "Das Wort ist \"ankreuzen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "anmachen",
+    "meaning": "bật",
+    "meaning_en": "to turn on, to switch on",
+    "example": "Das Wort ist \"anmachen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Anmeldung",
+    "meaning": "sự đăng ký",
+    "meaning_en": "registration",
+    "example": "Das Wort ist \"Anmeldung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Anrede",
+    "meaning": "lời xưng hô",
+    "meaning_en": "form of address, salutation",
+    "example": "Das Wort ist \"Anrede\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Anruf",
+    "meaning": "cuộc gọi",
+    "meaning_en": "phone call",
+    "example": "Das Wort ist \"Anruf\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Anrufbeantworter",
+    "meaning": "máy trả lời tự động",
+    "meaning_en": "answering machine",
+    "example": "Das Wort ist \"Anruf-\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "anrufen",
+    "meaning": "gọi điện",
+    "meaning_en": "to call, to phone",
+    "example": "Das Wort ist \"anrufen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Ansage",
+    "meaning": "thông báo",
+    "meaning_en": "announcement",
+    "example": "Das Wort ist \"Ansage\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Anschluss",
+    "meaning": "kết nối, chuyến nối",
+    "meaning_en": "connection",
+    "example": "Das Wort ist \"Anschluss\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Antwort",
+    "meaning": "câu trả lời",
+    "meaning_en": "answer, reply",
+    "example": "Das Wort ist \"Antwort\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "antworten",
+    "meaning": "trả lời",
+    "meaning_en": "to answer, to reply",
+    "example": "Das Wort ist \"antworten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Anzeige",
+    "meaning": "thông báo, quảng cáo",
+    "meaning_en": "advertisement, notice",
+    "example": "Das Wort ist \"Anzeige\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Apartment",
+    "meaning": "căn hộ",
+    "meaning_en": "apartment",
+    "example": "Das Wort ist \"Apartment\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Apfel",
+    "meaning": "quả táo",
+    "meaning_en": "apple",
+    "example": "Das Wort ist \"Apfel\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Appetit",
+    "meaning": "sự ngon miệng",
+    "meaning_en": "appetite",
+    "example": "Das Wort ist \"Appetit\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Arbeit",
+    "meaning": "công việc",
+    "meaning_en": "work, job",
+    "example": "Die Arbeit ist schwer.",
+    "translation": "The work is hard.",
+    "level": "A1"
+  },
+  {
+    "word": "arbeiten",
+    "meaning": "làm việc",
+    "meaning_en": "to work",
+    "example": "Das Wort ist \"arbeiten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "arbeitslos",
+    "meaning": "thất nghiệp",
+    "meaning_en": "unemployed",
+    "example": "Das Wort ist \"arbeitslos\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Arbeitsplatz",
+    "meaning": "nơi làm việc",
+    "meaning_en": "workplace",
+    "example": "An meinem Arbeitsplatz fehlt ein Drucker.",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Arm",
+    "meaning": "cánh tay",
+    "meaning_en": "arm",
+    "example": "Das Wort ist \"Arm\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Arzt",
+    "meaning": "bác sĩ",
+    "meaning_en": "doctor",
+    "example": "Ich gehe zum Arzt.",
+    "translation": "I go to the doctor.",
+    "level": "A1"
+  },
+  {
+    "word": "auch",
+    "meaning": "cũng",
+    "meaning_en": "also, too",
+    "example": "Das Wort ist \"auch\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "auf",
+    "meaning": "trên, mở",
+    "meaning_en": "on, upon, open",
+    "example": "Das Wort ist \"auf\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "auf sein",
+    "meaning": "đang mở",
+    "meaning_en": "to be open",
+    "example": "Das Wort ist \"auf sein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Aufgabe",
+    "meaning": "bài tập, nhiệm vụ",
+    "meaning_en": "task, exercise",
+    "example": "Das Wort ist \"Aufgabe\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "aufhören",
+    "meaning": "ngừng, kết thúc",
+    "meaning_en": "to stop, to end",
+    "example": "Das Wort ist \"aufhören\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Aufzug",
+    "meaning": "thang máy",
+    "meaning_en": "elevator, lift",
+    "example": "Das Wort ist \"Aufzug\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Auge",
+    "meaning": "mắt",
+    "meaning_en": "eye",
+    "example": "Das Wort ist \"Auge\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "aus",
+    "meaning": "từ, ra khỏi",
+    "meaning_en": "from, out of",
+    "example": "Das Wort ist \"aus\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "aus sein",
+    "meaning": "đang tắt",
+    "meaning_en": "to be off",
+    "example": "Das Wort ist \"aus sein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Ausflug",
+    "meaning": "chuyến đi chơi",
+    "meaning_en": "excursion, trip",
+    "example": "Das Wort ist \"Ausflug\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "ausfüllen",
+    "meaning": "điền (đơn)",
+    "meaning_en": "to fill in, to fill out",
+    "example": "Das Wort ist \"ausfüllen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Ausgang",
+    "meaning": "lối ra",
+    "meaning_en": "exit",
+    "example": "Das Wort ist \"Ausgang\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Auskunft",
+    "meaning": "thông tin",
+    "meaning_en": "information",
+    "example": "Das Wort ist \"Auskunft\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Ausland",
+    "meaning": "nước ngoài",
+    "meaning_en": "abroad, foreign country",
+    "example": "Das Wort ist \"Ausland\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Ausländer",
+    "meaning": "người nước ngoài",
+    "meaning_en": "foreigner",
+    "example": "Das Wort ist \"Ausländer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "ausländisch",
+    "meaning": "nước ngoài (tính từ)",
+    "meaning_en": "foreign",
+    "example": "Das Wort ist \"ausländisch\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "ausmachen",
+    "meaning": "tắt",
+    "meaning_en": "to turn off, to switch off",
+    "example": "Das Wort ist \"ausmachen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Aussage",
+    "meaning": "phát biểu, tuyên bố",
+    "meaning_en": "statement",
+    "example": "Das Wort ist \"Aussage\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "aussehen",
+    "meaning": "trông, có vẻ",
+    "meaning_en": "to look, to appear",
+    "example": "Das Wort ist \"aussehen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "aussteigen",
+    "meaning": "xuống (xe)",
+    "meaning_en": "to get off, to exit",
+    "example": "Das Wort ist \"aussteigen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Ausweis",
+    "meaning": "giấy tờ tùy thân",
+    "meaning_en": "ID card, identification",
+    "example": "Das Wort ist \"Ausweis\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Auto",
+    "meaning": "ô tô, xe hơi",
+    "meaning_en": "car",
+    "example": "Das Wort ist \"Auto\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Autobahn",
+    "meaning": "đường cao tốc",
+    "meaning_en": "highway, motorway",
+    "example": "Das Wort ist \"Autobahn\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Automat",
+    "meaning": "máy tự động",
+    "meaning_en": "vending machine",
+    "example": "Das Wort ist \"Automat\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "automatisch",
+    "meaning": "tự động",
+    "meaning_en": "automatic",
+    "example": "Das Wort ist \"automatisch\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Baby",
+    "meaning": "em bé",
+    "meaning_en": "baby",
+    "example": "Das Wort ist \"Baby\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Bad",
+    "meaning": "phòng tắm",
+    "meaning_en": "bathroom",
+    "example": "Das Wort ist \"Bad\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "baden",
+    "meaning": "tắm (bồn)",
+    "meaning_en": "to bathe",
+    "example": "Das Wort ist \"baden\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Bahn",
+    "meaning": "tàu, đường sắt",
+    "meaning_en": "train, railway",
+    "example": "Das Wort ist \"Bahn\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Bahnhof",
+    "meaning": "nhà ga",
+    "meaning_en": "train station",
+    "example": "Das Wort ist \"Bahnhof\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Bahnsteig",
+    "meaning": "sân ga",
+    "meaning_en": "platform",
+    "example": "Das Wort ist \"Bahnsteig\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "bald",
+    "meaning": "sớm",
+    "meaning_en": "soon",
+    "example": "Das Wort ist \"bald\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Balkon",
+    "meaning": "ban công",
+    "meaning_en": "balcony",
+    "example": "Das Wort ist \"Balkon\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Banane",
+    "meaning": "chuối",
+    "meaning_en": "banana",
+    "example": "Das Wort ist \"Banane\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "bar",
+    "meaning": "tiền mặt",
+    "meaning_en": "cash",
+    "example": "Das Wort ist \"bar\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Bauch",
+    "meaning": "bụng",
+    "meaning_en": "belly, stomach",
+    "example": "Das Wort ist \"Bauch\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Baum",
+    "meaning": "cây",
+    "meaning_en": "tree",
+    "example": "Das Wort ist \"Baum\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Beamte",
+    "meaning": "công chức",
+    "meaning_en": "civil servant, official",
+    "example": "Das Wort ist \"Beamte\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "bedeuten",
+    "meaning": "có nghĩa là",
+    "meaning_en": "to mean",
+    "example": "Das Wort ist \"bedeuten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "bei",
+    "meaning": "ở, tại, gần",
+    "meaning_en": "at, near, with",
+    "example": "Das Wort ist \"bei\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "beide",
+    "meaning": "cả hai",
+    "meaning_en": "both",
+    "example": "Das Wort ist \"beide\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Bein",
+    "meaning": "chân",
+    "meaning_en": "leg",
+    "example": "Das Wort ist \"Bein\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Beispiel",
+    "meaning": "ví dụ",
+    "meaning_en": "example",
+    "example": "Das Wort ist \"Beispiel\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "bekannt",
+    "meaning": "nổi tiếng, quen biết",
+    "meaning_en": "well-known, famous",
+    "example": "Das Wort ist \"bekannt\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "bekommen",
+    "meaning": "nhận được",
+    "meaning_en": "to receive, to get",
+    "example": "Das Wort ist \"bekommen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "benutzen",
+    "meaning": "sử dụng",
+    "meaning_en": "to use",
+    "example": "Das Wort ist \"benutzen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Beruf",
+    "meaning": "nghề nghiệp",
+    "meaning_en": "profession, occupation",
+    "example": "Das Wort ist \"Beruf\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "besetzt",
+    "meaning": "đã có người, bận",
+    "meaning_en": "occupied, busy",
+    "example": "Das Wort ist \"besetzt\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "besichtigen",
+    "meaning": "tham quan",
+    "meaning_en": "to visit, to sightsee",
+    "example": "Das Wort ist \"besichtigen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "besser",
+    "meaning": "tốt hơn",
+    "meaning_en": "better",
+    "example": "Das Wort ist \"besser\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "best-",
+    "meaning": "tốt nhất",
+    "meaning_en": "best",
+    "example": "Das Wort ist \"best-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "bestellen",
+    "meaning": "đặt hàng, gọi món",
+    "meaning_en": "to order",
+    "example": "Das Wort ist \"bestellen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "besuchen",
+    "meaning": "thăm, đến thăm",
+    "meaning_en": "to visit",
+    "example": "Das Wort ist \"besuchen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Bett",
+    "meaning": "giường",
+    "meaning_en": "bed",
+    "example": "Das Wort ist \"Bett\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "bezahlen",
+    "meaning": "trả tiền",
+    "meaning_en": "to pay",
+    "example": "Das Wort ist \"bezahlen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Bier",
+    "meaning": "bia",
+    "meaning_en": "beer",
+    "example": "Das Wort ist \"Bier\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Bild",
+    "meaning": "hình ảnh, bức tranh",
+    "meaning_en": "picture, image",
+    "example": "Das Wort ist \"Bild\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "billig",
+    "meaning": "rẻ",
+    "meaning_en": "cheap, inexpensive",
+    "example": "Das Wort ist \"billig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Birne",
+    "meaning": "quả lê",
+    "meaning_en": "pear",
+    "example": "Das Wort ist \"Birne\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "bis",
+    "meaning": "đến, cho đến",
+    "meaning_en": "until, to",
+    "example": "Das Wort ist \"bis\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "bisschen",
+    "meaning": "một chút",
+    "meaning_en": "a little, a bit",
+    "example": "Das Wort ist \"bisschen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "bitte",
+    "meaning": "xin, làm ơn",
+    "meaning_en": "please",
+    "example": "Das Wort ist \"bitte\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "bitten",
+    "meaning": "yêu cầu, xin",
+    "meaning_en": "to ask, to request",
+    "example": "Das Wort ist \"bitten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "bitter",
+    "meaning": "đắng",
+    "meaning_en": "bitter",
+    "example": "Das Wort ist \"bitter\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "bleiben",
+    "meaning": "ở lại",
+    "meaning_en": "to stay, to remain",
+    "example": "Das Wort ist \"bleiben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Bleistift",
+    "meaning": "bút chì",
+    "meaning_en": "pencil",
+    "example": "Das Wort ist \"Bleistift\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Blick",
+    "meaning": "cái nhìn, tầm nhìn",
+    "meaning_en": "view, glance",
+    "example": "Das Wort ist \"Blick\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Blume",
+    "meaning": "hoa",
+    "meaning_en": "flower",
+    "example": "Das Wort ist \"Blume\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Bogen",
+    "meaning": "tờ giấy",
+    "meaning_en": "sheet (of paper)",
+    "example": "Das Wort ist \"Bogen\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "brauchen",
+    "meaning": "cần",
+    "meaning_en": "to need",
+    "example": "Das Wort ist \"brauchen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "breit",
+    "meaning": "rộng",
+    "meaning_en": "wide, broad",
+    "example": "Das Wort ist \"breit\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Brief",
+    "meaning": "thư",
+    "meaning_en": "letter",
+    "example": "Das Wort ist \"Brief\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Briefmarke",
+    "meaning": "tem thư",
+    "meaning_en": "stamp",
+    "example": "Das Wort ist \"Briefmarke\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "bringen",
+    "meaning": "mang, đem",
+    "meaning_en": "to bring",
+    "example": "Das Wort ist \"bringen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Brot",
+    "meaning": "bánh mì",
+    "meaning_en": "bread",
+    "example": "Das Wort ist \"Brot\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Bruder",
+    "meaning": "anh/em trai",
+    "meaning_en": "brother",
+    "example": "Das Wort ist \"Bruder\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Brötchen",
+    "meaning": "bánh mì nhỏ",
+    "meaning_en": "bread roll",
+    "example": "Das Wort ist \"Brötchen\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Buch",
+    "meaning": "quyển sách",
+    "meaning_en": "book",
+    "example": "Ich lese ein Buch.",
+    "translation": "I read a book.",
+    "level": "A1"
+  },
+  {
+    "word": "Buchstabe",
+    "meaning": "chữ cái",
+    "meaning_en": "letter (alphabet)",
+    "example": "Das Wort ist \"Buchstabe\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "buchstabieren",
+    "meaning": "đánh vần",
+    "meaning_en": "to spell",
+    "example": "Das Wort ist \"buchstabieren\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Bus",
+    "meaning": "xe buýt",
+    "meaning_en": "bus",
+    "example": "Das Wort ist \"Bus\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Butter",
+    "meaning": "bơ",
+    "meaning_en": "butter",
+    "example": "Das Wort ist \"Butter\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Bäckerei",
+    "meaning": "tiệm bánh mì",
+    "meaning_en": "bakery",
+    "example": "Das Wort ist \"Bäckerei\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "böse",
+    "meaning": "giận, tức",
+    "meaning_en": "angry, mad",
+    "example": "Das Wort ist \"böse\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "daneben",
+    "meaning": "bên cạnh",
+    "meaning_en": "next to it, beside",
+    "example": "Das Wort ist \"daneben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Dank",
+    "meaning": "lời cảm ơn",
+    "meaning_en": "thanks",
+    "example": "Das Wort ist \"Dank\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "danke",
+    "meaning": "cảm ơn",
+    "meaning_en": "thank you",
+    "example": "Danke für die Hilfe!",
+    "translation": "Thanks for the help!",
+    "level": "A1"
+  },
+  {
+    "word": "danken",
+    "meaning": "cảm ơn",
+    "meaning_en": "to thank",
+    "example": "Das Wort ist \"danken\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "dann",
+    "meaning": "sau đó, rồi",
+    "meaning_en": "then, after that",
+    "example": "Das Wort ist \"dann\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Datum",
+    "meaning": "ngày tháng",
+    "meaning_en": "date",
+    "example": "Das Wort ist \"Datum\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "dauern",
+    "meaning": "kéo dài",
+    "meaning_en": "to last, to take (time)",
+    "example": "Das Wort ist \"dauern\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "dein-",
+    "meaning": "của bạn",
+    "meaning_en": "your (informal)",
+    "example": "Das Wort ist \"dein-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "denn",
+    "meaning": "vì, bởi vì",
+    "meaning_en": "because, for",
+    "example": "Das Wort ist \"denn\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "der, die, das",
+    "meaning": "mạo từ xác định",
+    "meaning_en": "the (definite article)",
+    "example": "Das Wort ist \"der, die, das\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "dich",
+    "meaning": "bạn (tân ngữ)",
+    "meaning_en": "you (accusative)",
+    "example": "Das Wort ist \"dich\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "dies-",
+    "meaning": "này, cái này",
+    "meaning_en": "this",
+    "example": "Das Wort ist \"dies-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "dir",
+    "meaning": "cho bạn",
+    "meaning_en": "you (dative)",
+    "example": "Das Wort ist \"dir\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Disco",
+    "meaning": "vũ trường",
+    "meaning_en": "disco, club",
+    "example": "Das Wort ist \"Disco\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Doktor",
+    "meaning": "bác sĩ, tiến sĩ",
+    "meaning_en": "doctor",
+    "example": "Das Wort ist \"Doktor\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Doppelzimmer",
+    "meaning": "phòng đôi",
+    "meaning_en": "double room",
+    "example": "Das Wort ist \"Doppelzimmer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Dorf",
+    "meaning": "làng",
+    "meaning_en": "village",
+    "example": "Das Wort ist \"Dorf\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "dort",
+    "meaning": "ở đằng kia",
+    "meaning_en": "there, over there",
+    "example": "Das Wort ist \"dort\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "draußen",
+    "meaning": "bên ngoài",
+    "meaning_en": "outside",
+    "example": "Das Wort ist \"draußen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "drucken",
+    "meaning": "in",
+    "meaning_en": "to print",
+    "example": "Das Wort ist \"drucken\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Drucker",
+    "meaning": "máy in",
+    "meaning_en": "printer",
+    "example": "Das Wort ist \"Drucker\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "durch",
+    "meaning": "qua, xuyên qua",
+    "meaning_en": "through",
+    "example": "Das Wort ist \"durch\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Durchsage",
+    "meaning": "thông báo (loa)",
+    "meaning_en": "announcement (loudspeaker)",
+    "example": "Das Wort ist \"Durchsage\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Durst",
+    "meaning": "khát",
+    "meaning_en": "thirst",
+    "example": "Das Wort ist \"Durst\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Dusche",
+    "meaning": "vòi sen",
+    "meaning_en": "shower",
+    "example": "Das Wort ist \"Dusche\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "dürfen",
+    "meaning": "được phép",
+    "meaning_en": "may, to be allowed to",
+    "example": "Das Wort ist \"dürfen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "E-Mail",
+    "meaning": "thư điện tử",
+    "meaning_en": "email",
+    "example": "Das Wort ist \"E-Mail\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Ecke",
+    "meaning": "góc",
+    "meaning_en": "corner",
+    "example": "Das Wort ist \"Ecke\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Ei",
+    "meaning": "trứng",
+    "meaning_en": "egg",
+    "example": "Das Wort ist \"Ei\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "eilig",
+    "meaning": "gấp, vội",
+    "meaning_en": "urgent, in a hurry",
+    "example": "Das Wort ist \"eilig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "ein-",
+    "meaning": "một",
+    "meaning_en": "a, an, one",
+    "example": "Das Wort ist \"ein-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "einfach",
+    "meaning": "đơn giản, một chiều",
+    "meaning_en": "simple, easy, one-way",
+    "example": "Das Wort ist \"einfach\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Eingang",
+    "meaning": "lối vào",
+    "meaning_en": "entrance",
+    "example": "Das Wort ist \"Eingang\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "einkaufen",
+    "meaning": "mua sắm",
+    "meaning_en": "to shop, to buy",
+    "example": "Das Wort ist \"einkaufen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "einladen",
+    "meaning": "mời",
+    "meaning_en": "to invite",
+    "example": "Das Wort ist \"einladen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Einladung",
+    "meaning": "lời mời",
+    "meaning_en": "invitation",
+    "example": "Das Wort ist \"Einladung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "einmal",
+    "meaning": "một lần",
+    "meaning_en": "once",
+    "example": "Das Wort ist \"einmal\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "einsteigen",
+    "meaning": "lên (xe)",
+    "meaning_en": "to get on, to board",
+    "example": "Das Wort ist \"einsteigen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Eintritt",
+    "meaning": "vé vào cửa",
+    "meaning_en": "admission, entry",
+    "example": "Das Wort ist \"Eintritt\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Einzelzimmer",
+    "meaning": "phòng đơn",
+    "meaning_en": "single room",
+    "example": "Das Wort ist \"Einzelzimmer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "empfehlen",
+    "meaning": "giới thiệu, khuyên",
+    "meaning_en": "to recommend",
+    "example": "Das Wort ist \"empfehlen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Empfänger",
+    "meaning": "người nhận",
+    "meaning_en": "recipient",
+    "example": "Das Wort ist \"Empfänger\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Ende",
+    "meaning": "cuối, kết thúc",
+    "meaning_en": "end",
+    "example": "Das Wort ist \"Ende\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "enden",
+    "meaning": "kết thúc",
+    "meaning_en": "to end",
+    "example": "Das Wort ist \"enden\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "entschuldigen",
+    "meaning": "xin lỗi",
+    "meaning_en": "to excuse, to apologize",
+    "example": "Das Wort ist \"entschuldigen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Entschuldigung",
+    "meaning": "xin lỗi",
+    "meaning_en": "excuse me, sorry",
+    "example": "Das Wort ist \"Entschuldigung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "er",
+    "meaning": "anh ấy, ông ấy",
+    "meaning_en": "he",
+    "example": "Das Wort ist \"er\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Ergebnis",
+    "meaning": "kết quả",
+    "meaning_en": "result",
+    "example": "Das Wort ist \"Ergebnis\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "erklären",
+    "meaning": "giải thích",
+    "meaning_en": "to explain",
+    "example": "Das Wort ist \"erklären\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "erlauben",
+    "meaning": "cho phép",
+    "meaning_en": "to allow, to permit",
+    "example": "Das Wort ist \"erlauben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Erwachsene",
+    "meaning": "người lớn",
+    "meaning_en": "adult",
+    "example": "Das Wort ist \"Erwachsene\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "erzählen",
+    "meaning": "kể, kể chuyện",
+    "meaning_en": "to tell, to narrate",
+    "example": "Das Wort ist \"erzählen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "es",
+    "meaning": "nó",
+    "meaning_en": "it",
+    "example": "Das Wort ist \"es\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "essen",
+    "meaning": "ăn",
+    "meaning_en": "to eat",
+    "example": "Wir essen zusammen.",
+    "translation": "We eat together.",
+    "level": "A1"
+  },
+  {
+    "word": "euer",
+    "meaning": "của các bạn",
+    "meaning_en": "your (plural informal)",
+    "example": "Das Wort ist \"euer\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "fahren",
+    "meaning": "lái xe, đi (bằng phương tiện)",
+    "meaning_en": "to drive, to go (by vehicle)",
+    "example": "Ich fahre mit dem Bus.",
+    "translation": "I go by bus.",
+    "level": "A1"
+  },
+  {
+    "word": "Fahrer",
+    "meaning": "tài xế",
+    "meaning_en": "driver",
+    "example": "Das Wort ist \"Fahrer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Fahrkarte",
+    "meaning": "vé xe",
+    "meaning_en": "ticket (transport)",
+    "example": "Das Wort ist \"Fahrkarte\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Fahrrad",
+    "meaning": "xe đạp",
+    "meaning_en": "bicycle",
+    "example": "Das Wort ist \"Fahrrad\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "falsch",
+    "meaning": "sai",
+    "meaning_en": "wrong, false",
+    "example": "Das Wort ist \"falsch\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Familie",
+    "meaning": "gia đình",
+    "meaning_en": "family",
+    "example": "Das Wort ist \"Familie\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Familienname",
+    "meaning": "họ",
+    "meaning_en": "family name, surname",
+    "example": "Das Wort ist \"Familienname\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Familienstand",
+    "meaning": "tình trạng hôn nhân",
+    "meaning_en": "marital status",
+    "example": "Das Wort ist \"Familienstand\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Farbe",
+    "meaning": "màu sắc",
+    "meaning_en": "color",
+    "example": "Das Wort ist \"Farbe\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Fax",
+    "meaning": "fax",
+    "meaning_en": "fax",
+    "example": "Das Wort ist \"Fax\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "fehlen",
+    "meaning": "thiếu, vắng",
+    "meaning_en": "to be missing, to be absent",
+    "example": "Das Wort ist \"fehlen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Fehler",
+    "meaning": "lỗi",
+    "meaning_en": "mistake, error",
+    "example": "Das Wort ist \"Fehler\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Feier-",
+    "meaning": "lễ, tiệc",
+    "meaning_en": "celebration, party",
+    "example": "Das Wort ist \"Feier-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "feiern",
+    "meaning": "ăn mừng, kỷ niệm",
+    "meaning_en": "to celebrate",
+    "example": "Das Wort ist \"feiern\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "fernsehen",
+    "meaning": "xem ti vi",
+    "meaning_en": "to watch TV",
+    "example": "Das Wort ist \"fernsehen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "fertig",
+    "meaning": "xong, hoàn thành",
+    "meaning_en": "ready, finished",
+    "example": "Das Wort ist \"fertig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Feuer",
+    "meaning": "lửa",
+    "meaning_en": "fire",
+    "example": "Das Wort ist \"Feuer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Fieber",
+    "meaning": "sốt",
+    "meaning_en": "fever",
+    "example": "Das Wort ist \"Fieber\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Film",
+    "meaning": "phim",
+    "meaning_en": "film, movie",
+    "example": "Das Wort ist \"Film\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "finden",
+    "meaning": "tìm thấy",
+    "meaning_en": "to find",
+    "example": "Das Wort ist \"finden\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Fisch",
+    "meaning": "cá",
+    "meaning_en": "fish",
+    "example": "Das Wort ist \"Fisch\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Flasche",
+    "meaning": "chai",
+    "meaning_en": "bottle",
+    "example": "Das Wort ist \"Flasche\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Fleisch",
+    "meaning": "thịt",
+    "meaning_en": "meat",
+    "example": "Das Wort ist \"Fleisch\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "fliegen",
+    "meaning": "bay",
+    "meaning_en": "to fly",
+    "example": "Das Wort ist \"fliegen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Flughafen",
+    "meaning": "sân bay",
+    "meaning_en": "airport",
+    "example": "Das Wort ist \"Flughafen\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Flugzeug",
+    "meaning": "máy bay",
+    "meaning_en": "airplane",
+    "example": "Das Wort ist \"Flugzeug\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Formular",
+    "meaning": "mẫu đơn",
+    "meaning_en": "form (document)",
+    "example": "Das Wort ist \"Formular\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Foto",
+    "meaning": "ảnh",
+    "meaning_en": "photo",
+    "example": "Das Wort ist \"Foto\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Frage",
+    "meaning": "câu hỏi",
+    "meaning_en": "question",
+    "example": "Das Wort ist \"Frage\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "fragen",
+    "meaning": "hỏi",
+    "meaning_en": "to ask",
+    "example": "Das Wort ist \"fragen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Frau",
+    "meaning": "phụ nữ, bà/cô",
+    "meaning_en": "woman, Mrs.",
+    "example": "Die Frau ist nett.",
+    "translation": "The woman is nice.",
+    "level": "A1"
+  },
+  {
+    "word": "frei",
+    "meaning": "trống, tự do",
+    "meaning_en": "free, available",
+    "example": "Das Wort ist \"frei\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Freizeit",
+    "meaning": "thời gian rảnh",
+    "meaning_en": "free time, leisure",
+    "example": "Das Wort ist \"Freizeit\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "fremd",
+    "meaning": "lạ, xa lạ",
+    "meaning_en": "strange, foreign",
+    "example": "Das Wort ist \"fremd\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Freund",
+    "meaning": "bạn bè, người bạn",
+    "meaning_en": "friend",
+    "example": "Er ist mein bester Freund.",
+    "translation": "He is my best friend.",
+    "level": "A1"
+  },
+  {
+    "word": "früher",
+    "meaning": "trước đây",
+    "meaning_en": "earlier, formerly",
+    "example": "Das Wort ist \"früher\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Frühstück",
+    "meaning": "bữa sáng",
+    "meaning_en": "breakfast",
+    "example": "Das Wort ist \"Frühstück\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "frühstücken",
+    "meaning": "ăn sáng",
+    "meaning_en": "to have breakfast",
+    "example": "Das Wort ist \"frühstücken\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Fuß",
+    "meaning": "bàn chân",
+    "meaning_en": "foot",
+    "example": "Das Wort ist \"Fuß\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Fußball",
+    "meaning": "bóng đá",
+    "meaning_en": "football, soccer",
+    "example": "Das Wort ist \"Fußball\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Führung",
+    "meaning": "tour tham quan",
+    "meaning_en": "guided tour",
+    "example": "Das Wort ist \"Führung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "für",
+    "meaning": "cho, dành cho",
+    "meaning_en": "for",
+    "example": "Das Wort ist \"für\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Garten",
+    "meaning": "vườn",
+    "meaning_en": "garden",
+    "example": "Das Wort ist \"Garten\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Gast",
+    "meaning": "khách",
+    "meaning_en": "guest",
+    "example": "Das Wort ist \"Gast\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "geben",
+    "meaning": "cho, đưa",
+    "meaning_en": "to give",
+    "example": "Das Wort ist \"geben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "geboren",
+    "meaning": "sinh ra",
+    "meaning_en": "born",
+    "example": "Das Wort ist \"geboren\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Geburtsort",
+    "meaning": "nơi sinh",
+    "meaning_en": "place of birth",
+    "example": "Das Wort ist \"Geburtsort\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Geburtstag",
+    "meaning": "sinh nhật",
+    "meaning_en": "birthday",
+    "example": "Das Wort ist \"Geburtstag\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "gefallen",
+    "meaning": "thích, ưa thích",
+    "meaning_en": "to like, to please",
+    "example": "Das Wort ist \"gefallen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "gegen",
+    "meaning": "chống lại, khoảng",
+    "meaning_en": "against, around",
+    "example": "Das Wort ist \"gegen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "gehen",
+    "meaning": "đi (bộ)",
+    "meaning_en": "to go, to walk",
+    "example": "Ich gehe in die Schule.",
+    "translation": "I go to school.",
+    "level": "A1"
+  },
+  {
+    "word": "gehören",
+    "meaning": "thuộc về",
+    "meaning_en": "to belong to",
+    "example": "Das Wort ist \"gehören\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Geld",
+    "meaning": "tiền",
+    "meaning_en": "money",
+    "example": "Das Wort ist \"Geld\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Gemüse",
+    "meaning": "rau",
+    "meaning_en": "vegetables",
+    "example": "Das Wort ist \"Gemüse\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Gepäck",
+    "meaning": "hành lý",
+    "meaning_en": "luggage, baggage",
+    "example": "Das Wort ist \"Gepäck\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "geradeaus",
+    "meaning": "thẳng tiến",
+    "meaning_en": "straight ahead",
+    "example": "Das Wort ist \"geradeaus\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Geschenk",
+    "meaning": "quà tặng",
+    "meaning_en": "gift, present",
+    "example": "Das Wort ist \"Geschenk\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "geschlossen",
+    "meaning": "đã đóng cửa",
+    "meaning_en": "closed",
+    "example": "Das Wort ist \"geschlossen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "gestern",
+    "meaning": "hôm qua",
+    "meaning_en": "yesterday",
+    "example": "Das Wort ist \"gestern\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "gestorben",
+    "meaning": "đã mất",
+    "meaning_en": "deceased, died",
+    "example": "Das Wort ist \"gestorben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Getränk",
+    "meaning": "đồ uống",
+    "meaning_en": "drink, beverage",
+    "example": "Das Wort ist \"Getränk\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Gewicht",
+    "meaning": "cân nặng",
+    "meaning_en": "weight",
+    "example": "Das Wort ist \"Gewicht\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "gewinnen",
+    "meaning": "thắng, chiến thắng",
+    "meaning_en": "to win",
+    "example": "Das Wort ist \"gewinnen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "geöffnet",
+    "meaning": "đang mở cửa",
+    "meaning_en": "open (adj.)",
+    "example": "Das Wort ist \"geöffnet\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Glas",
+    "meaning": "cốc, ly",
+    "meaning_en": "glass",
+    "example": "Das Wort ist \"Glas\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "glauben",
+    "meaning": "tin, tin tưởng",
+    "meaning_en": "to believe",
+    "example": "Das Wort ist \"glauben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "gleich",
+    "meaning": "giống nhau, ngay",
+    "meaning_en": "same, right away",
+    "example": "Das Wort ist \"gleich\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Glück",
+    "meaning": "may mắn, hạnh phúc",
+    "meaning_en": "luck, happiness",
+    "example": "Das Wort ist \"Glück\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "glücklich",
+    "meaning": "hạnh phúc",
+    "meaning_en": "happy",
+    "example": "Das Wort ist \"glücklich\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Glückwunsch",
+    "meaning": "lời chúc mừng",
+    "meaning_en": "congratulations",
+    "example": "Das Wort ist \"Glückwunsch\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "gratulieren",
+    "meaning": "chúc mừng",
+    "meaning_en": "to congratulate",
+    "example": "Das Wort ist \"gratulieren\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "grillen",
+    "meaning": "nướng",
+    "meaning_en": "to grill, to barbecue",
+    "example": "Das Wort ist \"grillen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "groß",
+    "meaning": "to, lớn",
+    "meaning_en": "big, large, tall",
+    "example": "Das Haus ist groß.",
+    "translation": "The house is big.",
+    "level": "A1"
+  },
+  {
+    "word": "Großmutter",
+    "meaning": "bà",
+    "meaning_en": "grandmother",
+    "example": "Das Wort ist \"Großmutter\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Großvater",
+    "meaning": "ông",
+    "meaning_en": "grandfather",
+    "example": "Das Wort ist \"Großvater\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Gruß",
+    "meaning": "lời chào",
+    "meaning_en": "greeting",
+    "example": "Das Wort ist \"Gruß\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Größe",
+    "meaning": "kích cỡ, chiều cao",
+    "meaning_en": "size, height",
+    "example": "Das Wort ist \"Größe\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "gut",
+    "meaning": "tốt, giỏi",
+    "meaning_en": "good",
+    "example": "Das Essen ist gut.",
+    "translation": "The food is good.",
+    "level": "A1"
+  },
+  {
+    "word": "gültig",
+    "meaning": "có hiệu lực",
+    "meaning_en": "valid",
+    "example": "Das Wort ist \"gültig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "günstig",
+    "meaning": "rẻ, thuận lợi",
+    "meaning_en": "cheap, favorable",
+    "example": "Das Wort ist \"günstig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Haar",
+    "meaning": "tóc",
+    "meaning_en": "hair",
+    "example": "Das Wort ist \"Haar\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "haben",
+    "meaning": "có",
+    "meaning_en": "to have",
+    "example": "Das Wort ist \"haben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Halbpension",
+    "meaning": "bán trú (ăn sáng+tối)",
+    "meaning_en": "half board",
+    "example": "Das Wort ist \"Halbpension\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Halle",
+    "meaning": "sảnh, hội trường",
+    "meaning_en": "hall",
+    "example": "Das Wort ist \"Halle\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "hallo",
+    "meaning": "xin chào",
+    "meaning_en": "hello",
+    "example": "Das Wort ist \"hallo\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "halten",
+    "meaning": "dừng, giữ",
+    "meaning_en": "to stop, to hold",
+    "example": "Das Wort ist \"halten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Haltestelle",
+    "meaning": "trạm (xe buýt)",
+    "meaning_en": "stop (bus/tram)",
+    "example": "Das Wort ist \"Haltestelle\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Hand",
+    "meaning": "bàn tay",
+    "meaning_en": "hand",
+    "example": "Das Wort ist \"Hand\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Handy",
+    "meaning": "điện thoại di động",
+    "meaning_en": "cell phone, mobile phone",
+    "example": "Das Wort ist \"Handy\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Haus",
+    "meaning": "ngôi nhà",
+    "meaning_en": "house",
+    "example": "Das ist mein Haus.",
+    "translation": "This is my house.",
+    "level": "A1"
+  },
+  {
+    "word": "Hausaufgabe",
+    "meaning": "bài tập về nhà",
+    "meaning_en": "homework",
+    "example": "Das Wort ist \"Hausaufgabe\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Hausmann",
+    "meaning": "nội trợ (nam)",
+    "meaning_en": "househusband",
+    "example": "Das Wort ist \"Hausmann\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Heimat",
+    "meaning": "quê hương",
+    "meaning_en": "homeland, home country",
+    "example": "Das Wort ist \"Heimat\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "heiraten",
+    "meaning": "kết hôn",
+    "meaning_en": "to marry",
+    "example": "Das Wort ist \"heiraten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "helfen",
+    "meaning": "giúp đỡ",
+    "meaning_en": "to help",
+    "example": "Das Wort ist \"helfen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Herd",
+    "meaning": "bếp",
+    "meaning_en": "stove, cooker",
+    "example": "Das Wort ist \"Herd\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Herr",
+    "meaning": "ông",
+    "meaning_en": "Mr., gentleman",
+    "example": "Das Wort ist \"Herr\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "herzlich",
+    "meaning": "nhiệt tình, chân thành",
+    "meaning_en": "warm, cordial",
+    "example": "Das Wort ist \"herzlich\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "heute",
+    "meaning": "hôm nay",
+    "meaning_en": "today",
+    "example": "Heute ist Montag.",
+    "translation": "Today is Monday.",
+    "level": "A1"
+  },
+  {
+    "word": "hier",
+    "meaning": "ở đây",
+    "meaning_en": "here",
+    "example": "Das Wort ist \"hier\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Hilfe",
+    "meaning": "sự giúp đỡ",
+    "meaning_en": "help",
+    "example": "Das Wort ist \"Hilfe\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "hinten",
+    "meaning": "phía sau",
+    "meaning_en": "at the back, behind",
+    "example": "Das Wort ist \"hinten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Hobby",
+    "meaning": "sở thích",
+    "meaning_en": "hobby",
+    "example": "Das Wort ist \"Hobby\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "hoch",
+    "meaning": "cao",
+    "meaning_en": "high, tall",
+    "example": "Das Wort ist \"hoch\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Hochzeit",
+    "meaning": "đám cưới",
+    "meaning_en": "wedding",
+    "example": "Das Wort ist \"Hochzeit\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "holen",
+    "meaning": "lấy, mang",
+    "meaning_en": "to fetch, to get",
+    "example": "Das Wort ist \"holen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Hunger",
+    "meaning": "đói",
+    "meaning_en": "hunger",
+    "example": "Das Wort ist \"Hunger\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Hähnchen",
+    "meaning": "gà (món ăn)",
+    "meaning_en": "chicken (food)",
+    "example": "Das Wort ist \"Hähnchen\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "hören",
+    "meaning": "nghe",
+    "meaning_en": "to hear, to listen",
+    "example": "Das Wort ist \"hören\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "ich",
+    "meaning": "tôi",
+    "meaning_en": "I",
+    "example": "Das Wort ist \"ich\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "immer",
+    "meaning": "luôn luôn",
+    "meaning_en": "always",
+    "example": "Das Wort ist \"immer\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "in",
+    "meaning": "trong, ở",
+    "meaning_en": "in, into",
+    "example": "Das Wort ist \"in\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Information",
+    "meaning": "thông tin",
+    "meaning_en": "information",
+    "example": "Das Wort ist \"Information\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Internet",
+    "meaning": "internet",
+    "meaning_en": "internet",
+    "example": "Das Wort ist \"Internet\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Jacke",
+    "meaning": "áo khoác",
+    "meaning_en": "jacket",
+    "example": "Das Wort ist \"Jacke\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Job",
+    "meaning": "công việc",
+    "meaning_en": "job",
+    "example": "Das Wort ist \"Job\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Jugendliche",
+    "meaning": "thanh thiếu niên",
+    "meaning_en": "teenager, young person",
+    "example": "Das Wort ist \"Jugendliche\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Junge",
+    "meaning": "con trai, cậu bé",
+    "meaning_en": "boy",
+    "example": "Das Wort ist \"Junge\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Kaffee",
+    "meaning": "cà phê",
+    "meaning_en": "coffee",
+    "example": "Das Wort ist \"Kaffee\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "kaputt",
+    "meaning": "hỏng, vỡ",
+    "meaning_en": "broken",
+    "example": "Das Wort ist \"kaputt\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Karte",
+    "meaning": "vé, thẻ, bản đồ",
+    "meaning_en": "card, ticket, map",
+    "example": "Das Wort ist \"Karte\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Kartoffel",
+    "meaning": "khoai tây",
+    "meaning_en": "potato",
+    "example": "Das Wort ist \"Kartoffel\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Kasse",
+    "meaning": "quầy thu ngân",
+    "meaning_en": "cash register, checkout",
+    "example": "Das Wort ist \"Kasse\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "kaufen",
+    "meaning": "mua",
+    "meaning_en": "to buy",
+    "example": "Ich kaufe Brot.",
+    "translation": "I buy bread.",
+    "level": "A1"
+  },
+  {
+    "word": "kein",
+    "meaning": "không có",
+    "meaning_en": "no, not any",
+    "example": "Das Wort ist \"kein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "kennen",
+    "meaning": "biết, quen",
+    "meaning_en": "to know (person/place)",
+    "example": "Das Wort ist \"kennen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "kennenlernen",
+    "meaning": "làm quen",
+    "meaning_en": "to get to know",
+    "example": "Das Wort ist \"kennenlernen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Kind",
+    "meaning": "đứa trẻ",
+    "meaning_en": "child",
+    "example": "Das Kind spielt im Garten.",
+    "translation": "The child plays in the garden.",
+    "level": "A1"
+  },
+  {
+    "word": "Kindergarten",
+    "meaning": "trường mẫu giáo",
+    "meaning_en": "kindergarten",
+    "example": "Das Wort ist \"Kindergarten\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Kino",
+    "meaning": "rạp phim",
+    "meaning_en": "cinema, movie theater",
+    "example": "Das Wort ist \"Kino\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Kiosk",
+    "meaning": "quầy báo",
+    "meaning_en": "kiosk, newsstand",
+    "example": "Das Wort ist \"Kiosk\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "klar",
+    "meaning": "rõ ràng, tất nhiên",
+    "meaning_en": "clear, of course",
+    "example": "Das Wort ist \"klar\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Klasse",
+    "meaning": "lớp học",
+    "meaning_en": "class",
+    "example": "Das Wort ist \"Klasse\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Kleidung",
+    "meaning": "quần áo",
+    "meaning_en": "clothing",
+    "example": "Das Wort ist \"Kleidung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "klein",
+    "meaning": "nhỏ, bé",
+    "meaning_en": "small, little",
+    "example": "Das Wort ist \"klein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "kochen",
+    "meaning": "nấu ăn",
+    "meaning_en": "to cook",
+    "example": "Das Wort ist \"kochen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Koffer",
+    "meaning": "va li",
+    "meaning_en": "suitcase",
+    "example": "Das Wort ist \"Koffer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Kollege",
+    "meaning": "đồng nghiệp",
+    "meaning_en": "colleague",
+    "example": "Das Wort ist \"Kollege\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "kommen",
+    "meaning": "đến",
+    "meaning_en": "to come",
+    "example": "Ich komme aus Vietnam.",
+    "translation": "I come from Vietnam.",
+    "level": "A1"
+  },
+  {
+    "word": "Konto",
+    "meaning": "tài khoản",
+    "meaning_en": "account (bank)",
+    "example": "Das Wort ist \"Konto\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Kopf",
+    "meaning": "đầu",
+    "meaning_en": "head",
+    "example": "Das Wort ist \"Kopf\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "kosten",
+    "meaning": "có giá",
+    "meaning_en": "to cost",
+    "example": "Das Wort ist \"kosten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "krank",
+    "meaning": "ốm, bệnh",
+    "meaning_en": "sick, ill",
+    "example": "Das Wort ist \"krank\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "kriegen",
+    "meaning": "được, nhận",
+    "meaning_en": "to get, to receive",
+    "example": "Das Wort ist \"kriegen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Kuchen",
+    "meaning": "bánh ngọt",
+    "meaning_en": "cake",
+    "example": "Das Wort ist \"Kuchen\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Kugelschreiber",
+    "meaning": "bút bi",
+    "meaning_en": "ballpoint pen",
+    "example": "Das Wort ist \"Kugelschreiber\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "kulturell",
+    "meaning": "thuộc văn hóa",
+    "meaning_en": "cultural",
+    "example": "Das Wort ist \"kulturell\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Kunde",
+    "meaning": "khách hàng",
+    "meaning_en": "customer",
+    "example": "Das Wort ist \"Kunde\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Kurs",
+    "meaning": "khóa học",
+    "meaning_en": "course",
+    "example": "Das Wort ist \"Kurs\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "kurz",
+    "meaning": "ngắn",
+    "meaning_en": "short",
+    "example": "Das Wort ist \"kurz\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "können",
+    "meaning": "có thể",
+    "meaning_en": "can, to be able to",
+    "example": "Das Wort ist \"können\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Küche",
+    "meaning": "nhà bếp",
+    "meaning_en": "kitchen",
+    "example": "Das Wort ist \"Küche\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Kühlschrank",
+    "meaning": "tủ lạnh",
+    "meaning_en": "refrigerator",
+    "example": "Das Wort ist \"Kühlschrank\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "lachen",
+    "meaning": "cười",
+    "meaning_en": "to laugh",
+    "example": "Das Wort ist \"lachen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Laden",
+    "meaning": "cửa hàng",
+    "meaning_en": "shop, store",
+    "example": "Das Wort ist \"Laden\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Land",
+    "meaning": "đất nước, nông thôn",
+    "meaning_en": "country, countryside",
+    "example": "Das Wort ist \"Land\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "lang",
+    "meaning": "dài",
+    "meaning_en": "long",
+    "example": "Das Wort ist \"lang\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "lange",
+    "meaning": "lâu",
+    "meaning_en": "for a long time",
+    "example": "Das Wort ist \"lange\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "langsam",
+    "meaning": "chậm",
+    "meaning_en": "slow",
+    "example": "Das Wort ist \"langsam\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "laufen",
+    "meaning": "chạy, đi bộ",
+    "meaning_en": "to run, to walk",
+    "example": "Das Wort ist \"laufen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "laut",
+    "meaning": "to, ồn ào",
+    "meaning_en": "loud",
+    "example": "Das Wort ist \"laut\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "leben",
+    "meaning": "sống",
+    "meaning_en": "to live",
+    "example": "Das Wort ist \"leben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Lebensmittel",
+    "meaning": "thực phẩm",
+    "meaning_en": "groceries, food",
+    "example": "Das Wort ist \"Lebens-\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "ledig",
+    "meaning": "độc thân",
+    "meaning_en": "single, unmarried",
+    "example": "Das Wort ist \"ledig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "legen",
+    "meaning": "đặt, để",
+    "meaning_en": "to put, to lay",
+    "example": "Das Wort ist \"legen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "leicht",
+    "meaning": "nhẹ, dễ",
+    "meaning_en": "light, easy",
+    "example": "Das Wort ist \"leicht\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "leider",
+    "meaning": "tiếc là, đáng tiếc",
+    "meaning_en": "unfortunately",
+    "example": "Das Wort ist \"leider\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "leise",
+    "meaning": "nhỏ (âm thanh)",
+    "meaning_en": "quiet, soft",
+    "example": "Das Wort ist \"leise\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "lernen",
+    "meaning": "học",
+    "meaning_en": "to learn, to study",
+    "example": "Ich lerne jeden Tag Deutsch.",
+    "translation": "I learn German every day.",
+    "level": "A1"
+  },
+  {
+    "word": "lesen",
+    "meaning": "đọc",
+    "meaning_en": "to read",
+    "example": "Das Wort ist \"lesen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "letzt-",
+    "meaning": "cuối cùng, vừa rồi",
+    "meaning_en": "last",
+    "example": "Das Wort ist \"letzt-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Licht",
+    "meaning": "ánh sáng, đèn",
+    "meaning_en": "light",
+    "example": "Das Wort ist \"Licht\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "lieb-",
+    "meaning": "thân mến",
+    "meaning_en": "dear",
+    "example": "Das Wort ist \"lieb-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "lieben",
+    "meaning": "yêu",
+    "meaning_en": "to love",
+    "example": "Das Wort ist \"lieben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "lieber",
+    "meaning": "thích hơn",
+    "meaning_en": "rather, prefer",
+    "example": "Das Wort ist \"lieber\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Lieblings-",
+    "meaning": "yêu thích nhất",
+    "meaning_en": "favorite",
+    "example": "Das Wort ist \"Lieblings-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Lied",
+    "meaning": "bài hát",
+    "meaning_en": "song",
+    "example": "Das Wort ist \"Lied\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "links",
+    "meaning": "bên trái",
+    "meaning_en": "left",
+    "example": "Das Wort ist \"links\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Lkw",
+    "meaning": "xe tải",
+    "meaning_en": "truck",
+    "example": "Das Wort ist \"Lkw\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Lokal",
+    "meaning": "nhà hàng, quán",
+    "meaning_en": "restaurant, bar",
+    "example": "Das Wort ist \"Lokal\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "lustig",
+    "meaning": "vui, hài hước",
+    "meaning_en": "funny, cheerful",
+    "example": "Das Wort ist \"lustig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Lösung",
+    "meaning": "giải pháp, đáp án",
+    "meaning_en": "solution, answer",
+    "example": "Das Wort ist \"Lösung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "machen",
+    "meaning": "làm",
+    "meaning_en": "to do, to make",
+    "example": "Was machst du?",
+    "translation": "What are you doing?",
+    "level": "A1"
+  },
+  {
+    "word": "man",
+    "meaning": "người ta",
+    "meaning_en": "one, people (impersonal)",
+    "example": "Das Wort ist \"man\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Mann",
+    "meaning": "đàn ông, chồng",
+    "meaning_en": "man, husband",
+    "example": "Das Wort ist \"Mann\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Maschine",
+    "meaning": "máy",
+    "meaning_en": "machine",
+    "example": "Das Wort ist \"Maschine\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "mehr",
+    "meaning": "nhiều hơn",
+    "meaning_en": "more",
+    "example": "Das Wort ist \"mehr\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "mein",
+    "meaning": "của tôi",
+    "meaning_en": "my",
+    "example": "Das Wort ist \"mein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "meist-",
+    "meaning": "hầu hết",
+    "meaning_en": "most",
+    "example": "Das Wort ist \"meist-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Mensch",
+    "meaning": "con người",
+    "meaning_en": "person, human",
+    "example": "Das Wort ist \"Mensch\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Miete",
+    "meaning": "tiền thuê",
+    "meaning_en": "rent",
+    "example": "Das Wort ist \"Miete\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "mieten",
+    "meaning": "thuê",
+    "meaning_en": "to rent",
+    "example": "Das Wort ist \"mieten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Milch",
+    "meaning": "sữa",
+    "meaning_en": "milk",
+    "example": "Das Wort ist \"Milch\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "mit",
+    "meaning": "với",
+    "meaning_en": "with",
+    "example": "Das Wort ist \"mit\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "mitbringen",
+    "meaning": "mang theo",
+    "meaning_en": "to bring along",
+    "example": "Das Wort ist \"mitbringen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "mitkommen",
+    "meaning": "đi cùng",
+    "meaning_en": "to come along",
+    "example": "Das Wort ist \"mitkommen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "mitmachen",
+    "meaning": "tham gia",
+    "meaning_en": "to participate",
+    "example": "Das Wort ist \"mitmachen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "mitnehmen",
+    "meaning": "mang đi",
+    "meaning_en": "to take along",
+    "example": "Das Wort ist \"mitnehmen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Mitte",
+    "meaning": "giữa, trung tâm",
+    "meaning_en": "middle, center",
+    "example": "Das Wort ist \"Mitte\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Moment",
+    "meaning": "lúc, khoảnh khắc",
+    "meaning_en": "moment",
+    "example": "Das Wort ist \"Moment\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Mutter",
+    "meaning": "mẹ",
+    "meaning_en": "mother",
+    "example": "Das Wort ist \"Mutter\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Mädchen",
+    "meaning": "con gái, cô gái",
+    "meaning_en": "girl",
+    "example": "Das Wort ist \"Mädchen\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "männlich",
+    "meaning": "nam, giống đực",
+    "meaning_en": "male, masculine",
+    "example": "Das Wort ist \"männlich\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "möchten",
+    "meaning": "muốn",
+    "meaning_en": "would like",
+    "example": "Das Wort ist \"möchten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "mögen",
+    "meaning": "thích",
+    "meaning_en": "to like",
+    "example": "Das Wort ist \"mögen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "müde",
+    "meaning": "mệt",
+    "meaning_en": "tired",
+    "example": "Das Wort ist \"müde\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Name",
+    "meaning": "tên",
+    "meaning_en": "name",
+    "example": "Mein Name ist Anna.",
+    "translation": "My name is Anna.",
+    "level": "A1"
+  },
+  {
+    "word": "nehmen",
+    "meaning": "lấy, cầm",
+    "meaning_en": "to take",
+    "example": "Ich nehme einen Kaffee.",
+    "translation": "I take a coffee.",
+    "level": "A1"
+  },
+  {
+    "word": "nein",
+    "meaning": "không",
+    "meaning_en": "no",
+    "example": "Das Wort ist \"nein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "neu",
+    "meaning": "mới",
+    "meaning_en": "new",
+    "example": "Das Wort ist \"neu\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "nicht",
+    "meaning": "không",
+    "meaning_en": "not",
+    "example": "Das Wort ist \"nicht\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "nichts",
+    "meaning": "không gì",
+    "meaning_en": "nothing",
+    "example": "Das Wort ist \"nichts\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "nie",
+    "meaning": "không bao giờ",
+    "meaning_en": "never",
+    "example": "Das Wort ist \"nie\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "noch",
+    "meaning": "vẫn, còn",
+    "meaning_en": "still, yet",
+    "example": "Das Wort ist \"noch\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "normal",
+    "meaning": "bình thường",
+    "meaning_en": "normal",
+    "example": "Das Wort ist \"normal\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Nummer",
+    "meaning": "số",
+    "meaning_en": "number",
+    "example": "Das Wort ist \"Nummer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "nur",
+    "meaning": "chỉ",
+    "meaning_en": "only",
+    "example": "Das Wort ist \"nur\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "nächst-",
+    "meaning": "tiếp theo",
+    "meaning_en": "next",
+    "example": "Das Wort ist \"nächst-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "oben",
+    "meaning": "ở trên",
+    "meaning_en": "above, upstairs",
+    "example": "Das Wort ist \"oben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Obst",
+    "meaning": "trái cây",
+    "meaning_en": "fruit",
+    "example": "Das Wort ist \"Obst\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "oder",
+    "meaning": "hoặc",
+    "meaning_en": "or",
+    "example": "Das Wort ist \"oder\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "oft",
+    "meaning": "thường xuyên",
+    "meaning_en": "often",
+    "example": "Das Wort ist \"oft\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "ohne",
+    "meaning": "không có",
+    "meaning_en": "without",
+    "example": "Das Wort ist \"ohne\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Oma",
+    "meaning": "bà (thân mật)",
+    "meaning_en": "grandma",
+    "example": "Das Wort ist \"Oma\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Opa",
+    "meaning": "ông (thân mật)",
+    "meaning_en": "grandpa",
+    "example": "Das Wort ist \"Opa\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Ordnung",
+    "meaning": "trật tự",
+    "meaning_en": "order",
+    "example": "Das Wort ist \"Ordnung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Ort",
+    "meaning": "nơi, địa điểm",
+    "meaning_en": "place, location",
+    "example": "Das Wort ist \"Ort\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Papier",
+    "meaning": "giấy",
+    "meaning_en": "paper",
+    "example": "Das Wort ist \"Papier\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Partnerin",
+    "meaning": "bạn đời (nữ)",
+    "meaning_en": "partner (female)",
+    "example": "Das Wort ist \"Partnerin\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Party",
+    "meaning": "bữa tiệc",
+    "meaning_en": "party",
+    "example": "Das Wort ist \"Party\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Pass",
+    "meaning": "hộ chiếu",
+    "meaning_en": "passport",
+    "example": "Das Wort ist \"Pass\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Plan",
+    "meaning": "kế hoạch, bản đồ",
+    "meaning_en": "plan, map",
+    "example": "Das Wort ist \"Plan\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Platz",
+    "meaning": "chỗ, quảng trường",
+    "meaning_en": "place, seat, square",
+    "example": "Das Wort ist \"Platz\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Polizei",
+    "meaning": "cảnh sát",
+    "meaning_en": "police",
+    "example": "Das Wort ist \"Polizei\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Post",
+    "meaning": "bưu điện, thư",
+    "meaning_en": "post office, mail",
+    "example": "Das Wort ist \"Post\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Postleitzahl",
+    "meaning": "mã bưu chính",
+    "meaning_en": "postal code, zip code",
+    "example": "Das Wort ist \"Postleitzahl\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Praktikum",
+    "meaning": "thực tập",
+    "meaning_en": "internship",
+    "example": "Das Wort ist \"Praktikum\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Preis",
+    "meaning": "giá",
+    "meaning_en": "price",
+    "example": "Das Wort ist \"Preis\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Problem",
+    "meaning": "vấn đề",
+    "meaning_en": "problem",
+    "example": "Das Wort ist \"Problem\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Prospekt",
+    "meaning": "tờ quảng cáo",
+    "meaning_en": "brochure, flyer",
+    "example": "Das Wort ist \"Prospekt\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Rad fahren",
+    "meaning": "đạp xe",
+    "meaning_en": "to cycle",
+    "example": "Das Wort ist \"Rad fahren\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "rauchen",
+    "meaning": "hút thuốc",
+    "meaning_en": "to smoke",
+    "example": "Das Wort ist \"rauchen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Rechnung",
+    "meaning": "hóa đơn",
+    "meaning_en": "bill, invoice",
+    "example": "Das Wort ist \"Rechnung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "rechts",
+    "meaning": "bên phải",
+    "meaning_en": "right (direction)",
+    "example": "Das Wort ist \"rechts\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Regen",
+    "meaning": "mưa",
+    "meaning_en": "rain",
+    "example": "Das Wort ist \"Regen\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "regnen",
+    "meaning": "mưa",
+    "meaning_en": "to rain",
+    "example": "Das Wort ist \"regnen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Reis",
+    "meaning": "gạo, cơm",
+    "meaning_en": "rice",
+    "example": "Das Wort ist \"Reis\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Reise",
+    "meaning": "chuyến đi",
+    "meaning_en": "trip, journey",
+    "example": "Das Wort ist \"Reise\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Reisebüro",
+    "meaning": "đại lý du lịch",
+    "meaning_en": "travel agency",
+    "example": "Das Wort ist \"Reisebüro\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Reiseführer",
+    "meaning": "hướng dẫn viên du lịch",
+    "meaning_en": "tour guide, guidebook",
+    "example": "Das Wort ist \"Reiseführer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "reisen",
+    "meaning": "du lịch",
+    "meaning_en": "to travel",
+    "example": "Das Wort ist \"reisen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Reparatur",
+    "meaning": "sự sửa chữa",
+    "meaning_en": "repair",
+    "example": "Das Wort ist \"Reparatur\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "reparieren",
+    "meaning": "sửa chữa",
+    "meaning_en": "to repair",
+    "example": "Das Wort ist \"reparieren\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Restaurant",
+    "meaning": "nhà hàng",
+    "meaning_en": "restaurant",
+    "example": "Das Wort ist \"Restaurant\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Rezeption",
+    "meaning": "lễ tân",
+    "meaning_en": "reception (hotel)",
+    "example": "Das Wort ist \"Rezeption\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "richtig",
+    "meaning": "đúng",
+    "meaning_en": "correct, right",
+    "example": "Das Wort ist \"richtig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "riechen",
+    "meaning": "ngửi, có mùi",
+    "meaning_en": "to smell",
+    "example": "Das Wort ist \"riechen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "ruhig",
+    "meaning": "yên tĩnh",
+    "meaning_en": "quiet, calm",
+    "example": "Das Wort ist \"ruhig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "S-Bahn",
+    "meaning": "tàu điện ngoại ô",
+    "meaning_en": "suburban train",
+    "example": "Das Wort ist \"S-Bahn\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Saft",
+    "meaning": "nước ép",
+    "meaning_en": "juice",
+    "example": "Das Wort ist \"Saft\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "sagen",
+    "meaning": "nói",
+    "meaning_en": "to say",
+    "example": "Das Wort ist \"sagen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Salat",
+    "meaning": "rau trộn, salad",
+    "meaning_en": "salad",
+    "example": "Das Wort ist \"Salat\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Salz",
+    "meaning": "muối",
+    "meaning_en": "salt",
+    "example": "Das Wort ist \"Salz\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Satz",
+    "meaning": "câu",
+    "meaning_en": "sentence",
+    "example": "Das Wort ist \"Satz\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Schalter",
+    "meaning": "quầy, công tắc",
+    "meaning_en": "counter, switch",
+    "example": "Das Wort ist \"Schalter\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "scheinen",
+    "meaning": "chiếu sáng, có vẻ",
+    "meaning_en": "to shine, to seem",
+    "example": "Das Wort ist \"scheinen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "schicken",
+    "meaning": "gửi",
+    "meaning_en": "to send",
+    "example": "Das Wort ist \"schicken\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Schild",
+    "meaning": "biển hiệu",
+    "meaning_en": "sign",
+    "example": "Das Wort ist \"Schild\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Schinken",
+    "meaning": "giăm bông",
+    "meaning_en": "ham",
+    "example": "Das Wort ist \"Schinken\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "schlafen",
+    "meaning": "ngủ",
+    "meaning_en": "to sleep",
+    "example": "Das Wort ist \"schlafen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "schlecht",
+    "meaning": "xấu, tệ",
+    "meaning_en": "bad",
+    "example": "Das Wort ist \"schlecht\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "schließen",
+    "meaning": "đóng",
+    "meaning_en": "to close",
+    "example": "Das Wort ist \"schließen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Schlüssel",
+    "meaning": "chìa khóa",
+    "meaning_en": "key",
+    "example": "Das Wort ist \"Schlüssel\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "schmecken",
+    "meaning": "có vị, ngon",
+    "meaning_en": "to taste",
+    "example": "Das Wort ist \"schmecken\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "schnell",
+    "meaning": "nhanh",
+    "meaning_en": "fast, quick",
+    "example": "Das Wort ist \"schnell\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "schon",
+    "meaning": "đã, rồi",
+    "meaning_en": "already",
+    "example": "Das Wort ist \"schon\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Schrank",
+    "meaning": "tủ",
+    "meaning_en": "cabinet, wardrobe",
+    "example": "Das Wort ist \"Schrank\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Schuh",
+    "meaning": "giày",
+    "meaning_en": "shoe",
+    "example": "Das Wort ist \"Schuh\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Schule",
+    "meaning": "trường học",
+    "meaning_en": "school",
+    "example": "Die Schule beginnt um acht.",
+    "translation": "School starts at eight.",
+    "level": "A1"
+  },
+  {
+    "word": "schwer",
+    "meaning": "nặng, khó",
+    "meaning_en": "heavy, difficult",
+    "example": "Das Wort ist \"schwer\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Schwester",
+    "meaning": "chị/em gái",
+    "meaning_en": "sister",
+    "example": "Das Wort ist \"Schwester\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Schwimmbad",
+    "meaning": "bể bơi",
+    "meaning_en": "swimming pool",
+    "example": "Das Wort ist \"Schwimmbad\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Schüler",
+    "meaning": "học sinh",
+    "meaning_en": "student, pupil",
+    "example": "Das Wort ist \"Schüler\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "See",
+    "meaning": "hồ",
+    "meaning_en": "lake",
+    "example": "Das Wort ist \"See\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "sehen",
+    "meaning": "thấy, nhìn",
+    "meaning_en": "to see",
+    "example": "Das Wort ist \"sehen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "sehr",
+    "meaning": "rất",
+    "meaning_en": "very",
+    "example": "Das Wort ist \"sehr\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "sein",
+    "meaning": "là, ở",
+    "meaning_en": "to be",
+    "example": "Das Wort ist \"sein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "seit",
+    "meaning": "từ, kể từ",
+    "meaning_en": "since, for",
+    "example": "Das Wort ist \"seit\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "selbstständig",
+    "meaning": "tự kinh doanh",
+    "meaning_en": "self-employed",
+    "example": "Das Wort ist \"selbstständig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "sich",
+    "meaning": "mình (đại từ phản thân)",
+    "meaning_en": "oneself (reflexive)",
+    "example": "Das Wort ist \"sich\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "sich kümmern",
+    "meaning": "chăm sóc, quan tâm",
+    "meaning_en": "to take care of",
+    "example": "Das Wort ist \"sich kümmern\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "sie",
+    "meaning": "cô ấy, họ",
+    "meaning_en": "she, they",
+    "example": "Das Wort ist \"sie\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "sitzen",
+    "meaning": "ngồi",
+    "meaning_en": "to sit",
+    "example": "Das Wort ist \"sitzen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "so",
+    "meaning": "vậy, như vậy",
+    "meaning_en": "so, like this",
+    "example": "Das Wort ist \"so\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Sofa",
+    "meaning": "ghế sofa",
+    "meaning_en": "sofa, couch",
+    "example": "Das Wort ist \"Sofa\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "sofort",
+    "meaning": "ngay lập tức",
+    "meaning_en": "immediately",
+    "example": "Das Wort ist \"sofort\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Sohn",
+    "meaning": "con trai",
+    "meaning_en": "son",
+    "example": "Das Wort ist \"Sohn\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "sollen",
+    "meaning": "nên",
+    "meaning_en": "should, shall",
+    "example": "Das Wort ist \"sollen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Sonne",
+    "meaning": "mặt trời",
+    "meaning_en": "sun",
+    "example": "Das Wort ist \"Sonne\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Speisekarte",
+    "meaning": "thực đơn",
+    "meaning_en": "menu",
+    "example": "Das Wort ist \"Speisekarte\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "spielen",
+    "meaning": "chơi",
+    "meaning_en": "to play",
+    "example": "Das Wort ist \"spielen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Sport",
+    "meaning": "thể thao",
+    "meaning_en": "sport",
+    "example": "Das Wort ist \"Sport\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Sprache",
+    "meaning": "ngôn ngữ",
+    "meaning_en": "language",
+    "example": "Das Wort ist \"Sprache\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "spät",
+    "meaning": "muộn, trễ",
+    "meaning_en": "late",
+    "example": "Das Wort ist \"spät\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "später",
+    "meaning": "sau, muộn hơn",
+    "meaning_en": "later",
+    "example": "Das Wort ist \"später\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Stadt",
+    "meaning": "thành phố",
+    "meaning_en": "city",
+    "example": "Das Wort ist \"Stadt\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "stehen",
+    "meaning": "đứng",
+    "meaning_en": "to stand",
+    "example": "Das Wort ist \"stehen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Stelle",
+    "meaning": "vị trí, chỗ làm",
+    "meaning_en": "position, job",
+    "example": "Das Wort ist \"Stelle\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "stellen",
+    "meaning": "đặt",
+    "meaning_en": "to put, to place",
+    "example": "Das Wort ist \"stellen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Straße",
+    "meaning": "con đường",
+    "meaning_en": "street, road",
+    "example": "Die Straße ist lang.",
+    "translation": "The street is long.",
+    "level": "A1"
+  },
+  {
+    "word": "Straßenbahn",
+    "meaning": "xe điện",
+    "meaning_en": "tram, streetcar",
+    "example": "Das Wort ist \"Straßenbahn\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Student",
+    "meaning": "sinh viên",
+    "meaning_en": "student (university)",
+    "example": "Das Wort ist \"Student\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "studieren",
+    "meaning": "học đại học",
+    "meaning_en": "to study (university)",
+    "example": "Das Wort ist \"studieren\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Studium",
+    "meaning": "việc học đại học",
+    "meaning_en": "studies (university)",
+    "example": "Das Wort ist \"Studium\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Stunde",
+    "meaning": "giờ, tiếng",
+    "meaning_en": "hour",
+    "example": "Das Wort ist \"Stunde\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "suchen",
+    "meaning": "tìm kiếm",
+    "meaning_en": "to search, to look for",
+    "example": "Das Wort ist \"suchen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "tanzen",
+    "meaning": "nhảy, khiêu vũ",
+    "meaning_en": "to dance",
+    "example": "Das Wort ist \"tanzen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Tasche",
+    "meaning": "túi, cặp",
+    "meaning_en": "bag, pocket",
+    "example": "Das Wort ist \"Tasche\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Taxi",
+    "meaning": "taxi",
+    "meaning_en": "taxi",
+    "example": "Das Wort ist \"Taxi\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Tee",
+    "meaning": "trà",
+    "meaning_en": "tea",
+    "example": "Das Wort ist \"Tee\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Teil",
+    "meaning": "phần",
+    "meaning_en": "part",
+    "example": "Das Wort ist \"Teil\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Telefon",
+    "meaning": "điện thoại",
+    "meaning_en": "telephone",
+    "example": "Das Wort ist \"Telefon\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "telefonieren",
+    "meaning": "gọi điện",
+    "meaning_en": "to make a phone call",
+    "example": "Das Wort ist \"telefonieren\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Termin",
+    "meaning": "cuộc hẹn",
+    "meaning_en": "appointment",
+    "example": "Das Wort ist \"Termin\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Test",
+    "meaning": "bài kiểm tra",
+    "meaning_en": "test",
+    "example": "Das Wort ist \"Test\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "teuer",
+    "meaning": "đắt",
+    "meaning_en": "expensive",
+    "example": "Das Wort ist \"teuer\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Text",
+    "meaning": "văn bản",
+    "meaning_en": "text",
+    "example": "Das Wort ist \"Text\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Thema",
+    "meaning": "chủ đề",
+    "meaning_en": "topic, theme",
+    "example": "Das Wort ist \"Thema\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Ticket",
+    "meaning": "vé",
+    "meaning_en": "ticket",
+    "example": "Das Wort ist \"Ticket\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Tisch",
+    "meaning": "bàn",
+    "meaning_en": "table",
+    "example": "Das Wort ist \"Tisch\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Tochter",
+    "meaning": "con gái",
+    "meaning_en": "daughter",
+    "example": "Das Wort ist \"Tochter\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Toilette",
+    "meaning": "nhà vệ sinh",
+    "meaning_en": "toilet, restroom",
+    "example": "Das Wort ist \"Toilette\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Tomate",
+    "meaning": "cà chua",
+    "meaning_en": "tomato",
+    "example": "Das Wort ist \"Tomate\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "tot",
+    "meaning": "đã chết",
+    "meaning_en": "dead",
+    "example": "Das Wort ist \"tot\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Treppe",
+    "meaning": "cầu thang",
+    "meaning_en": "stairs",
+    "example": "Das Wort ist \"Treppe\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "trinken",
+    "meaning": "uống",
+    "meaning_en": "to drink",
+    "example": "Ich trinke Wasser.",
+    "translation": "I drink water.",
+    "level": "A1"
+  },
+  {
+    "word": "tschüss",
+    "meaning": "tạm biệt",
+    "meaning_en": "bye",
+    "example": "Das Wort ist \"tschüss\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "tun",
+    "meaning": "làm",
+    "meaning_en": "to do",
+    "example": "Das Wort ist \"tun\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "umziehen",
+    "meaning": "chuyển nhà",
+    "meaning_en": "to move (house)",
+    "example": "Das Wort ist \"umziehen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "und",
+    "meaning": "và",
+    "meaning_en": "and",
+    "example": "Das Wort ist \"und\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "unser-",
+    "meaning": "của chúng tôi",
+    "meaning_en": "our",
+    "example": "Das Wort ist \"unser-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "unten",
+    "meaning": "ở dưới",
+    "meaning_en": "below, downstairs",
+    "example": "Das Wort ist \"unten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "unterschreiben",
+    "meaning": "ký tên",
+    "meaning_en": "to sign",
+    "example": "Das Wort ist \"unterschreiben\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Unterschrift",
+    "meaning": "chữ ký",
+    "meaning_en": "signature",
+    "example": "Das Wort ist \"Unterschrift\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Vater",
+    "meaning": "bố, cha",
+    "meaning_en": "father",
+    "example": "Das Wort ist \"Vater\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "verboten",
+    "meaning": "bị cấm",
+    "meaning_en": "forbidden, prohibited",
+    "example": "Das Wort ist \"verboten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "verdienen",
+    "meaning": "kiếm tiền",
+    "meaning_en": "to earn",
+    "example": "Das Wort ist \"verdienen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Verein",
+    "meaning": "câu lạc bộ, hội",
+    "meaning_en": "club, association",
+    "example": "Das Wort ist \"Verein\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "verheiratet",
+    "meaning": "đã kết hôn",
+    "meaning_en": "married",
+    "example": "Das Wort ist \"verheiratet\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "verkaufen",
+    "meaning": "bán",
+    "meaning_en": "to sell",
+    "example": "Das Wort ist \"verkaufen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Verkäufer",
+    "meaning": "người bán hàng",
+    "meaning_en": "salesperson",
+    "example": "Das Wort ist \"Verkäufer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "vermieten",
+    "meaning": "cho thuê",
+    "meaning_en": "to rent out",
+    "example": "Das Wort ist \"vermieten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Vermieter",
+    "meaning": "chủ nhà cho thuê",
+    "meaning_en": "landlord",
+    "example": "Das Wort ist \"Vermieter\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "verstehen",
+    "meaning": "hiểu",
+    "meaning_en": "to understand",
+    "example": "Das Wort ist \"verstehen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Verwandte",
+    "meaning": "người thân",
+    "meaning_en": "relative",
+    "example": "Das Wort ist \"Verwandte\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "viel",
+    "meaning": "nhiều",
+    "meaning_en": "much, a lot",
+    "example": "Das Wort ist \"viel\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "vielleicht",
+    "meaning": "có lẽ",
+    "meaning_en": "maybe, perhaps",
+    "example": "Das Wort ist \"vielleicht\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "von",
+    "meaning": "của, từ",
+    "meaning_en": "of, from",
+    "example": "Das Wort ist \"von\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "vor",
+    "meaning": "trước",
+    "meaning_en": "before, in front of",
+    "example": "Das Wort ist \"vor\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Vorname",
+    "meaning": "tên",
+    "meaning_en": "first name",
+    "example": "Das Wort ist \"Vorname\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "Vorsicht",
+    "meaning": "cẩn thận",
+    "meaning_en": "caution, be careful",
+    "example": "Das Wort ist \"Vorsicht\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Vorwahl",
+    "meaning": "mã vùng",
+    "meaning_en": "area code",
+    "example": "Das Wort ist \"Vorwahl\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "wann",
+    "meaning": "khi nào",
+    "meaning_en": "when",
+    "example": "Das Wort ist \"wann\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "warten",
+    "meaning": "đợi, chờ",
+    "meaning_en": "to wait",
+    "example": "Das Wort ist \"warten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "warum",
+    "meaning": "tại sao",
+    "meaning_en": "why",
+    "example": "Das Wort ist \"warum\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "was",
+    "meaning": "cái gì",
+    "meaning_en": "what",
+    "example": "Das Wort ist \"was\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "was für ein",
+    "meaning": "loại gì",
+    "meaning_en": "what kind of",
+    "example": "Das Wort ist \"was für ein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Wasser",
+    "meaning": "nước",
+    "meaning_en": "water",
+    "example": "Das Wasser ist kalt.",
+    "translation": "The water is cold.",
+    "level": "A1"
+  },
+  {
+    "word": "weg sein",
+    "meaning": "đã đi rồi",
+    "meaning_en": "to be gone",
+    "example": "Das Wort ist \"weg sein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "weh tun",
+    "meaning": "đau",
+    "meaning_en": "to hurt",
+    "example": "Das Wort ist \"weh tun\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "weiblich",
+    "meaning": "nữ, giống cái",
+    "meaning_en": "female, feminine",
+    "example": "Das Wort ist \"weiblich\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Wein",
+    "meaning": "rượu vang",
+    "meaning_en": "wine",
+    "example": "Das Wort ist \"Wein\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "weit",
+    "meaning": "xa",
+    "meaning_en": "far",
+    "example": "Das Wort ist \"weit\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "weiter",
+    "meaning": "tiếp tục",
+    "meaning_en": "further, continue",
+    "example": "Das Wort ist \"weiter\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "welch-",
+    "meaning": "nào, cái nào",
+    "meaning_en": "which",
+    "example": "Das Wort ist \"welch-\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Welt",
+    "meaning": "thế giới",
+    "meaning_en": "world",
+    "example": "Das Wort ist \"Welt\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "wenig",
+    "meaning": "ít",
+    "meaning_en": "little, few",
+    "example": "Das Wort ist \"wenig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "wer",
+    "meaning": "ai",
+    "meaning_en": "who",
+    "example": "Das Wort ist \"wer\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "werden",
+    "meaning": "trở thành",
+    "meaning_en": "to become",
+    "example": "Das Wort ist \"werden\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Wetter",
+    "meaning": "thời tiết",
+    "meaning_en": "weather",
+    "example": "Das Wort ist \"Wetter\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "wichtig",
+    "meaning": "quan trọng",
+    "meaning_en": "important",
+    "example": "Das Wort ist \"wichtig\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "wie",
+    "meaning": "như thế nào",
+    "meaning_en": "how, like",
+    "example": "Das Wort ist \"wie\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "wie viel",
+    "meaning": "bao nhiêu",
+    "meaning_en": "how much, how many",
+    "example": "Das Wort ist \"wie viel\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "wiederholen",
+    "meaning": "nhắc lại",
+    "meaning_en": "to repeat",
+    "example": "Das Wort ist \"wiederholen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Wiedersehen",
+    "meaning": "tạm biệt, gặp lại",
+    "meaning_en": "goodbye, see you again",
+    "example": "Das Wort ist \"Wiedersehen\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "willkommen",
+    "meaning": "chào mừng",
+    "meaning_en": "welcome",
+    "example": "Das Wort ist \"willkommen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Wind",
+    "meaning": "gió",
+    "meaning_en": "wind",
+    "example": "Das Wort ist \"Wind\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "wir",
+    "meaning": "chúng tôi",
+    "meaning_en": "we",
+    "example": "Das Wort ist \"wir\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "wissen",
+    "meaning": "biết (sự thật)",
+    "meaning_en": "to know (fact)",
+    "example": "Das Wort ist \"wissen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "woher",
+    "meaning": "từ đâu",
+    "meaning_en": "where from",
+    "example": "Das Wort ist \"woher\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "wohin",
+    "meaning": "đến đâu",
+    "meaning_en": "where to",
+    "example": "Das Wort ist \"wohin\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "wohnen",
+    "meaning": "sống, ở",
+    "meaning_en": "to live, to reside",
+    "example": "Das Wort ist \"wohnen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Wohnung",
+    "meaning": "căn hộ",
+    "meaning_en": "apartment, flat",
+    "example": "Das Wort ist \"Wohnung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "wollen",
+    "meaning": "muốn",
+    "meaning_en": "to want",
+    "example": "Das Wort ist \"wollen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "wunderbar",
+    "meaning": "tuyệt vời",
+    "meaning_en": "wonderful",
+    "example": "Das Wort ist \"wunderbar\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Zeit",
+    "meaning": "thời gian",
+    "meaning_en": "time",
+    "example": "Ich habe keine Zeit.",
+    "translation": "I have no time.",
+    "level": "A1"
+  },
+  {
+    "word": "Zeitung",
+    "meaning": "báo",
+    "meaning_en": "newspaper",
+    "example": "Das Wort ist \"Zeitung\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Zigarette",
+    "meaning": "thuốc lá",
+    "meaning_en": "cigarette",
+    "example": "Das Wort ist \"Zigarette\".",
+    "translation": "",
+    "level": "A1",
+    "article": "die"
+  },
+  {
+    "word": "Zimmer",
+    "meaning": "phòng",
+    "meaning_en": "room",
+    "example": "Das Wort ist \"Zimmer\".",
+    "translation": "",
+    "level": "A1",
+    "article": "das"
+  },
+  {
+    "word": "Zoll",
+    "meaning": "hải quan",
+    "meaning_en": "customs",
+    "example": "Das Wort ist \"Zoll\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "zu",
+    "meaning": "đến, quá",
+    "meaning_en": "to, too",
+    "example": "Das Wort ist \"zu\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "zu sein",
+    "meaning": "đã đóng",
+    "meaning_en": "to be closed",
+    "example": "Das Wort ist \"zu sein\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "zufrieden",
+    "meaning": "hài lòng",
+    "meaning_en": "satisfied, content",
+    "example": "Das Wort ist \"zufrieden\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "Zug",
+    "meaning": "tàu hỏa",
+    "meaning_en": "train",
+    "example": "Das Wort ist \"Zug\".",
+    "translation": "",
+    "level": "A1",
+    "article": "der"
+  },
+  {
+    "word": "zum Beispiel/z. B.",
+    "meaning": "ví dụ",
+    "meaning_en": "for example",
+    "example": "Das Wort ist \"zum Beispiel/z. B.\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "zurzeit",
+    "meaning": "hiện tại",
+    "meaning_en": "currently, at the moment",
+    "example": "Das Wort ist \"zurzeit\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "zurück",
+    "meaning": "trở lại",
+    "meaning_en": "back, return",
+    "example": "Das Wort ist \"zurück\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "zusammen",
+    "meaning": "cùng nhau",
+    "meaning_en": "together",
+    "example": "Das Wort ist \"zusammen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "zwischen",
+    "meaning": "giữa",
+    "meaning_en": "between",
+    "example": "Das Wort ist \"zwischen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "öffnen",
+    "meaning": "mở",
+    "meaning_en": "to open",
+    "example": "Das Wort ist \"öffnen\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "über",
+    "meaning": "trên, hơn",
+    "meaning_en": "over, above, about",
+    "example": "Das Wort ist \"über\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "übernachten",
+    "meaning": "qua đêm",
+    "meaning_en": "to stay overnight",
+    "example": "Das Wort ist \"übernachten\".",
+    "translation": "",
+    "level": "A1"
+  },
+  {
+    "word": "überweisen",
+    "meaning": "chuyển khoản",
+    "meaning_en": "to transfer (money)",
+    "example": "Das Wort ist \"überweisen\".",
+    "translation": "",
+    "level": "A1"
+  }
+]
