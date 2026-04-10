@@ -198,8 +198,10 @@ curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
 - [x] Test end-to-end tất cả tính năng
 - [x] Script test tự động (`test_sync.py`)
 
-### Phase 5 — Mở rộng (Tương lai)
+### Phase 5 — Mở rộng
 - [ ] Mở rộng dataset (1000+ từ vựng)
+- [ ] **Chế độ phản xạ Mạo từ (Der/Die/Das) & Số nhiều** — Mini-game rèn phản xạ chọn đúng mạo từ cho danh từ. SRS tự động tăng tần suất xuất hiện của từ hay sai.
+- [ ] **Trợ lý đọc hiểu (Context Analyzer)** — Người dùng dán đoạn văn bản tiếng Đức (báo chí, tài liệu). App tự động highlight từ vựng mục tiêu, hỗ trợ tra nghĩa và nghe phát âm trực tiếp trong ngữ cảnh.
 - [ ] Viết báo cáo đồ án
 - [ ] Deploy (tuỳ chọn)
 
