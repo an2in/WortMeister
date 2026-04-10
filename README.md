@@ -1,12 +1,12 @@
-# 🇩🇪 WortMeister — Ứng dụng Học Từ Vựng Tiếng Đức
+# WortMeister — Ứng dụng Học Từ Vựng Tiếng Đức 🇩🇪
 
 > **Personal Project** — German Vocabulary Learning App
 
-WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ từ vựng tiếng Đức cấp độ A1–B1 thông qua hệ thống **Spaced Repetition (SM-2)**, tìm kiếm **Autocomplete (Binary Search)**, và kiểm tra bản dịch bằng **Regex**. Hỗ trợ song ngữ 🇻🇳 Tiếng Việt / 🇬🇧 English.
+WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ từ vựng tiếng Đức cấp độ A1–B1 thông qua hệ thống **Spaced Repetition (SM-2)**, tìm kiếm **Autocomplete (Binary Search)**, và kiểm tra bản dịch bằng **Regex**. Hỗ trợ song ngữ Tiếng Việt / English.
 
 ---
 
-## 📐 Kiến trúc hệ thống
+## Kiến trúc hệ thống
 
 ```
 ┌──────────────────┐       HTTP/JSON        ┌──────────────────────┐
@@ -20,7 +20,7 @@ WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ t
                                           └───────────────────────┘
 ```
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer     | Technology                                  |
 |-----------|---------------------------------------------|
@@ -31,7 +31,7 @@ WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ t
 | Algorithm | `bisect`, `heapq`, `re` (built-in)          |
 | i18n      | Custom `data-i18n` + JS translation map     |
 
-## 📁 Cấu trúc thư mục
+## Cấu trúc thư mục
 
 ```
 DSA_BTL/
@@ -43,7 +43,7 @@ DSA_BTL/
     └── index.html       # SPA — Search, Flashcards, Translate (i18n VI/EN)
 ```
 
-## 📡 API Reference
+## API Reference
 
 Base URL: `http://localhost:8000`
 
@@ -93,7 +93,7 @@ Base URL: `http://localhost:8000`
 
 </details>
 
-## 🚀 Hướng dẫn chạy
+## Hướng dẫn chạy
 
 ### 1. Cài đặt thư viện
 
@@ -113,10 +113,10 @@ API Docs (tự động): [http://localhost:8000/docs](http://localhost:8000/docs
 
 ### 3. Mở frontend
 
-Mở file `frontend/index.html` trong trình duyệt (Chrome/Firefox/Edge).  
-Bấm nút **🇻🇳 VI ↔ 🇬🇧 EN** ở góc trên bên phải để chuyển ngôn ngữ giao diện.
+Truy cập [http://localhost:8000](http://localhost:8000) trên trình duyệt.  
+Bấm nút **VI ↔ EN** ở góc trên bên phải để chuyển ngôn ngữ giao diện.
 
-## 🧪 Hướng dẫn Test (Local)
+## Hướng dẫn Test (Local)
 
 ### Test tự động — `test_sync.py`
 
@@ -169,13 +169,13 @@ curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
 
 ### Test frontend — Trình duyệt
 
-1. Mở `frontend/index.html` → kiểm tra tab **Search** (gõ "ha" → "Haus" xuất hiện)
+1. Mở `http://localhost:8000` → kiểm tra tab **Search** (gõ "ha" → "Haus" xuất hiện)
 2. Chuyển tab **Flashcards** → lật thẻ, bấm đánh giá 0-5
 3. Chuyển tab **Translate** → nhập câu tiếng Đức, bấm "Kiểm tra"
 4. Bấm toggle **VI ↔ EN** → toàn bộ UI chuyển ngôn ngữ
-5. Bấm 🔊 → nghe phát âm
+5. Bấm biểu tượng loa → nghe phát âm
 
-## 📋 Roadmap & Tiến độ
+## Roadmap & Tiến độ
 
 ### Phase 1 — Cài đặt môi trường ✅
 - [x] Cài Python 3.10+, pip
@@ -192,7 +192,7 @@ curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
 ### Phase 3 — Build UI ✅
 - [x] Tạo giao diện bằng Google Stitch
 - [x] Kết nối frontend với backend API (fetch)
-- [x] Hệ thống i18n — toggle 🇻🇳 VI ↔ 🇬🇧 EN toàn bộ UI
+- [x] Hệ thống i18n — toggle VI ↔ EN toàn bộ UI
 
 ### Phase 4 — Tích hợp & Hoàn thiện ✅
 - [x] Test end-to-end tất cả tính năng
@@ -205,4 +205,6 @@ curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
 
 ---
 
-*WortMeister — Wort (từ) + Meister (bậc thầy) 🧠*
+*WortMeister — Wort (từ) + Meister (bậc thầy)*
+
+> **Về việc sử dụng emoji trong README:** Có thể bạn đang nghĩ *"file này có emoji, chắc AI viết"*. Xin thưa — đúng rồi 🙂. Nhưng mà, việc sử dụng emoji trong văn bản **hoàn toàn có cơ sở khoa học**. Nghiên cứu của Boutet et al. (2021, *Computers in Human Behavior*) chỉ ra rằng positive emoji giúp người đọc cảm nhận người viết *thân thiện hơn* và xử lý thông tin *nhanh hơn*. Huh (2025, *PLOS One*) bổ sung: emoji tăng cảm giác *gần gũi* và *dễ mến* — bất kể đó là mặt cười hay cây xương rồng 🌵. Khalid (2024) còn phát hiện positive emoji *khuếch đại* cảm xúc tích cực trong văn bản. Nói cách khác, README không có emoji giống như phở không có rau — ăn được, nhưng buồn. Tất nhiên, *nhiều quá thì lố*, nên file này chỉ rắc emoji ở những chỗ thật sự cần thiết. Bạn đọc đến đây nghĩa là emoji đã hoàn thành nhiệm vụ của nó rồi 😄
