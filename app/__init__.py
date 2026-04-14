@@ -1,0 +1,1 @@
+"""WortMeister application package."""

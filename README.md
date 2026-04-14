@@ -35,7 +35,24 @@ WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ t
 
 ```
 DSA_BTL/
-├── main.py              # FastAPI server — 5 API endpoints
+├── main.py              # FastAPI entrypoint (`uvicorn main:app`)
+├── app/                 # Backend package theo kiến trúc service/controller
+│   ├── core/
+│   │   └── config.py
+│   ├── models/
+│   │   ├── domain.py
+│   │   └── schemas.py
+│   ├── routers/
+│   │   └── api.py
+│   ├── services/
+│   │   ├── audio_service.py
+│   │   ├── container.py
+│   │   ├── search_service.py
+│   │   ├── srs_service.py
+│   │   ├── translation_service.py
+│   │   └── vocabulary_store.py
+│   ├── dependencies.py
+│   └── factory.py
 ├── data.json            # Vocabulary dataset (597 từ A1, Goethe-Zertifikat, song ngữ VI/EN)
 ├── README.md            # Project Wiki (file này)
 ├── test_sync.py         # Script test tự động (local)
@@ -60,7 +77,7 @@ Base URL: `http://localhost:8000`
 <details>
 <summary><strong>Chi tiết Request/Response</strong></summary>
 
-### GET `/api/search?q=ha&lang=vi`
+### GET `/api/search?q=hau&lang=vi`
 ```json
 // Response
 { "results": [{ "word": "Haus", "meaning": "ngôi nhà", "meaning_en": "house", "example": "...", "translation": "...", "level": "A1" }] }
@@ -134,8 +151,8 @@ python test_sync.py
 
 | Test                     | Kiểm tra                                              |
 |--------------------------|-------------------------------------------------------|
-| `test_search_vi`         | Search "ha" → trả về "Haus" (meaning = "ngôi nhà")   |
-| `test_search_en`         | Search "ha" + lang=en → meaning = "house"             |
+| `test_search_vi`         | Search "hau" → trả về "Haus" (meaning = "ngôi nhà")  |
+| `test_search_en`         | Search "hau" + lang=en → meaning = "house"            |
 | `test_next_card`         | Lấy flashcard từ heap → trả về word, meaning, level   |
 | `test_update_card`       | Rate quality=4 → trả về new_interval, success=true    |
 | `test_check_translation` | "Das ist mein Haus." chứa "Haus" → correct=true       |
@@ -145,10 +162,10 @@ python test_sync.py
 
 ```bash
 # Search (Vietnamese)
-curl "http://localhost:8000/api/search?q=ha&lang=vi"
+curl "http://localhost:8000/api/search?q=hau&lang=vi"
 
 # Search (English)
-curl "http://localhost:8000/api/search?q=ha&lang=en"
+curl "http://localhost:8000/api/search?q=hau&lang=en"
 
 # Flashcard
 curl "http://localhost:8000/api/next-card?lang=vi"
@@ -169,7 +186,7 @@ curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
 
 ### Test frontend — Trình duyệt
 
-1. Mở `http://localhost:8000` → kiểm tra tab **Search** (gõ "ha" → "Haus" xuất hiện)
+1. Mở `http://localhost:8000` → kiểm tra tab **Search** (gõ "hau" → "Haus" xuất hiện)
 2. Chuyển tab **Flashcards** → lật thẻ, bấm đánh giá 0-5
 3. Chuyển tab **Translate** → nhập câu tiếng Đức, bấm "Kiểm tra"
 4. Bấm toggle **VI ↔ EN** → toàn bộ UI chuyển ngôn ngữ
@@ -183,7 +200,7 @@ curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
 
 ### Phase 2 — Code Backend ✅
 - [x] Chuẩn bị dataset `data.json` (597 từ A1, Goethe-Zertifikat)
-- [x] Implement FastAPI server `main.py`
+- [x] Implement FastAPI backend + refactor sang kiến trúc service/controller
 - [x] Endpoint `/api/search` — bisect autocomplete + `?lang=vi|en`
 - [x] Endpoint `/api/next-card` + `/api/update-card` — heapq SRS + `?lang=vi|en`
 - [x] Endpoint `/api/check-translation` — regex

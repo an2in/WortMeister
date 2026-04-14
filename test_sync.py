@@ -1,11 +1,11 @@
 """
 WortMeister — Local Test Script
 ================================
-Kiểm tra tất cả 5 API endpoint trên server đang chạy.
+Checks all 5 API endpoints on a running server.
 
-Cách dùng:
-    1. Chạy server:  uvicorn main:app --reload --port 8000
-    2. Chạy test:    python test_sync.py
+Usage:
+    1. Start the server:  uvicorn main:app --reload --port 8000
+    2. Run the tests:     python test_sync.py
 """
 
 import json
@@ -54,7 +54,7 @@ print("\n🧪 WortMeister Test Suite\n" + "=" * 40)
 # 1. Search (Vietnamese)
 print("\n📖 Search API")
 try:
-    data = get("/api/search?q=ha&lang=vi")
+    data = get("/api/search?q=hau&lang=vi")
     results = data.get("results", [])
     test("search_vi: returns results", len(results) > 0, "No results")
     if results:
@@ -67,7 +67,7 @@ except Exception as e:
 
 # 2. Search (English)
 try:
-    data = get("/api/search?q=ha&lang=en")
+    data = get("/api/search?q=hau&lang=en")
     results = data.get("results", [])
     test("search_en: returns results", len(results) > 0, "No results")
     if results:
