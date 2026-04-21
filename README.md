@@ -2,7 +2,7 @@
 
 > **Personal Project** — German Vocabulary Learning App
 
-WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ từ vựng tiếng Đức cấp độ A1–B1 thông qua hệ thống **Spaced Repetition (SM-2)**, tìm kiếm **Autocomplete (Binary Search)**, và kiểm tra bản dịch bằng **Regex**. Hỗ trợ song ngữ Tiếng Việt / English.
+WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ từ vựng tiếng Đức cấp độ A1–B1 thông qua hệ thống **Spaced Repetition (SM-2)**, tìm kiếm **Autocomplete (Binary Search)**, kiểm tra bản dịch bằng **Regex**, và các tính năng mở rộng gồm **Article Drill**, **Context Analyzer**, và **Custom Text-to-Speech**. Hỗ trợ song ngữ Tiếng Việt / English.
 
 ---
 
@@ -28,7 +28,7 @@ WortMeister là ứng dụng web hỗ trợ tra cứu, phát âm và ghi nhớ t
 | Frontend  | HTML / Tailwind CSS / Vanilla JS            |
 | Database  | In-memory (RAM), load từ `data.json`        |
 | TTS       | `edge-tts` (Microsoft Edge TTS API)         |
-| Algorithm | `bisect`, `heapq`, `re` (built-in)          |
+| Algorithm | `bisect`, `heapq`, `re`, hash-based cache   |
 | i18n      | Custom `data-i18n` + JS translation map     |
 
 ## Cấu trúc thư mục
@@ -45,8 +45,10 @@ DSA_BTL/
 │   ├── routers/
 │   │   └── api.py
 │   ├── services/
+│   │   ├── article_drill_service.py
 │   │   ├── audio_service.py
 │   │   ├── container.py
+│   │   ├── context_analyzer_service.py
 │   │   ├── search_service.py
 │   │   ├── srs_service.py
 │   │   ├── translation_service.py
@@ -57,20 +59,25 @@ DSA_BTL/
 ├── README.md            # Project Wiki (file này)
 ├── test_sync.py         # Script test tự động (local)
 └── frontend/
-    └── index.html       # SPA — Search, Flashcards, Translate (i18n VI/EN)
+    └── index.html       # SPA — Search, Flashcards, Translate, Drill, Context, Free TTS (i18n VI/EN)
 ```
 
 ## API Reference
 
 Base URL: `http://localhost:8000`
 
-| Method | Endpoint                       | Mô tả                         | Algorithm         |
-|--------|--------------------------------|--------------------------------|-------------------|
-| GET    | `/api/search?q={prefix}&lang=` | Autocomplete từ vựng           | `bisect_left`     |
-| GET    | `/api/next-card?lang=`         | Lấy flashcard cần ôn nhất      | `heapq.heappop`   |
-| POST   | `/api/update-card`             | Cập nhật kết quả ôn tập (SM-2) | `heapq.heappush`  |
-| POST   | `/api/check-translation`       | Kiểm tra bản dịch tiếng Đức    | `re.search`       |
-| GET    | `/api/audio?word={word}`       | Phát âm từ vựng (MP3)          | `edge-tts` async  |
+| Method | Endpoint                       | Mô tả                                           | Algorithm                         |
+|--------|--------------------------------|--------------------------------------------------|-----------------------------------|
+| GET    | `/api/search?q={prefix}&lang=` | Autocomplete từ vựng                             | `bisect_left`                     |
+| GET    | `/api/next-card?lang=`         | Lấy flashcard cần ôn nhất                        | `heapq.heappop`                   |
+| POST   | `/api/update-card`             | Cập nhật kết quả ôn tập (SM-2)                   | `heapq.heappush` + SM-2           |
+| POST   | `/api/check-translation`       | Kiểm tra bản dịch tiếng Đức                      | `re.search`                       |
+| GET    | `/api/audio?word={word}`       | Phát âm từ vựng (MP3)                            | `edge-tts` async + cache hash     |
+| GET    | `/api/drill/next`              | Lấy câu hỏi phản xạ mạo từ/số nhiều              | `heapq.heappop`                   |
+| POST   | `/api/drill/answer`            | Chấm câu trả lời drill và reschedule theo lỗi    | `heapq.heappush` + mistake weight |
+| POST   | `/api/context/analyze`         | Phân tích đoạn văn và trả token match để highlight | regex tokenization + hash lookup  |
+| POST   | `/api/audio/text`              | Tạo audio từ văn bản tự do                       | `edge-tts` async + cache hash     |
+| GET    | `/api/audio/file/{filename}`   | Phục vụ file MP3 đã cache                        | file cache lookup                 |
 
 > **`lang` parameter:** `vi` (mặc định — nghĩa tiếng Việt) hoặc `en` (nghĩa tiếng Anh).
 
@@ -108,6 +115,36 @@ Base URL: `http://localhost:8000`
 ### GET `/api/audio?word=Hallo`
 → Returns `audio/mpeg` file (MP3).
 
+### GET `/api/drill/next`
+```json
+// Response
+{ "word": "Abfahrt", "article_options": ["der", "die", "das"], "attempts": 0, "mistakes": 0, "hint": "Plural begins with: Ab..." }
+```
+
+### POST `/api/drill/answer`
+```json
+// Request
+{ "word": "Abfahrt", "article": "die", "plural": "Abfahrten" }
+// Response
+{ "word": "Abfahrt", "article_correct": true, "plural_correct": false, "correct": false, "expected_article": "die", "expected_plural": "Abfahrte (auto)", "message": "Incorrect. This noun will appear more frequently.", "next_due_in_minutes": 3.0, "attempts": 1, "mistakes": 1 }
+```
+
+### POST `/api/context/analyze`
+```json
+// Request
+{ "text": "Das Haus und die Adresse sind hier.", "lang": "vi" }
+// Response
+{ "text": "Das Haus und die Adresse sind hier.", "matches": [{ "word": "Haus", "start": 4, "end": 8, "meaning": "ngôi nhà", "meaning_en": "house", "example": "...", "article": "das" }] }
+```
+
+### POST `/api/audio/text`
+```json
+// Request
+{ "text": "Guten Morgen zusammen" }
+// Response
+{ "text": "Guten Morgen zusammen", "audio_url": "/api/audio/file/<md5>.mp3" }
+```
+
 </details>
 
 ## Hướng dẫn chạy
@@ -137,7 +174,7 @@ Bấm nút **VI ↔ EN** ở góc trên bên phải để chuyển ngôn ngữ g
 
 ### Test tự động — `test_sync.py`
 
-Script kiểm tra tất cả 5 endpoint trên server đang chạy:
+Script kiểm tra 5 endpoint nền tảng trên server đang chạy:
 
 ```bash
 # Terminal 1: Khởi động server
@@ -189,8 +226,32 @@ curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
 1. Mở `http://localhost:8000` → kiểm tra tab **Search** (gõ "hau" → "Haus" xuất hiện)
 2. Chuyển tab **Flashcards** → lật thẻ, bấm đánh giá 0-5
 3. Chuyển tab **Translate** → nhập câu tiếng Đức, bấm "Kiểm tra"
-4. Bấm toggle **VI ↔ EN** → toàn bộ UI chuyển ngôn ngữ
-5. Bấm biểu tượng loa → nghe phát âm
+4. Chuyển tab **Article Drill** → chọn mạo từ + nhập plural, xác nhận feedback và countdown 30s
+5. Chuyển tab **Context** → dán đoạn văn tiếng Đức, bấm Analyze, kiểm tra highlight + danh sách match
+6. Chuyển tab **Free TTS** → nhập đoạn văn bản, bấm Generate Audio, kiểm tra player phát được
+7. Bấm toggle **VI ↔ EN** → toàn bộ UI chuyển ngôn ngữ
+
+### Test nhanh các endpoint mới (`curl`)
+
+```bash
+# Drill next
+curl "http://localhost:8000/api/drill/next"
+
+# Drill answer
+curl -X POST "http://localhost:8000/api/drill/answer" \
+  -H "Content-Type: application/json" \
+  -d '{"word": "Abfahrt", "article": "die", "plural": "Abfahrten"}'
+
+# Context analyzer
+curl -X POST "http://localhost:8000/api/context/analyze" \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Das Haus und die Adresse sind hier.", "lang": "vi"}'
+
+# Free text TTS
+curl -X POST "http://localhost:8000/api/audio/text" \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Guten Morgen zusammen"}'
+```
 
 ## Roadmap & Tiến độ
 
@@ -205,20 +266,27 @@ curl -o test.mp3 "http://localhost:8000/api/audio?word=Hallo"
 - [x] Endpoint `/api/next-card` + `/api/update-card` — heapq SRS + `?lang=vi|en`
 - [x] Endpoint `/api/check-translation` — regex
 - [x] Endpoint `/api/audio` — edge-tts
+- [x] Endpoint `/api/drill/next` + `/api/drill/answer` — article/plural reflex mode
+- [x] Endpoint `/api/context/analyze` — context analyzer
+- [x] Endpoint `/api/audio/text` + `/api/audio/file/{filename}` — custom text-to-speech
 
 ### Phase 3 — Build UI ✅
 - [x] Tạo giao diện bằng Google Stitch
 - [x] Kết nối frontend với backend API (fetch)
 - [x] Hệ thống i18n — toggle VI ↔ EN toàn bộ UI
+- [x] Thêm tab mới: Article Drill, Context, Free TTS
+- [x] UX Article Drill: feedback hiển thị tối thiểu 30s + countdown vòng tròn
 
 ### Phase 4 — Tích hợp & Hoàn thiện ✅
-- [x] Test end-to-end tất cả tính năng
-- [x] Script test tự động (`test_sync.py`)
+- [x] Test end-to-end các tính năng nền tảng
+- [x] Smoke test các endpoint mở rộng (drill/context/free-tts)
+- [x] Cập nhật tài liệu kỹ thuật thuật toán (`docs/technical_algorithm_report.md`)
 
 ### Phase 5 — Mở rộng
 - [ ] Mở rộng dataset (1000+ từ vựng)
-- [ ] **Chế độ phản xạ Mạo từ (Der/Die/Das) & Số nhiều** — Mini-game rèn phản xạ chọn đúng mạo từ cho danh từ. SRS tự động tăng tần suất xuất hiện của từ hay sai.
-- [ ] **Trợ lý đọc hiểu (Context Analyzer)** — Người dùng dán đoạn văn bản tiếng Đức (báo chí, tài liệu). App tự động highlight từ vựng mục tiêu, hỗ trợ tra nghĩa và nghe phát âm trực tiếp trong ngữ cảnh.
+- [x] **Chế độ phản xạ Mạo từ (Der/Die/Das) & Số nhiều**
+- [x] **Trợ lý đọc hiểu (Context Analyzer)**
+- [x] **Công cụ Đọc văn bản tự do (Custom Text-to-Speech)**
 - [ ] Viết báo cáo đồ án
 - [ ] Deploy (tuỳ chọn)
 
