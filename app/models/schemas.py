@@ -51,3 +51,75 @@ class TranslationResponse(BaseModel):
     correct: bool
     target_word: str
     feedback: str
+
+
+class DrillQuestion(BaseModel):
+    """Question payload for article/plural reaction drill."""
+
+    word: str
+    article_options: list[str]
+    attempts: int
+    mistakes: int
+    hint: str
+
+
+class DrillAnswerRequest(BaseModel):
+    """User answer for article/plural reaction drill."""
+
+    word: str
+    article: str = Field(description="Chosen article: der/die/das")
+    plural: str = Field(default="", description="User-provided plural form")
+
+
+class DrillAnswerResponse(BaseModel):
+    """Result after evaluating a drill answer and updating schedule."""
+
+    word: str
+    article_correct: bool
+    plural_correct: bool
+    correct: bool
+    expected_article: str
+    expected_plural: str
+    message: str
+    next_due_in_minutes: float
+    attempts: int
+    mistakes: int
+
+
+class ContextAnalyzeRequest(BaseModel):
+    """Request payload for context analyzer."""
+
+    text: str = Field(min_length=1, description="German text to analyze")
+    lang: str = Field(default="vi", description="Meaning language: vi or en")
+
+
+class ContextToken(BaseModel):
+    """A matched token found in user-provided context text."""
+
+    word: str
+    start: int
+    end: int
+    meaning: str
+    meaning_en: str = ""
+    example: str = ""
+    article: str = ""
+
+
+class ContextAnalyzeResponse(BaseModel):
+    """Context analyzer output with matched vocabulary metadata."""
+
+    text: str
+    matches: list[ContextToken]
+
+
+class FreeTTSRequest(BaseModel):
+    """Request payload for free-form text-to-speech."""
+
+    text: str = Field(min_length=1, description="German text to synthesize")
+
+
+class FreeTTSResponse(BaseModel):
+    """Response containing playable URL for synthesized free-form text."""
+
+    text: str
+    audio_url: str
