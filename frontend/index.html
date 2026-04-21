@@ -119,55 +119,6 @@
             }
         }
 
-        .drill-countdown {
-            position: relative;
-            width: 46px;
-            height: 46px;
-            flex-shrink: 0;
-        }
-
-        .drill-countdown svg {
-            width: 46px;
-            height: 46px;
-            transform: rotate(-90deg);
-        }
-
-        .drill-countdown-bg {
-            fill: none;
-            stroke: rgba(148, 163, 184, 0.25);
-            stroke-width: 4;
-        }
-
-        .drill-countdown-ring {
-            fill: none;
-            stroke: #38bdf8;
-            stroke-width: 4;
-            stroke-linecap: round;
-            stroke-dasharray: 100.53;
-            stroke-dashoffset: 0;
-        }
-
-        .drill-countdown-ring.run {
-            animation: drillCountdown var(--countdown-duration, 30s) linear forwards;
-        }
-
-        .drill-countdown-label {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            font-weight: 700;
-            color: #8ed5ff;
-        }
-
-        @keyframes drillCountdown {
-            to {
-                stroke-dashoffset: 100.53;
-            }
-        }
-
         /* Search result items */
         .search-result {
             animation: fadeSlideIn 0.3s ease forwards;
@@ -252,12 +203,6 @@
                 data-tab="flashcard">Flashcards</a>
             <a class="nav-tab text-slate-400 hover:text-slate-200 transition-colors cursor-pointer"
                 data-tab="translate">Translate</a>
-            <a class="nav-tab text-slate-400 hover:text-slate-200 transition-colors cursor-pointer"
-                data-tab="drill">Article Drill</a>
-            <a class="nav-tab text-slate-400 hover:text-slate-200 transition-colors cursor-pointer"
-                data-tab="context">Context</a>
-            <a class="nav-tab text-slate-400 hover:text-slate-200 transition-colors cursor-pointer"
-                data-tab="tts">Free TTS</a>
         </nav>
         <div class="flex items-center gap-3">
             <button id="langToggle" onclick="toggleLang()"
@@ -441,94 +386,22 @@
             </div>
         </section>
 
-        <!-- ═══ TAB 4: ARTICLE DRILL ═══ -->
-        <section class="tab-section" id="drill-view">
-            <div class="max-w-3xl mx-auto bg-surface-container rounded-[2rem] p-8 space-y-6">
-                <div>
-                    <h2 class="text-3xl font-bold" data-i18n="drillTitle">Phản xạ mạo từ & số nhiều</h2>
-                    <p class="text-on-surface-variant" data-i18n="drillSubtitle">Chọn Der/Die/Das và nhập số nhiều của danh từ.</p>
-                </div>
-
-                <div class="bg-surface-container-low rounded-2xl p-6 space-y-4">
-                    <p class="text-sm text-slate-400" data-i18n="drillWordLabel">Danh từ</p>
-                    <p id="drillWord" class="text-4xl font-black text-sky-300">—</p>
-                    <p id="drillHint" class="text-sm text-slate-400">—</p>
-                    <div class="grid grid-cols-3 gap-3">
-                        <button class="drill-article-btn py-3 rounded-xl bg-surface-container-highest hover:bg-primary/20" data-article="der">der</button>
-                        <button class="drill-article-btn py-3 rounded-xl bg-surface-container-highest hover:bg-primary/20" data-article="die">die</button>
-                        <button class="drill-article-btn py-3 rounded-xl bg-surface-container-highest hover:bg-primary/20" data-article="das">das</button>
-                    </div>
-                    <input id="drillPluralInput" type="text" placeholder="Plural form..."
-                        class="w-full bg-surface-container-highest rounded-xl p-3 ring-1 ring-outline-variant/15 focus:ring-primary/40" />
-                    <button onclick="submitDrillAnswer()"
-                        class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold">Submit</button>
-                    <div id="drillFeedback" class="hidden p-4 rounded-xl text-center font-bold"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ TAB 5: CONTEXT ANALYZER ═══ -->
-        <section class="tab-section" id="context-view">
-            <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-surface-container rounded-[2rem] p-8 space-y-4">
-                    <h2 class="text-3xl font-bold" data-i18n="contextTitle">Context Analyzer</h2>
-                    <p class="text-on-surface-variant" data-i18n="contextSubtitle">Dán đoạn văn bản tiếng Đức để highlight từ mục tiêu.</p>
-                    <textarea id="contextInput" class="w-full min-h-[240px] bg-surface-container-low rounded-2xl p-4 ring-1 ring-outline-variant/15 focus:ring-primary/40"
-                        placeholder="Fügen Sie hier Ihren deutschen Text ein..."></textarea>
-                    <button onclick="analyzeContext()"
-                        class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold">Analyze</button>
-                </div>
-                <div class="bg-surface-container-high rounded-[2rem] p-8 space-y-4">
-                    <h3 class="text-sm uppercase tracking-widest text-slate-400">Matches</h3>
-                    <div id="contextRender" class="min-h-[140px] whitespace-pre-wrap leading-relaxed text-on-surface"></div>
-                    <div id="contextMatches" class="space-y-3"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══ TAB 6: FREE TTS ═══ -->
-        <section class="tab-section" id="tts-view">
-            <div class="max-w-3xl mx-auto bg-surface-container rounded-[2rem] p-8 space-y-6">
-                <div>
-                    <h2 class="text-3xl font-bold" data-i18n="ttsTitle">Custom Text-to-Speech</h2>
-                    <p class="text-on-surface-variant" data-i18n="ttsSubtitle">Nhập bất kỳ văn bản tiếng Đức nào để nghe phát âm ngay.</p>
-                </div>
-                <textarea id="freeTtsInput" class="w-full min-h-[180px] bg-surface-container-low rounded-2xl p-4 ring-1 ring-outline-variant/15 focus:ring-primary/40"
-                    placeholder="Geben Sie hier Text ein..."></textarea>
-                <button onclick="generateFreeTts()"
-                    class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed font-bold">Generate Audio</button>
-                <audio id="freeTtsPlayer" controls class="w-full hidden"></audio>
-            </div>
-        </section>
-
     </main>
 
     <!-- ─── Bottom Navigation (Mobile) ─── -->
     <nav
-        class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-950/80 backdrop-blur-2xl px-3 py-3 grid grid-cols-6 gap-1 items-center border-t border-white/5 z-50">
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-950/80 backdrop-blur-2xl px-6 py-4 flex justify-around items-center border-t border-white/5 z-50">
         <button class="mobile-tab flex flex-col items-center gap-1 text-sky-300" data-tab="search">
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
             <span class="text-[10px] font-bold uppercase tracking-widest">Search</span>
         </button>
         <button class="mobile-tab flex flex-col items-center gap-1 text-slate-500" data-tab="flashcard">
             <span class="material-symbols-outlined">style</span>
-            <span class="text-[10px] font-bold uppercase tracking-widest">Cards</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Flashcards</span>
         </button>
         <button class="mobile-tab flex flex-col items-center gap-1 text-slate-500" data-tab="translate">
             <span class="material-symbols-outlined">edit_note</span>
-            <span class="text-[10px] font-bold uppercase tracking-widest">Trans</span>
-        </button>
-        <button class="mobile-tab flex flex-col items-center gap-1 text-slate-500" data-tab="drill">
-            <span class="material-symbols-outlined">bolt</span>
-            <span class="text-[10px] font-bold uppercase tracking-widest">Drill</span>
-        </button>
-        <button class="mobile-tab flex flex-col items-center gap-1 text-slate-500" data-tab="context">
-            <span class="material-symbols-outlined">article</span>
-            <span class="text-[10px] font-bold uppercase tracking-widest">Ctx</span>
-        </button>
-        <button class="mobile-tab flex flex-col items-center gap-1 text-slate-500" data-tab="tts">
-            <span class="material-symbols-outlined">record_voice_over</span>
-            <span class="text-[10px] font-bold uppercase tracking-widest">TTS</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest">Translate</span>
         </button>
     </nav>
 
@@ -544,14 +417,6 @@
         let translateTarget = "";
         let searchDebounce = null;
         let currentLang = "vi"; // "vi" or "en"
-
-        let currentDrill = null;
-        let selectedArticle = "";
-        let lastContextPayload = null;
-
-        let drillFeedbackTimeout = null;
-        let drillFeedbackInterval = null;
-        const DRILL_FEEDBACK_MIN_MS = 30000;
 
         // ─── i18n Translation Map ───
         const i18n = {
@@ -576,13 +441,6 @@
                 checkBtn: "Kiểm tra",
                 nextBtn: "Câu tiếp theo →",
                 noResults: "Không tìm thấy kết quả.",
-                drillTitle: "Phản xạ mạo từ & số nhiều",
-                drillSubtitle: "Chọn Der/Die/Das và nhập số nhiều của danh từ.",
-                drillWordLabel: "Danh từ",
-                contextTitle: "Trợ lý đọc hiểu",
-                contextSubtitle: "Dán đoạn văn bản tiếng Đức để highlight từ mục tiêu.",
-                ttsTitle: "Đọc văn bản tự do",
-                ttsSubtitle: "Nhập bất kỳ văn bản tiếng Đức nào để nghe phát âm ngay.",
             },
             en: {
                 tagline: "",
@@ -605,13 +463,6 @@
                 checkBtn: "Check",
                 nextBtn: "Next sentence →",
                 noResults: "No results found.",
-                drillTitle: "Article & plural reflex",
-                drillSubtitle: "Pick Der/Die/Das and enter the plural form.",
-                drillWordLabel: "Noun",
-                contextTitle: "Context Analyzer",
-                contextSubtitle: "Paste German text to highlight target vocabulary.",
-                ttsTitle: "Custom Text-to-Speech",
-                ttsSubtitle: "Type any German text and hear native pronunciation instantly.",
             }
         };
 
@@ -648,14 +499,7 @@
         }
 
         // ─── Tab Switching ───
-        const tabMap = {
-            search: "search-view",
-            flashcard: "flashcard-view",
-            translate: "translate-view",
-            drill: "drill-view",
-            context: "context-view",
-            tts: "tts-view",
-        };
+        const tabMap = { search: "search-view", flashcard: "flashcard-view", translate: "translate-view" };
 
         function switchTab(tabName) {
             // Hide all sections
@@ -689,9 +533,6 @@
             // Auto-load data
             if (tabName === "flashcard") loadNextCard();
             if (tabName === "translate") loadTranslateExercise();
-            if (tabName === "drill") loadDrillQuestion();
-            if (tabName === "context" && lastContextPayload) renderContextAnalysis(lastContextPayload);
-            if (tabName === "tts") document.getElementById("freeTtsInput")?.focus();
         }
 
         document.querySelectorAll(".nav-tab").forEach(a => a.addEventListener("click", () => switchTab(a.dataset.tab)));
@@ -718,75 +559,12 @@
             setTimeout(() => { toast.classList.replace("toast-enter", "toast-exit"); setTimeout(() => toast.remove(), 300); }, 3000);
         }
 
-        function clearDrillFeedbackTimers() {
-            if (drillFeedbackTimeout) {
-                clearTimeout(drillFeedbackTimeout);
-                drillFeedbackTimeout = null;
-            }
-            if (drillFeedbackInterval) {
-                clearInterval(drillFeedbackInterval);
-                drillFeedbackInterval = null;
-            }
-        }
-
-        function showDrillFeedback(message, ok, onFinish = null) {
-            clearDrillFeedbackTimers();
-
-            const fb = document.getElementById("drillFeedback");
-            fb.classList.remove("hidden");
-            fb.className = ok
-                ? "p-4 rounded-xl text-center font-bold bg-emerald-500/15 text-emerald-400"
-                : "p-4 rounded-xl text-center font-bold bg-red-500/15 text-red-400";
-
-            const id = `drill-countdown-${Date.now()}`;
-            fb.innerHTML = `
-                <div class="flex items-center gap-3">
-                    <div class="drill-countdown" style="--countdown-duration: 30s;">
-                        <svg viewBox="0 0 36 36" aria-hidden="true">
-                            <circle class="drill-countdown-bg" cx="18" cy="18" r="16"></circle>
-                            <circle id="${id}" class="drill-countdown-ring run" cx="18" cy="18" r="16"></circle>
-                        </svg>
-                        <span id="${id}-label" class="drill-countdown-label">30</span>
-                    </div>
-                    <p class="flex-1 text-left">${escapeHtml(message)}</p>
-                </div>
-            `;
-
-            const label = document.getElementById(`${id}-label`);
-            const startedAt = Date.now();
-
-            drillFeedbackInterval = setInterval(() => {
-                const elapsed = Date.now() - startedAt;
-                const remaining = Math.max(0, Math.ceil((DRILL_FEEDBACK_MIN_MS - elapsed) / 1000));
-                if (label) label.textContent = String(remaining);
-                if (remaining <= 0) {
-                    clearDrillFeedbackTimers();
-                }
-            }, 250);
-
-            drillFeedbackTimeout = setTimeout(() => {
-                clearDrillFeedbackTimers();
-                fb.classList.add("hidden");
-                if (typeof onFinish === "function") onFinish();
-            }, DRILL_FEEDBACK_MIN_MS);
-        }
-
-        function hideDrillFeedbackImmediate() {
-            clearDrillFeedbackTimers();
-            const fb = document.getElementById("drillFeedback");
-            fb.classList.add("hidden");
-        }
-
         // ─── Audio Playback ───
         function playAudio(word) {
             if (!word) return;
             const audio = document.getElementById("audioPlayer");
             audio.src = `${API_BASE}/api/audio?word=${encodeURIComponent(word)}`;
             audio.play().catch(() => showToast("Không thể phát âm thanh", "error"));
-        }
-
-        function escapeJsQuote(value) {
-            return String(value).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
         }
 
         // ─── 1. SEARCH (Autocomplete with debounce) ───
@@ -832,7 +610,7 @@
                     <p class="text-lg text-on-surface-variant font-medium">${r.meaning}</p>
                     <p class="text-sm italic text-slate-400 mt-2">"${r.example}"</p>
                 </div>
-                <button onclick="playAudio('${escapeJsQuote(r.word)}')" class="ml-4 w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all flex-shrink-0">
+                <button onclick="playAudio('${r.word}')" class="ml-4 w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all flex-shrink-0">
                     <span class="material-symbols-outlined">volume_up</span>
                 </button>
             </div>
@@ -943,168 +721,6 @@
                 fb.textContent = data.feedback;
             } catch (e) {
                 showToast("Lỗi kiểm tra bản dịch!", "error");
-            }
-        }
-
-        // ─── 4. ARTICLE DRILL ───
-        document.querySelectorAll(".drill-article-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                selectedArticle = btn.dataset.article || "";
-                document.querySelectorAll(".drill-article-btn").forEach(x => x.classList.remove("ring-2", "ring-primary"));
-                btn.classList.add("ring-2", "ring-primary");
-            });
-        });
-
-        async function loadDrillQuestion() {
-            hideDrillFeedbackImmediate();
-            selectedArticle = "";
-            document.querySelectorAll(".drill-article-btn").forEach(x => x.classList.remove("ring-2", "ring-primary"));
-            document.getElementById("drillPluralInput").value = "";
-
-            try {
-                const res = await fetch(`${API_BASE}/api/drill/next`);
-                if (res.status === 404) {
-                    document.getElementById("drillWord").textContent = "No drill cards";
-                    document.getElementById("drillHint").textContent = "Dataset has no noun drill items.";
-                    return;
-                }
-                const data = await res.json();
-                currentDrill = data;
-                document.getElementById("drillWord").textContent = data.word;
-                document.getElementById("drillHint").textContent = `${data.hint} • attempts=${data.attempts}, mistakes=${data.mistakes}`;
-            } catch (e) {
-                showToast("Không tải được drill", "error");
-            }
-        }
-
-        async function submitDrillAnswer() {
-            if (!currentDrill) {
-                showToast("Chưa có câu hỏi drill", "info");
-                return;
-            }
-            if (!selectedArticle) {
-                showToast("Hãy chọn mạo từ", "info");
-                return;
-            }
-
-            const plural = document.getElementById("drillPluralInput").value.trim();
-            const payload = {
-                word: currentDrill.word,
-                article: selectedArticle,
-                plural,
-            };
-
-            try {
-                const res = await fetch(`${API_BASE}/api/drill/answer`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload),
-                });
-                const data = await res.json();
-                const message = `${data.message} (article=${data.expected_article}, plural=${data.expected_plural})`;
-                showDrillFeedback(message, Boolean(data.correct), loadDrillQuestion);
-            } catch (e) {
-                showToast("Lỗi gửi câu trả lời drill", "error");
-            }
-        }
-
-        // ─── 5. CONTEXT ANALYZER ───
-        async function analyzeContext() {
-            const text = document.getElementById("contextInput").value.trim();
-            if (!text) {
-                showToast("Nhập đoạn văn trước khi phân tích", "info");
-                return;
-            }
-
-            try {
-                const res = await fetch(`${API_BASE}/api/context/analyze`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ text, lang: currentLang }),
-                });
-                const data = await res.json();
-                lastContextPayload = data;
-                renderContextAnalysis(data);
-            } catch (e) {
-                showToast("Lỗi phân tích ngữ cảnh", "error");
-            }
-        }
-
-        function renderContextAnalysis(payload) {
-            const text = payload.text || "";
-            const matches = Array.isArray(payload.matches) ? payload.matches.slice() : [];
-            matches.sort((a, b) => a.start - b.start);
-
-            const render = document.getElementById("contextRender");
-            const list = document.getElementById("contextMatches");
-
-            if (!matches.length) {
-                render.textContent = text;
-                list.innerHTML = `<p class="text-slate-500">No known vocabulary matched.</p>`;
-                return;
-            }
-
-            let cursor = 0;
-            let html = "";
-            for (const m of matches) {
-                const safeStart = Math.max(cursor, m.start);
-                const safeEnd = Math.max(safeStart, m.end);
-                html += escapeHtml(text.slice(cursor, safeStart));
-                const token = escapeHtml(text.slice(safeStart, safeEnd));
-                const tooltip = escapeHtml(`${m.word}: ${m.meaning}`);
-                html += `<mark class="bg-primary/25 text-primary px-1 rounded" title="${tooltip}">${token}</mark>`;
-                cursor = safeEnd;
-            }
-            html += escapeHtml(text.slice(cursor));
-            render.innerHTML = html;
-
-            list.innerHTML = matches.map(m => {
-                const article = m.article ? `${m.article} ` : "";
-                return `
-                <div class="p-3 rounded-xl bg-surface-container-low">
-                    <div class="flex items-center justify-between gap-3">
-                        <p class="font-bold text-sky-300">${article}${m.word}</p>
-                        <button onclick="playAudio('${escapeJsQuote(m.word)}')" class="text-primary hover:text-sky-300">
-                            <span class="material-symbols-outlined">volume_up</span>
-                        </button>
-                    </div>
-                    <p class="text-sm text-slate-300">${m.meaning}</p>
-                    <p class="text-xs text-slate-500">${m.start}-${m.end}</p>
-                </div>`;
-            }).join("");
-        }
-
-        function escapeHtml(value) {
-            return String(value)
-                .replaceAll("&", "&amp;")
-                .replaceAll("<", "&lt;")
-                .replaceAll(">", "&gt;")
-                .replaceAll('"', "&quot;")
-                .replaceAll("'", "&#39;");
-        }
-
-        // ─── 6. FREE TTS ───
-        async function generateFreeTts() {
-            const text = document.getElementById("freeTtsInput").value.trim();
-            if (!text) {
-                showToast("Nhập văn bản để tạo audio", "info");
-                return;
-            }
-
-            try {
-                const res = await fetch(`${API_BASE}/api/audio/text`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ text }),
-                });
-                const data = await res.json();
-                const player = document.getElementById("freeTtsPlayer");
-                player.src = `${API_BASE}${data.audio_url}`;
-                player.classList.remove("hidden");
-                await player.play();
-                showToast("Đã tạo audio thành công", "success");
-            } catch (e) {
-                showToast("Không thể tạo audio", "error");
             }
         }
 
