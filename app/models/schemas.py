@@ -123,3 +123,82 @@ class FreeTTSResponse(BaseModel):
 
     text: str
     audio_url: str
+
+
+class MazePositionPayload(BaseModel):
+    row: int
+    col: int
+
+
+class MazeCellPayload(BaseModel):
+    row: int
+    col: int
+    kind: str
+    letter: str = ""
+
+
+class MazeStartRequest(BaseModel):
+    target_word: str = Field(min_length=1)
+
+
+class MazeSessionResponse(BaseModel):
+    session_id: str
+    target_word: str
+    collected_letters: list[str]
+    remaining_letters: list[str]
+    player_position: MazePositionPayload
+    cells: list[list[MazeCellPayload]]
+    status: str
+    steps_taken: int
+    shortest_goal_distance: int | None = None
+
+
+class MazeMoveRequest(BaseModel):
+    direction: str
+
+
+class MazeMoveResponse(BaseModel):
+    moved: bool
+    hit_wall: bool
+    collected_letter: str
+    completed: bool
+    state: MazeSessionResponse
+
+
+class NotebookUpsertRequest(BaseModel):
+    word: str = Field(min_length=1)
+    meaning: str = Field(min_length=1)
+    meaning_en: str = ""
+    example: str = ""
+    article: str = ""
+    image_url: str = ""
+
+
+class NotebookEntryPayload(BaseModel):
+    word: str
+    meaning: str
+    meaning_en: str = ""
+    example: str = ""
+    article: str = ""
+    pos: str
+    image_url: str
+    image_source: str
+    created_at: str
+
+
+class NotebookListResponse(BaseModel):
+    entries: list[NotebookEntryPayload]
+
+
+class NotebookGroup(BaseModel):
+    pos: str
+    entries: list[NotebookEntryPayload]
+
+
+class NotebookGroupResponse(BaseModel):
+    groups: list[NotebookGroup]
+
+
+class NotebookDeleteResponse(BaseModel):
+    success: bool
+    word: str

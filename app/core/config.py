@@ -14,6 +14,9 @@ class Settings:
     frontend_dir: Path
     audio_cache_dir: Path
     tts_voice: str
+    notebook_data_file: Path
+    notebook_image_fallback: str
+    maze_default_size: int
 
 
 settings = Settings(
@@ -21,6 +24,9 @@ settings = Settings(
     frontend_dir=BASE_DIR / "frontend",
     audio_cache_dir=Path(tempfile.gettempdir()) / "wortmeister_audio",
     tts_voice="de-DE-ConradNeural",
+    notebook_data_file=BASE_DIR / "notebook_data.json",
+    notebook_image_fallback="https://placehold.co/640x400/0b1326/8ed5ff?text={word}",
+    maze_default_size=9,
 )
 
 settings.audio_cache_dir.mkdir(parents=True, exist_ok=True)

@@ -16,6 +16,15 @@ from app.models.schemas import (
     FlashcardResponse,
     FreeTTSRequest,
     FreeTTSResponse,
+    MazeMoveRequest,
+    MazeMoveResponse,
+    MazeSessionResponse,
+    MazeStartRequest,
+    NotebookDeleteResponse,
+    NotebookEntryPayload,
+    NotebookGroupResponse,
+    NotebookListResponse,
+    NotebookUpsertRequest,
     SearchResponse,
     TranslationRequest,
     TranslationResponse,
@@ -144,3 +153,70 @@ def audio_file(filename: str) -> FileResponse:
         raise HTTPException(status_code=404, detail="Audio file not found")
 
     return FileResponse(path=str(file_path), media_type="audio/mpeg", filename=filename)
+
+
+@router.post("/api/maze/start", response_model=MazeSessionResponse)
+def maze_start(
+    request: MazeStartRequest,
+    container: ServiceContainer = Depends(get_container),
+) -> MazeSessionResponse:
+    return container.maze.start_session(request)
+
+
+@router.get("/api/maze/{session_id}", response_model=MazeSessionResponse)
+def maze_get(
+    session_id: str,
+    container: ServiceContainer = Depends(get_container),
+) -> MazeSessionResponse:
+    return container.maze.get_session(session_id)
+
+
+@router.post("/api/maze/{session_id}/move", response_model=MazeMoveResponse)
+def maze_move(
+    session_id: str,
+    request: MazeMoveRequest,
+    container: ServiceContainer = Depends(get_container),
+) -> MazeMoveResponse:
+    return container.maze.move(session_id, request)
+
+
+@router.get("/api/notebook", response_model=NotebookListResponse)
+def notebook_list(
+    pos: str = Query("", description="Optional POS filter"),
+    container: ServiceContainer = Depends(get_container),
+) -> NotebookListResponse:
+    return container.notebook.list_entries(pos)
+
+
+@router.get("/api/notebook/groups", response_model=NotebookGroupResponse)
+def notebook_groups(
+    container: ServiceContainer = Depends(get_container),
+) -> NotebookGroupResponse:
+    return container.notebook.grouped_entries()
+
+
+@router.post("/api/notebook", response_model=NotebookEntryPayload)
+def notebook_create(
+    request: NotebookUpsertRequest,
+    container: ServiceContainer = Depends(get_container),
+) -> NotebookEntryPayload:
+    return container.notebook.upsert_entry(request)
+
+
+@router.put("/api/notebook/{word}", response_model=NotebookEntryPayload)
+def notebook_update(
+    word: str,
+    request: NotebookUpsertRequest,
+    container: ServiceContainer = Depends(get_container),
+) -> NotebookEntryPayload:
+    if word.strip().lower() != request.word.strip().lower():
+        raise HTTPException(status_code=400, detail="Path word must match payload word")
+    return container.notebook.upsert_entry(request)
+
+
+@router.delete("/api/notebook/{word}", response_model=NotebookDeleteResponse)
+def notebook_delete(
+    word: str,
+    container: ServiceContainer = Depends(get_container),
+) -> NotebookDeleteResponse:
+    return container.notebook.delete_entry(word)

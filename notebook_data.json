@@ -1,0 +1,35 @@
+[
+  {
+    "word": "Haus",
+    "meaning": "ngôi nhà",
+    "meaning_en": "",
+    "example": "",
+    "article": "das",
+    "pos": "noun",
+    "image_url": "https://placehold.co/640x400/0b1326/8ed5ff?text=Haus",
+    "image_source": "fallback",
+    "created_at": "2026-05-05T15:26:14.494882+00:00"
+  },
+  {
+    "word": "lernen",
+    "meaning": "học",
+    "meaning_en": "",
+    "example": "Wir lernen Deutsch.",
+    "article": "",
+    "pos": "verb",
+    "image_url": "https://placehold.co/640x400/0b1326/8ed5ff?text=lernen",
+    "image_source": "fallback",
+    "created_at": "2026-05-05T15:58:03.937929+00:00"
+  },
+  {
+    "word": "Worterbuch",
+    "meaning": "Wordbook",
+    "meaning_en": "",
+    "example": "",
+    "article": "die",
+    "pos": "noun",
+    "image_url": "https://placehold.co/640x400/0b1326/8ed5ff?text=Worterbuch",
+    "image_source": "fallback",
+    "created_at": "2026-05-05T16:43:31.938594+00:00"
+  }
+]
