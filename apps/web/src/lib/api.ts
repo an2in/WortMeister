@@ -11,7 +11,14 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   });
 
   if (!response.ok) {
-    const message = await response.text();
+    const text = await response.text();
+    let message = text;
+    try {
+      const payload = JSON.parse(text) as { detail?: string };
+      message = payload.detail || message;
+    } catch {
+      // Keep the raw response text when the server does not return JSON.
+    }
     throw new Error(message || `Request failed with status ${response.status}`);
   }
 
@@ -120,6 +127,7 @@ export type MazeMoveResponse = {
   collected_letter: string;
   completed: boolean;
   state: MazeSessionResponse;
+  message: string;
 };
 
 export function getSrsStats() {
@@ -176,6 +184,10 @@ export function startMaze(targetWord: string) {
     method: 'POST',
     body: JSON.stringify({ target_word: targetWord }),
   });
+}
+
+export function getMazeSession(sessionId: string) {
+  return request<MazeSessionResponse>(`/api/maze/${encodeURIComponent(sessionId)}`);
 }
 
 export function moveMaze(sessionId: string, direction: 'up' | 'down' | 'left' | 'right') {

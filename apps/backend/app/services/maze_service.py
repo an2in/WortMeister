@@ -69,6 +69,7 @@ class MazeService:
                 collected_letter="",
                 completed=True,
                 state=self._to_response(session),
+                message="This maze is already completed.",
             )
 
         delta = self._DIRECTIONS.get(request.direction)
@@ -85,21 +86,28 @@ class MazeService:
                 collected_letter="",
                 completed=False,
                 state=self._to_response(session),
+                message="You hit a wall.",
             )
 
         session.player_position = MazePosition(row=next_row, col=next_col)
         session.steps_taken += 1
 
         collected_letter = ""
+        message = "Moved."
         if target_cell.kind == "goal" and target_cell.letter:
-            if target_cell.letter not in session.collected_letters:
+            expected_letter = session.target_word[len(session.collected_letters)]
+            if target_cell.letter == expected_letter:
                 session.collected_letters.append(target_cell.letter)
                 collected_letter = target_cell.letter
-            target_cell.kind = "path"
-            target_cell.letter = ""
+                target_cell.kind = "path"
+                target_cell.letter = ""
+                message = f"Collected {collected_letter}."
+            else:
+                message = f"Find {expected_letter} before collecting {target_cell.letter}."
 
-        if len(session.collected_letters) >= len(session.target_word):
+        if len(session.collected_letters) == len(session.target_word):
             session.status = "completed"
+            message = "Word completed!"
 
         return MazeMoveResponse(
             moved=True,
@@ -107,6 +115,7 @@ class MazeService:
             collected_letter=collected_letter,
             completed=session.status == "completed",
             state=self._to_response(session),
+            message=message,
         )
 
     def _require_session(self, session_id: str) -> MazeSession:

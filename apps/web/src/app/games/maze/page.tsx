@@ -5,8 +5,10 @@ import { AppLayout } from '@/components/AppLayout';
 import { useVocabulary } from '@/hooks/use-vocabulary';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { moveMaze, startMaze, type MazeSessionResponse } from '@/lib/api';
+import { getMazeSession, moveMaze, startMaze, type MazeSessionResponse } from '@/lib/api';
 import { Trophy, ArrowBigUp, ArrowBigDown, ArrowBigLeft, ArrowBigRight } from 'lucide-react';
+
+const MAZE_SESSION_STORAGE_KEY = 'wortmeister_maze_session_id';
 
 export default function VocabularyMaze() {
   const { vocabulary } = useVocabulary();
@@ -14,6 +16,7 @@ export default function VocabularyMaze() {
   const [mazeSession, setMazeSession] = useState<MazeSessionResponse | null>(null);
   const [isBusy, setIsBusy] = useState(false);
   const [error, setError] = useState('');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const initGame = useCallback(async () => {
     const randomWord = vocabulary[Math.floor(Math.random() * vocabulary.length)]?.word;
@@ -24,8 +27,10 @@ export default function VocabularyMaze() {
 
     setIsBusy(true);
     setError('');
+    setStatusMessage('');
     try {
       const session = await startMaze(randomWord);
+      window.localStorage.setItem(MAZE_SESSION_STORAGE_KEY, session.session_id);
       setMazeSession(session);
       setGameStatus(session.status === 'completed' ? 'won' : 'playing');
     } catch (e) {
@@ -42,8 +47,11 @@ export default function VocabularyMaze() {
     setError('');
     try {
       const response = await moveMaze(mazeSession.session_id, direction);
+      window.localStorage.setItem(MAZE_SESSION_STORAGE_KEY, response.state.session_id);
       setMazeSession(response.state);
+      setStatusMessage(response.message);
       if (response.completed || response.state.status === 'completed') {
+        window.localStorage.removeItem(MAZE_SESSION_STORAGE_KEY);
         setGameStatus('won');
       }
     } catch (e) {
@@ -52,6 +60,23 @@ export default function VocabularyMaze() {
       setIsBusy(false);
     }
   }, [gameStatus, isBusy, mazeSession]);
+
+  useEffect(() => {
+    const sessionId = window.localStorage.getItem(MAZE_SESSION_STORAGE_KEY);
+    if (!sessionId) return;
+
+    setIsBusy(true);
+    getMazeSession(sessionId)
+      .then((session) => {
+        setMazeSession(session);
+        setGameStatus(session.status === 'completed' ? 'won' : 'playing');
+        setStatusMessage('Maze restored.');
+      })
+      .catch(() => {
+        window.localStorage.removeItem(MAZE_SESSION_STORAGE_KEY);
+      })
+      .finally(() => setIsBusy(false));
+  }, []);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -66,7 +91,7 @@ export default function VocabularyMaze() {
   }, [gameStatus, move]);
 
   const targetWord = mazeSession?.target_word ?? '';
-  const collectedChars = mazeSession?.collected_letters.join('') ?? '';
+  const collectedLetters = mazeSession?.collected_letters ?? [];
   const gridSize = mazeSession?.cells.length ?? 0;
 
   if (gameStatus === 'start') {
@@ -108,16 +133,20 @@ export default function VocabularyMaze() {
           <header className="mb-8">
             <h1 className="text-2xl font-bold text-muted-foreground uppercase tracking-widest">Spelling Target:</h1>
             <div className="flex gap-2 mt-2">
-              {targetWord.split('').map((char, i) => (
-                <div key={i} className={cn(
-                  "h-12 w-12 rounded-lg border-2 flex items-center justify-center text-2xl font-bold",
-                  i < collectedChars.length ? "border-primary bg-primary text-white" : "border-border text-muted-foreground"
-                )}>
-                  {i < collectedChars.length ? char : ''}
-                </div>
-              ))}
+              {targetWord.split('').map((char, i) => {
+                const collectedLetter = collectedLetters[i];
+                return (
+                  <div key={i} className={cn(
+                    "h-12 w-12 rounded-lg border-2 flex items-center justify-center text-2xl font-bold",
+                    collectedLetter ? "border-primary bg-primary text-white" : "border-border text-muted-foreground"
+                  )}>
+                    {collectedLetter ?? ''}
+                  </div>
+                );
+              })}
             </div>
-            {error && <p className="text-destructive text-sm mt-4">{error}</p>}
+            {statusMessage && <p className="text-primary text-sm mt-4">{statusMessage}</p>}
+            {error && <p className="text-destructive text-sm mt-2">{error}</p>}
           </header>
 
           <div
@@ -156,6 +185,20 @@ export default function VocabularyMaze() {
               <Button size="icon" onClick={() => move('right')} disabled={isBusy}><ArrowBigRight /></Button>
             </div>
             <p className="text-[10px] text-muted-foreground mt-4 text-center">Use Arrow keys or buttons to move</p>
+          </div>
+
+          <div className="bg-card p-6 rounded-2xl border border-border">
+            <h3 className="text-xs uppercase font-bold text-muted-foreground mb-4">Maze Stats</h3>
+            <div className="space-y-3 text-sm">
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Steps</span>
+                <span className="font-bold">{mazeSession?.steps_taken ?? 0}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Nearest letter</span>
+                <span className="font-bold">{mazeSession?.shortest_goal_distance ?? 'Done'}</span>
+              </div>
+            </div>
           </div>
 
           <div className="bg-primary/5 p-6 rounded-2xl border border-primary/20">

@@ -174,6 +174,7 @@ class MazeMoveResponse(BaseModel):
     collected_letter: str
     completed: bool
     state: MazeSessionResponse
+    message: str = ""
 
 
 class NotebookUpsertRequest(BaseModel):
