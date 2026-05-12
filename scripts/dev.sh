@@ -2,6 +2,9 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+BACKEND_DIR="$ROOT_DIR/apps/backend"
+BACKEND_VENV="$BACKEND_DIR/.venv"
+BACKEND_PYTHON="$BACKEND_VENV/bin/python"
 BACKEND_URL="http://localhost:8000"
 WEB_URL="http://localhost:9002"
 BACKEND_PID=""
@@ -50,11 +53,21 @@ warm_next_routes() {
   echo "App is ready: $WEB_URL"
 }
 
+ensure_backend_venv() {
+  if [[ ! -x "$BACKEND_PYTHON" ]]; then
+    python -m venv "$BACKEND_VENV"
+  fi
+
+  "$BACKEND_PYTHON" -m pip install -q -r "$BACKEND_DIR/requirements.txt"
+}
+
 trap cleanup EXIT INT TERM
 
+ensure_backend_venv
+
 (
-  cd "$ROOT_DIR/apps/backend"
-  python main.py
+  cd "$BACKEND_DIR"
+  "$BACKEND_PYTHON" main.py
 ) &
 BACKEND_PID=$!
 

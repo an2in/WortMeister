@@ -5,19 +5,20 @@ import { AppLayout } from '@/components/AppLayout';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { 
-  Plus, 
-  Trash2, 
-  Image as ImageIcon, 
-  Volume2, 
+import {
+  Plus,
+  Trash2,
+  Image as ImageIcon,
+  Volume2,
   Loader2,
-  AlertCircle
+  AlertCircle,
+  Pencil,
+  RotateCcw,
+  Save
 } from 'lucide-react';
-import { augmentNewVocabularyWithAI } from '@/ai/flows/augment-new-vocabulary-with-ai';
 import { useToast } from '@/hooks/use-toast';
-import { createNotebookEntry, deleteNotebookEntry, getAudioUrl, getNotebookEntries, type NotebookEntry } from '@/lib/api';
+import { createNotebookEntry, deleteNotebookEntry, getAudioUrl, getNotebookEntries, updateNotebookEntry, type NotebookEntry } from '@/lib/api';
 import { GermanGender } from '@/lib/vocabulary';
-import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
 export default function VisualNotebook() {
@@ -30,6 +31,9 @@ export default function VisualNotebook() {
   const [newMeaning, setNewMeaning] = useState('');
   const [gender, setGender] = useState<GermanGender | ''>('');
   const [isAdding, setIsAdding] = useState(false);
+  const [editingImageWord, setEditingImageWord] = useState<string | null>(null);
+  const [imageUrlDraft, setImageUrlDraft] = useState('');
+  const [failedImageWords, setFailedImageWords] = useState<Set<string>>(new Set());
   const { toast } = useToast();
 
   useEffect(() => {
@@ -51,14 +55,10 @@ export default function VisualNotebook() {
     if (!newWord || !newMeaning) return;
     setIsAdding(true);
     try {
-      // AI Augmentation: Get POS and Image
-      const aiResult = await augmentNewVocabularyWithAI({ word: newWord });
-      
       const entry = await createNotebookEntry({
         word: newWord,
         meaning: newMeaning,
         article: gender || undefined,
-        image_url: aiResult.imageUrl,
       });
 
       setEntries((current) => [entry, ...current.filter((item) => item.word.toLowerCase() !== entry.word.toLowerCase())]);
@@ -67,7 +67,7 @@ export default function VisualNotebook() {
       setGender('');
       toast({ title: "Word Added", description: `"${newWord}" is now in your notebook.` });
     } catch (error) {
-      toast({ title: "Error", description: "Failed to augment word with AI.", variant: "destructive" });
+      toast({ title: "Error", description: "Failed to add this word.", variant: "destructive" });
     } finally {
       setIsAdding(false);
     }
@@ -81,6 +81,39 @@ export default function VisualNotebook() {
     } catch (error) {
       toast({ title: "Delete Failed", description: "Could not delete this word.", variant: "destructive" });
     }
+  };
+
+  const startImageEdit = (entry: NotebookEntry) => {
+    setEditingImageWord(entry.word);
+    setImageUrlDraft(entry.image_url);
+  };
+
+  const saveImageUrl = async (entry: NotebookEntry, imageUrl: string) => {
+    try {
+      const updatedEntry = await updateNotebookEntry(entry.word, {
+        word: entry.word,
+        meaning: entry.meaning,
+        meaning_en: entry.meaning_en,
+        example: entry.example,
+        article: entry.article,
+        image_url: imageUrl,
+      });
+      setEntries((current) => current.map((item) => item.word === entry.word ? updatedEntry : item));
+      setFailedImageWords((current) => {
+        const next = new Set(current);
+        next.delete(entry.word);
+        return next;
+      });
+      setEditingImageWord(null);
+      setImageUrlDraft('');
+      toast({ title: "Image Updated", description: `The image for "${entry.word}" was updated.` });
+    } catch (error) {
+      toast({ title: "Image Update Failed", description: "Could not update this image.", variant: "destructive" });
+    }
+  };
+
+  const handleImageError = (word: string) => {
+    setFailedImageWords((current) => new Set(current).add(word));
   };
 
   const handlePronounce = async (text: string) => {
@@ -169,6 +202,8 @@ export default function VisualNotebook() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {entries.map((entry) => {
             const isHighlighted = highlightedWord === entry.word.toLowerCase();
+            const isEditingImage = editingImageWord === entry.word;
+            const hasImage = entry.image_url && !failedImageWords.has(entry.word);
             return (
               <Card
                 key={entry.word}
@@ -176,19 +211,27 @@ export default function VisualNotebook() {
                 className={`glass card-hover overflow-hidden group ${isHighlighted ? 'ring-2 ring-primary' : ''}`}
               >
                 <div className="aspect-video relative bg-muted overflow-hidden">
-                  {entry.image_url ? (
-                    <Image
+                  {hasImage ? (
+                    <img
                       src={entry.image_url}
                       alt={entry.word}
-                      fill
-                      className="object-cover transition-transform group-hover:scale-110"
+                      className="h-full w-full object-cover transition-transform group-hover:scale-110"
+                      onError={() => handleImageError(entry.word)}
                     />
                   ) : (
                     <div className="flex items-center justify-center h-full text-muted-foreground/30">
                       <ImageIcon size={48} />
                     </div>
                   )}
-                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-2 right-2 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button
+                      variant="secondary"
+                      size="icon"
+                      className="h-8 w-8 rounded-full"
+                      onClick={() => startImageEdit(entry)}
+                    >
+                      <Pencil size={14} />
+                    </Button>
                     <Button
                       variant="destructive"
                       size="icon"
@@ -219,8 +262,26 @@ export default function VisualNotebook() {
                   </div>
                   <div className="flex items-center gap-2 mt-4">
                     <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold uppercase">{entry.pos}</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-secondary text-muted-foreground font-bold uppercase">Notebook</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-secondary text-muted-foreground font-bold uppercase">{entry.image_source || 'no image'}</span>
                   </div>
+                  {isEditingImage && (
+                    <div className="mt-4 space-y-2">
+                      <Input
+                        placeholder="Paste an image URL, or leave blank for auto lookup"
+                        value={imageUrlDraft}
+                        onChange={(event) => setImageUrlDraft(event.target.value)}
+                        className="bg-secondary/20 text-xs"
+                      />
+                      <div className="grid grid-cols-2 gap-2">
+                        <Button size="sm" className="text-xs" onClick={() => saveImageUrl(entry, imageUrlDraft)}>
+                          <Save size={14} className="mr-1" /> Save image
+                        </Button>
+                        <Button size="sm" variant="outline" className="text-xs" onClick={() => saveImageUrl(entry, '')}>
+                          <RotateCcw size={14} className="mr-1" /> Reset auto
+                        </Button>
+                      </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             );

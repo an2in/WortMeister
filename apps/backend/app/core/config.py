@@ -16,6 +16,9 @@ class Settings:
     notebook_data_file: Path
     user_state_dir: Path
     notebook_image_fallback: str
+    notebook_image_lookup_enabled: bool
+    notebook_image_lookup_timeout_seconds: float
+    notebook_image_lookup_user_agent: str
     maze_default_size: int
 
 
@@ -25,7 +28,10 @@ settings = Settings(
     tts_voice="de-DE-ConradNeural",
     notebook_data_file=BASE_DIR / "notebook_data.json",
     user_state_dir=BASE_DIR / "user_state",
-    notebook_image_fallback="https://placehold.co/640x400/0b1326/8ed5ff?text={word}",
+    notebook_image_fallback="",
+    notebook_image_lookup_enabled=True,
+    notebook_image_lookup_timeout_seconds=2.5,
+    notebook_image_lookup_user_agent="WortMeister/0.1 (educational vocabulary notebook)",
     maze_default_size=9,
 )
 
