@@ -166,7 +166,11 @@ export default function VocabularyMaze() {
                     isPlayer ? "bg-primary scale-110 shadow-lg z-10" : isWall ? "bg-secondary" : "bg-card/50"
                   )}
                 >
-                  {isPlayer ? "P" : hasLetter ? cell.letter : ""}
+                  {isPlayer ? (
+                    <div className="relative h-4 w-4 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary))]">
+                      <div className="absolute inset-[-6px] rounded-full border border-primary/40 animate-ping" />
+                    </div>
+                  ) : hasLetter ? cell.letter : ""}
                 </div>
               );
             })}

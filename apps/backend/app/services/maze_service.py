@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import random
 from collections import deque
 from uuid import uuid4
 
@@ -125,23 +126,37 @@ class MazeService:
         return session
 
     def _build_grid(self, size: int) -> list[list[MazeCell]]:
-        grid: list[list[MazeCell]] = []
-        for row in range(size):
-            current_row: list[MazeCell] = []
-            for col in range(size):
-                is_border = row in {0, size - 1} or col in {0, size - 1}
-                kind = "wall" if is_border else "path"
-                if row % 4 == 0 and 1 < col < size - 2:
-                    kind = "wall"
-                if col % 4 == 0 and 1 < row < size - 2:
-                    kind = "wall"
-                current_row.append(MazeCell(row=row, col=col, kind=kind))
-            grid.append(current_row)
+        grid = [[MazeCell(row=row, col=col, kind="wall") for col in range(size)] for row in range(size)]
+        start = MazePosition(row=size // 2, col=size // 2)
+        stack = [start]
+        grid[start.row][start.col].kind = "path"
 
-        center = size // 2
-        for offset in range(-1, 2):
-            grid[center][center + offset].kind = "path"
-            grid[center + offset][center].kind = "path"
+        while stack:
+            current = stack[-1]
+            neighbors: list[tuple[MazePosition, MazePosition]] = []
+            directions = list(self._DIRECTIONS.values())
+            random.shuffle(directions)
+
+            for delta_row, delta_col in directions:
+                next_row = current.row + delta_row * 2
+                next_col = current.col + delta_col * 2
+                if not (1 <= next_row < size - 1 and 1 <= next_col < size - 1):
+                    continue
+                if grid[next_row][next_col].kind == "path":
+                    continue
+                wall = MazePosition(row=current.row + delta_row, col=current.col + delta_col)
+                target = MazePosition(row=next_row, col=next_col)
+                neighbors.append((wall, target))
+
+            if not neighbors:
+                stack.pop()
+                continue
+
+            wall, target = random.choice(neighbors)
+            grid[wall.row][wall.col].kind = "path"
+            grid[target.row][target.col].kind = "path"
+            stack.append(target)
+
         return grid
 
     def _assign_letters(
