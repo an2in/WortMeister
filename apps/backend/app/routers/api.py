@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 
 from fastapi import APIRouter, Depends, HTTPException, Query
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse
 
 from app.core.config import settings
 from app.dependencies import get_container
@@ -37,13 +37,9 @@ from app.services.container import ServiceContainer
 router = APIRouter()
 
 
-@router.get("/", response_class=HTMLResponse)
-def serve_root() -> str:
-    """Serve SPA entrypoint."""
-    index_file = settings.frontend_dir / "index.html"
-    if not index_file.exists():
-        raise HTTPException(status_code=404, detail="Frontend not found")
-    return index_file.read_text(encoding="utf-8")
+@router.get("/")
+def health() -> dict[str, str]:
+    return {"status": "ok", "service": "WortMeister API"}
 
 
 @router.get("/api/search", response_model=SearchResponse)

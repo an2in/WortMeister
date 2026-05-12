@@ -11,7 +11,6 @@ BASE_DIR = Path(__file__).resolve().parents[2]
 @dataclass(frozen=True, slots=True)
 class Settings:
     data_file: Path
-    frontend_dir: Path
     audio_cache_dir: Path
     tts_voice: str
     notebook_data_file: Path
@@ -21,7 +20,6 @@ class Settings:
 
 settings = Settings(
     data_file=BASE_DIR / "data.json",
-    frontend_dir=BASE_DIR / "frontend",
     audio_cache_dir=Path(tempfile.gettempdir()) / "wortmeister_audio",
     tts_voice="de-DE-ConradNeural",
     notebook_data_file=BASE_DIR / "notebook_data.json",

@@ -1,0 +1,11 @@
+{
+  "name": "wortmeister-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "bash scripts/dev.sh",
+    "dev:backend": "python apps/backend/main.py",
+    "dev:web": "npm --prefix apps/web run dev",
+    "typecheck": "npm --prefix apps/web run typecheck"
+  }
+}

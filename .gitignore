@@ -1,20 +1,44 @@
-# Python
+# Python caches and build outputs
 __pycache__/
 *.py[cod]
 *.pyo
 *.egg-info/
-dist/
-build/
 .eggs/
 *.egg
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# Virtual environments
+# Virtual environments and local env files
 venv/
 .venv/
 env/
 .env
+.env.*
+apps/web/.env*
+!apps/web/.env.example
 
-# IDE
+# Node / Next.js dependencies and build outputs
+node_modules/
+apps/web/node_modules/
+.next/
+apps/web/.next/
+out/
+apps/web/out/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Generated runtime files
+*.mp3
+.genkit/
+apps/web/.genkit/
+
+# IDE / editor
 .vscode/
 .idea/
 *.swp
@@ -24,9 +48,6 @@ env/
 # OS
 .DS_Store
 Thumbs.db
-
-# Audio cache (TTS generated files)
-*.mp3
 
 # LaTeX build artifacts
 *.aux
@@ -39,10 +60,8 @@ Thumbs.db
 *.bbl
 *.blg
 
-# personal
+# Personal/local-only files
 main.tex
 A1_SD1_Wortliste_02.pdf
 .codex
-
-# reserves for for personal reports
 /docs
