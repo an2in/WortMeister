@@ -119,6 +119,10 @@ export type MazeSessionResponse = {
   status: string;
   steps_taken: number;
   shortest_goal_distance: number | null;
+  next_target_letter: string;
+  next_target_position: MazePositionPayload | null;
+  next_target_distance: number | null;
+  next_target_path: MazePositionPayload[];
 };
 
 export type MazeMoveResponse = {

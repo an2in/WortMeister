@@ -162,6 +162,10 @@ class MazeSessionResponse(BaseModel):
     status: str
     steps_taken: int
     shortest_goal_distance: int | None = None
+    next_target_letter: str = ""
+    next_target_position: MazePositionPayload | None = None
+    next_target_distance: int | None = None
+    next_target_path: list[MazePositionPayload] = Field(default_factory=list)
 
 
 class MazeMoveRequest(BaseModel):

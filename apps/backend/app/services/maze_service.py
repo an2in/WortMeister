@@ -36,7 +36,7 @@ class MazeService:
         if not target_word:
             raise HTTPException(status_code=400, detail="target_word must contain letters")
 
-        size = max(self._default_size, len(target_word) * 2 + 3)
+        size = max(self._default_size, len(target_word) * 3 + 5)
         if size % 2 == 0:
             size += 1
 
@@ -166,41 +166,73 @@ class MazeService:
         grid: list[list[MazeCell]],
     ) -> list[MazePosition]:
         distances = self._bfs_distances(start, grid)
-        candidate_cells: list[tuple[int, int, int]] = []
+        min_start_distance = max(4, len(grid) // 4)
+        dead_ends: list[MazePosition] = []
+        fallback: list[MazePosition] = []
+
         for row in range(len(grid)):
             for col in range(len(grid[row])):
                 distance = distances.get((row, col))
-                if distance is None or distance < 3:
+                if distance is None or distance < min_start_distance:
                     continue
                 if grid[row][col].kind != "path":
                     continue
+                position = MazePosition(row=row, col=col)
+                fallback.append(position)
                 if self._is_dead_end(row, col, grid):
-                    candidate_cells.append((distance, row, col))
+                    dead_ends.append(position)
 
-        candidate_cells.sort(reverse=True)
-        if len(candidate_cells) < len(target_word):
-            fallback_cells: list[tuple[int, int, int]] = []
-            for row in range(len(grid)):
-                for col in range(len(grid[row])):
-                    distance = distances.get((row, col))
-                    if distance is None or distance < 3:
-                        continue
-                    if grid[row][col].kind != "path":
-                        continue
-                    fallback_cells.append((distance, row, col))
-            fallback_cells.sort(reverse=True)
-            candidate_cells = fallback_cells
-
-        if len(candidate_cells) < len(target_word):
+        candidates = dead_ends if len(dead_ends) >= len(target_word) else fallback
+        positions = self._choose_spread_positions(candidates, target_word, grid)
+        if len(positions) < len(target_word):
             raise HTTPException(status_code=500, detail="Unable to place maze letters")
 
-        positions: list[MazePosition] = []
-        for index, letter in enumerate(target_word):
-            _, row, col = candidate_cells[index]
-            grid[row][col].kind = "goal"
-            grid[row][col].letter = letter
-            positions.append(MazePosition(row=row, col=col))
+        for letter, position in zip(target_word, positions):
+            grid[position.row][position.col].kind = "goal"
+            grid[position.row][position.col].letter = letter
         return positions
+
+    def _choose_spread_positions(
+        self,
+        candidates: list[MazePosition],
+        target_word: str,
+        grid: list[list[MazeCell]],
+    ) -> list[MazePosition]:
+        pair_min_distance = max(4, len(grid) // 5)
+        for threshold in range(pair_min_distance, 1, -1):
+            positions = self._try_choose_spread_positions(candidates, len(target_word), grid, threshold)
+            if len(positions) == len(target_word):
+                return positions
+
+        shuffled = candidates[:]
+        random.shuffle(shuffled)
+        return shuffled[: len(target_word)]
+
+    def _try_choose_spread_positions(
+        self,
+        candidates: list[MazePosition],
+        count: int,
+        grid: list[list[MazeCell]],
+        threshold: int,
+    ) -> list[MazePosition]:
+        pool = candidates[:]
+        random.shuffle(pool)
+        selected: list[MazePosition] = []
+        selected_distances: list[dict[tuple[int, int], int]] = []
+
+        while pool and len(selected) < count:
+            valid = [
+                position for position in pool
+                if all(distances.get((position.row, position.col), 0) >= threshold for distances in selected_distances)
+            ]
+            if not valid:
+                break
+            choice = random.choice(valid)
+            selected.append(choice)
+            selected_distances.append(self._bfs_distances(choice, grid))
+            pool = [position for position in pool if position != choice]
+
+        return selected
 
     def _bfs_distances(self, start: MazePosition, grid: list[list[MazeCell]]) -> dict[tuple[int, int], int]:
         queue = deque([(start.row, start.col, 0)])
@@ -222,6 +254,37 @@ class MazeService:
                 queue.append((next_row, next_col, distance + 1))
         return distances
 
+    def _shortest_path(self, start: MazePosition, goal: MazePosition, grid: list[list[MazeCell]]) -> list[MazePosition]:
+        start_key = (start.row, start.col)
+        goal_key = (goal.row, goal.col)
+        queue = deque([start_key])
+        parents: dict[tuple[int, int], tuple[int, int] | None] = {start_key: None}
+
+        while queue:
+            row, col = queue.popleft()
+            if (row, col) == goal_key:
+                break
+            for delta_row, delta_col in self._DIRECTIONS.values():
+                next_key = (row + delta_row, col + delta_col)
+                if next_key in parents:
+                    continue
+                cell = self._cell_at(grid, next_key[0], next_key[1])
+                if cell is None or cell.kind == "wall":
+                    continue
+                parents[next_key] = (row, col)
+                queue.append(next_key)
+
+        if goal_key not in parents:
+            return []
+
+        path: list[MazePosition] = []
+        current: tuple[int, int] | None = goal_key
+        while current is not None:
+            path.append(MazePosition(row=current[0], col=current[1]))
+            current = parents[current]
+        path.reverse()
+        return path
+
     def _is_dead_end(self, row: int, col: int, grid: list[list[MazeCell]]) -> bool:
         open_neighbors = 0
         for delta_row, delta_col in self._DIRECTIONS.values():
@@ -237,6 +300,8 @@ class MazeService:
         return grid[row][col]
 
     def _to_response(self, session: MazeSession) -> MazeSessionResponse:
+        next_letter, next_position, next_path = self._next_target_hint(session)
+        next_distance = len(next_path) - 1 if next_path else None
         return MazeSessionResponse(
             session_id=session.session_id,
             target_word=session.target_word,
@@ -252,8 +317,28 @@ class MazeService:
             ],
             status=session.status,
             steps_taken=session.steps_taken,
-            shortest_goal_distance=self._closest_goal_distance(session),
+            shortest_goal_distance=next_distance,
+            next_target_letter=next_letter,
+            next_target_position=self._to_position_payload(next_position) if next_position else None,
+            next_target_distance=next_distance,
+            next_target_path=[self._to_position_payload(position) for position in next_path],
         )
+
+    def _next_target_hint(self, session: MazeSession) -> tuple[str, MazePosition | None, list[MazePosition]]:
+        next_index = len(session.collected_letters)
+        if session.status != "active" or next_index >= len(session.target_word):
+            return "", None, []
+
+        position = session.letter_positions[next_index]
+        cell = self._cell_at(session.cells, position.row, position.col)
+        if cell is None or cell.kind != "goal":
+            return "", None, []
+
+        return session.target_word[next_index], position, self._shortest_path(session.player_position, position, session.cells)
+
+    @staticmethod
+    def _to_position_payload(position: MazePosition) -> MazePositionPayload:
+        return MazePositionPayload(row=position.row, col=position.col)
 
     def _remaining_letters(self, session: MazeSession) -> list[str]:
         remaining = list(session.target_word)

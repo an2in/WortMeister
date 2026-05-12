@@ -92,6 +92,7 @@ export default function VocabularyMaze() {
 
   const targetWord = mazeSession?.target_word ?? '';
   const collectedLetters = mazeSession?.collected_letters ?? [];
+  const hintPath = new Set((mazeSession?.next_target_path ?? []).map((position) => `${position.row}-${position.col}`));
   const gridSize = mazeSession?.cells.length ?? 0;
 
   if (gameStatus === 'start') {
@@ -157,20 +158,23 @@ export default function VocabularyMaze() {
               const isPlayer = mazeSession.player_position.row === cell.row && mazeSession.player_position.col === cell.col;
               const isWall = cell.kind === 'wall';
               const hasLetter = cell.kind === 'goal' && cell.letter;
+              const isHint = hintPath.has(`${cell.row}-${cell.col}`) && !isPlayer && !isWall && !hasLetter;
 
               return (
                 <div
                   key={`${cell.row}-${cell.col}`}
                   className={cn(
                     "aspect-square rounded-md flex items-center justify-center text-lg font-bold transition-all duration-200",
-                    isPlayer ? "bg-primary scale-110 shadow-lg z-10" : isWall ? "bg-secondary" : "bg-card/50"
+                    isPlayer ? "bg-primary scale-110 shadow-lg z-10" : isWall ? "bg-secondary" : isHint ? "bg-primary/10 shadow-[inset_0_0_0_1px_hsl(var(--primary)/0.22)]" : "bg-card/50"
                   )}
                 >
                   {isPlayer ? (
                     <div className="relative h-4 w-4 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary))]">
                       <div className="absolute inset-[-6px] rounded-full border border-primary/40 animate-ping" />
                     </div>
-                  ) : hasLetter ? cell.letter : ""}
+                  ) : hasLetter ? cell.letter : isHint ? (
+                    <div className="h-1.5 w-1.5 rounded-full bg-primary/45" />
+                  ) : ""}
                 </div>
               );
             })}
@@ -199,8 +203,12 @@ export default function VocabularyMaze() {
                 <span className="font-bold">{mazeSession?.steps_taken ?? 0}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Nearest letter</span>
-                <span className="font-bold">{mazeSession?.shortest_goal_distance ?? 'Done'}</span>
+                <span className="text-muted-foreground">Next letter</span>
+                <span className="font-bold">{mazeSession?.next_target_letter || 'Done'}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">Next distance</span>
+                <span className="font-bold">{mazeSession?.next_target_distance ?? 'Done'}</span>
               </div>
             </div>
           </div>
