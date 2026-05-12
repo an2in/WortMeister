@@ -129,13 +129,3 @@ Audit backend algorithm-helper usage:
 ```bash
 grep -RInE '(^|[^A-Za-z_])(heapq|bisect|sorted\(|\.sort\(|random\.shuffle|random\.choice|deque\(|re\.)' apps/backend/app || true
 ```
-
-## Git hygiene
-
-Do not commit generated or local-only files, including:
-
-- `apps/backend/.venv/`
-- `apps/backend/user_state/`
-- `.env` files
-- Next.js build output and dependency folders
-- generated audio cache files
