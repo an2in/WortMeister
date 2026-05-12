@@ -92,10 +92,7 @@ Set values in `apps/web/.env`:
 
 ```bash
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
-GEMINI_API_KEY=
 ```
-
-`GEMINI_API_KEY` is optional. Core learning features, notebook images, and audio do not require a paid Gemini/Imagen plan.
 
 ## Run the full app
 
