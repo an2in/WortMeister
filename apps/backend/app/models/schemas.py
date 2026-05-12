@@ -42,6 +42,13 @@ class UpdateCardResponse(BaseModel):
     message: str
 
 
+class SRSStatsResponse(BaseModel):
+    total_cards: int
+    due_cards: int
+    learned_cards: int
+    next_due: float | None = None
+
+
 class TranslationRequest(BaseModel):
     target_word: str = Field(description="The German word the user is practising")
     user_sentence: str = Field(description="User's German sentence")

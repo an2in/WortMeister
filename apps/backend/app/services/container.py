@@ -12,6 +12,7 @@ from app.services.pos_tagger_service import POSTaggerService
 from app.services.search_service import SearchService
 from app.services.srs_service import SRSService
 from app.services.translation_service import TranslationService
+from app.services.user_state_store import UserStateStore
 from app.services.vocabulary_store import VocabularyStore
 
 
@@ -21,10 +22,11 @@ class ServiceContainer:
     def __init__(self, settings: Settings) -> None:
         self.settings = settings
         self.store = VocabularyStore(settings.data_file)
+        self.user_state_store = UserStateStore(settings.user_state_dir)
         self.notebook_store = NotebookStore(settings.notebook_data_file)
 
         self.search = SearchService(self.store)
-        self.srs = SRSService(self.store)
+        self.srs = SRSService(self.store, self.user_state_store)
         self.translation = TranslationService()
         self.audio = AudioService(settings.audio_cache_dir, settings.tts_voice)
 

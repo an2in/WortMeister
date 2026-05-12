@@ -37,6 +37,7 @@ yarn-error.log*
 *.mp3
 .genkit/
 apps/web/.genkit/
+apps/backend/user_state/
 
 # IDE / editor
 .vscode/

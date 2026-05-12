@@ -1,4 +1,5 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? '';
+const USER_ID_STORAGE_KEY = 'wortmeister_user_id';
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${path}`, {
@@ -15,6 +16,21 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   }
 
   return response.json() as Promise<T>;
+}
+
+function userHeaders(): HeadersInit {
+  return { 'X-User-Id': getUserId() };
+}
+
+function getUserId(): string {
+  if (typeof window === 'undefined') return 'server-render';
+
+  const existingUserId = window.localStorage.getItem(USER_ID_STORAGE_KEY);
+  if (existingUserId) return existingUserId;
+
+  const generatedUserId = `user_${crypto.randomUUID().replaceAll('-', '')}`;
+  window.localStorage.setItem(USER_ID_STORAGE_KEY, generatedUserId);
+  return generatedUserId;
 }
 
 export type FlashcardResponse = {
@@ -36,6 +52,13 @@ export type UpdateCardResponse = {
   new_interval: number;
   new_due: string;
   message: string;
+};
+
+export type SRSStatsResponse = {
+  total_cards: number;
+  due_cards: number;
+  learned_cards: number;
+  next_due: number | null;
 };
 
 export type MazePositionPayload = {
@@ -70,13 +93,22 @@ export type MazeMoveResponse = {
   state: MazeSessionResponse;
 };
 
+export function getSrsStats() {
+  return request<SRSStatsResponse>('/api/srs/stats', {
+    headers: userHeaders(),
+  });
+}
+
 export function getNextCard(lang = 'vi') {
-  return request<FlashcardResponse>(`/api/next-card?lang=${encodeURIComponent(lang)}`);
+  return request<FlashcardResponse>(`/api/next-card?lang=${encodeURIComponent(lang)}`, {
+    headers: userHeaders(),
+  });
 }
 
 export function updateCard(word: string, quality: number) {
   return request<UpdateCardResponse>('/api/update-card', {
     method: 'POST',
+    headers: userHeaders(),
     body: JSON.stringify({ word, quality }),
   });
 }

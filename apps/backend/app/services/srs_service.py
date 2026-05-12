@@ -8,24 +8,43 @@ from typing import Any
 from fastapi import HTTPException
 
 from app.models.domain import ReviewCard
-from app.models.schemas import FlashcardResponse, UpdateCardRequest, UpdateCardResponse
+from app.models.schemas import FlashcardResponse, SRSStatsResponse, UpdateCardRequest, UpdateCardResponse
+from app.services.user_state_store import UserStateStore
 from app.services.vocabulary_store import VocabularyStore
 
 
 class SRSService:
-    def __init__(self, store: VocabularyStore) -> None:
+    def __init__(self, store: VocabularyStore, user_state_store: UserStateStore) -> None:
         self._store = store
+        self._user_state_store = user_state_store
 
-    def get_next_card(self, lang: str) -> FlashcardResponse:
-        if not self._store.srs_heap:
+    def get_stats(self, user_id: str) -> SRSStatsResponse:
+        cards = self._load_user_cards(user_id)
+        now = time.time()
+        due_times = [card.due for card in cards.values()]
+        next_due = min(due_times) if due_times else None
+        return SRSStatsResponse(
+            total_cards=len(cards),
+            due_cards=sum(1 for card in cards.values() if card.due <= now),
+            learned_cards=sum(1 for card in cards.values() if card.repetitions > 2),
+            next_due=next_due,
+        )
+
+    def get_next_card(self, user_id: str, lang: str) -> FlashcardResponse:
+        cards = self._load_user_cards(user_id)
+        heap = self._build_heap(cards)
+        if not heap:
             raise HTTPException(status_code=404, detail="No cards available")
 
-        _, word = heapq.heappop(self._store.srs_heap)
+        due, word = heapq.heappop(heap)
+        if due > time.time():
+            raise HTTPException(status_code=404, detail="No cards due")
+
         entry = self._store.get_entry(word)
         if entry is None:
             raise HTTPException(status_code=404, detail=f"Word '{word}' not found")
 
-        card = self._store.get_card(word)
+        card = cards.get(word)
         if card is None:
             raise HTTPException(status_code=404, detail=f"Card '{word}' not found")
 
@@ -43,14 +62,15 @@ class SRSService:
             due=card.due,
         )
 
-    def update_card(self, request: UpdateCardRequest) -> UpdateCardResponse:
+    def update_card(self, user_id: str, request: UpdateCardRequest) -> UpdateCardResponse:
+        cards = self._load_user_cards(user_id)
         word = request.word.lower()
-        card = self._store.get_card(word)
+        card = cards.get(word)
         if card is None:
             raise HTTPException(status_code=404, detail=f"Word '{request.word}' not in SRS")
 
         self._apply_sm2(card, request.quality)
-        heapq.heappush(self._store.srs_heap, (card.due, word))
+        self._user_state_store.save_srs_cards(user_id, cards)
 
         due_str = datetime.datetime.fromtimestamp(card.due).strftime("%Y-%m-%d %H:%M")
         return UpdateCardResponse(
@@ -60,6 +80,15 @@ class SRSService:
             new_due=due_str,
             message=f"Next review in {card.interval:.1f} day(s)",
         )
+
+    def _load_user_cards(self, user_id: str) -> dict[str, ReviewCard]:
+        return self._user_state_store.load_srs_cards(user_id, self._store.vocabulary)
+
+    @staticmethod
+    def _build_heap(cards: dict[str, ReviewCard]) -> list[tuple[float, str]]:
+        heap = [(card.due, word) for word, card in cards.items()]
+        heapq.heapify(heap)
+        return heap
 
     @staticmethod
     def _resolve_meaning(entry: dict[str, Any], lang: str) -> str:

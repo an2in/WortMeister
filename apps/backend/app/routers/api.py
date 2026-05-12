@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import FileResponse
 
 from app.core.config import settings
-from app.dependencies import get_container
+from app.dependencies import get_container, get_user_id
 from app.models.schemas import (
     ContextAnalyzeRequest,
     ContextAnalyzeResponse,
@@ -26,6 +26,7 @@ from app.models.schemas import (
     NotebookListResponse,
     NotebookUpsertRequest,
     SearchResponse,
+    SRSStatsResponse,
     TranslationRequest,
     TranslationResponse,
     UpdateCardRequest,
@@ -52,22 +53,32 @@ def search(
     return container.search.search(q, lang)
 
 
+@router.get("/api/srs/stats", response_model=SRSStatsResponse)
+def srs_stats(
+    user_id: str = Depends(get_user_id),
+    container: ServiceContainer = Depends(get_container),
+) -> SRSStatsResponse:
+    return container.srs.get_stats(user_id)
+
+
 @router.get("/api/next-card", response_model=FlashcardResponse)
 def next_card(
     lang: str = Query("vi", description="Language for meaning: 'vi' or 'en'"),
+    user_id: str = Depends(get_user_id),
     container: ServiceContainer = Depends(get_container),
 ) -> FlashcardResponse:
     """Return next due flashcard in SRS queue."""
-    return container.srs.get_next_card(lang)
+    return container.srs.get_next_card(user_id, lang)
 
 
 @router.post("/api/update-card", response_model=UpdateCardResponse)
 def update_card(
     request: UpdateCardRequest,
+    user_id: str = Depends(get_user_id),
     container: ServiceContainer = Depends(get_container),
 ) -> UpdateCardResponse:
     """Update flashcard scheduling after user self-rating."""
-    return container.srs.update_card(request)
+    return container.srs.update_card(user_id, request)
 
 
 @router.post("/api/check-translation", response_model=TranslationResponse)

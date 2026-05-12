@@ -1,19 +1,30 @@
 "use client";
 
+import { useEffect, useState } from 'react';
 import { AppLayout } from '@/components/AppLayout';
 import { useVocabulary } from '@/hooks/use-vocabulary';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { isDue } from '@/lib/spaced-repetition';
+import { getSrsStats, type SRSStatsResponse } from '@/lib/api';
+import { cn } from '@/lib/utils';
 import { Layers, Zap, Trophy, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Dashboard() {
-  const { vocabulary, isLoading } = useVocabulary();
-  
-  const dueCount = vocabulary.filter(isDue).length;
-  const learnedCount = vocabulary.filter(v => v.repetitions > 2).length;
-  const totalCount = vocabulary.length;
+  const { vocabulary } = useVocabulary();
+  const [srsStats, setSrsStats] = useState<SRSStatsResponse | null>(null);
+  const [isStatsLoading, setIsStatsLoading] = useState(true);
+
+  useEffect(() => {
+    getSrsStats()
+      .then(setSrsStats)
+      .finally(() => setIsStatsLoading(false));
+  }, []);
+
+  const dueCount = srsStats?.due_cards ?? 0;
+  const learnedCount = srsStats?.learned_cards ?? 0;
+  const totalCount = srsStats?.total_cards ?? 0;
+  const masteredPercent = totalCount > 0 ? (learnedCount / totalCount) * 100 : 0;
 
   return (
     <AppLayout>
@@ -29,7 +40,7 @@ export default function Dashboard() {
             <Layers className="text-accent" size={20} />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">{isLoading ? '...' : dueCount}</div>
+            <div className="text-3xl font-bold">{isStatsLoading ? '...' : dueCount}</div>
             <p className="text-xs text-muted-foreground mt-1">Words waiting for review</p>
             <Button asChild className="w-full mt-4 bg-accent hover:bg-accent/90" size="sm" disabled={dueCount === 0}>
               <Link href="/flashcards">Start Review</Link>
@@ -43,12 +54,12 @@ export default function Dashboard() {
             <Trophy className="text-yellow-500" size={20} />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">{isLoading ? '...' : learnedCount}</div>
+            <div className="text-3xl font-bold">{isStatsLoading ? '...' : learnedCount}</div>
             <p className="text-xs text-muted-foreground mt-1">From a total of {totalCount} words</p>
             <div className="h-1.5 w-full bg-secondary rounded-full mt-4">
               <div 
                 className="h-full bg-yellow-500 rounded-full transition-all" 
-                style={{ width: `${(learnedCount/totalCount) * 100}%` }} 
+                style={{ width: `${masteredPercent}%` }} 
               />
             </div>
           </CardContent>
@@ -128,5 +139,3 @@ export default function Dashboard() {
     </AppLayout>
   );
 }
-
-import { cn } from '@/lib/utils';

@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import heapq
 import json
-import time
 from pathlib import Path
 from typing import Any
 
@@ -45,19 +44,14 @@ class VocabularyStore:
         self.drill_heap = []
         self.drill_cards = {}
 
-        now = time.time()
         for entry in self.vocabulary:
             normalized_word = entry["word"].lower()
             self.sorted_words.append(normalized_word)
             self.word_index[normalized_word] = entry
 
-            srs_card = ReviewCard(due=now)
-            self.srs_cards[normalized_word] = srs_card
-            heapq.heappush(self.srs_heap, (srs_card.due, normalized_word))
-
             article = str(entry.get("article", "")).strip().lower()
             if article in {"der", "die", "das"}:
-                drill_card = DrillCard(due=now)
+                drill_card = DrillCard()
                 self.drill_cards[normalized_word] = drill_card
                 heapq.heappush(self.drill_heap, (drill_card.due, normalized_word))
 
