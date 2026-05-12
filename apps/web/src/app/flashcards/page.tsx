@@ -123,50 +123,49 @@ export default function Flashcards() {
 
         <div className="relative perspective-1000">
           <Card
-            className={cn(
-              "h-96 glass cursor-pointer transition-all duration-500 transform-style-3d relative",
-              showMeaning ? "[transform:rotateY(180deg)]" : ""
-            )}
+            className="h-96 glass cursor-pointer transition-all duration-300 relative overflow-hidden"
             onClick={() => !showMeaning && setShowMeaning(true)}
           >
-            <div className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-8">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-primary mb-4">{currentWord.level}</span>
-              <h2 className="text-5xl font-bold mb-8">{currentWord.word}</h2>
-              <div className="flex gap-4">
-                 <Button variant="outline" size="icon" className="rounded-full h-12 w-12" onClick={(e) => { e.stopPropagation(); handlePronounce(); }}>
-                  <Volume2 size={24} />
-                 </Button>
-                 <Button variant="secondary" className="rounded-full px-6" onClick={() => setShowMeaning(true)}>
-                  Reveal Meaning
-                 </Button>
+            {!showMeaning ? (
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-primary mb-4">{currentWord.level}</span>
+                <h2 className="text-5xl font-bold mb-8">{currentWord.word}</h2>
+                <div className="flex gap-4">
+                   <Button variant="outline" size="icon" className="rounded-full h-12 w-12" onClick={(e) => { e.stopPropagation(); handlePronounce(); }}>
+                    <Volume2 size={24} />
+                   </Button>
+                   <Button variant="secondary" className="rounded-full px-6" onClick={(e) => { e.stopPropagation(); setShowMeaning(true); }}>
+                    Reveal Meaning
+                   </Button>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 bg-primary/5">
+                <h3 className="text-2xl text-muted-foreground mb-2">English Meaning</h3>
+                <p className="text-4xl font-headline font-bold mb-6 text-center">{meaning}</p>
 
-            <div className="absolute inset-0 backface-hidden [transform:rotateY(180deg)] flex flex-col items-center justify-center p-8 bg-primary/5">
-              <h3 className="text-2xl text-muted-foreground mb-2">Meaning</h3>
-              <p className="text-4xl font-headline font-bold mb-6 text-center">{meaning}</p>
+                <p className="text-xs text-muted-foreground italic mb-8">How well did you know this?</p>
 
-              <p className="text-xs text-muted-foreground italic mb-8">How well did you know this?</p>
-
-              <div className="flex gap-2 w-full max-w-xs">
-                {[
-                  { q: 1, label: 'Hard', icon: XCircle, color: 'text-destructive' },
-                  { q: 3, label: 'Good', icon: HelpCircle, color: 'text-accent' },
-                  { q: 5, label: 'Easy', icon: CheckCircle, color: 'text-green-500' }
-                ].map((rating) => (
-                  <Button
-                    key={rating.q}
-                    variant="ghost"
-                    className="flex-1 flex flex-col h-auto py-3 gap-1 hover:bg-white/5"
-                    disabled={isLoading}
-                    onClick={(e) => { e.stopPropagation(); handleRating(rating.q); }}
-                  >
-                    <rating.icon size={24} className={rating.color} />
-                    <span className="text-[10px] font-bold uppercase">{rating.label}</span>
-                  </Button>
-                ))}
+                <div className="flex gap-2 w-full max-w-xs">
+                  {[
+                    { q: 1, label: 'Hard', icon: XCircle, color: 'text-destructive' },
+                    { q: 3, label: 'Good', icon: HelpCircle, color: 'text-accent' },
+                    { q: 5, label: 'Easy', icon: CheckCircle, color: 'text-green-500' }
+                  ].map((rating) => (
+                    <Button
+                      key={rating.q}
+                      variant="ghost"
+                      className="flex-1 flex flex-col h-auto py-3 gap-1 hover:bg-white/5"
+                      disabled={isLoading}
+                      onClick={(e) => { e.stopPropagation(); handleRating(rating.q); }}
+                    >
+                      <rating.icon size={24} className={rating.color} />
+                      <span className="text-[10px] font-bold uppercase">{rating.label}</span>
+                    </Button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </Card>
         </div>
 
@@ -178,11 +177,6 @@ export default function Flashcards() {
         </div>
       </div>
 
-      <style jsx global>{`
-        .perspective-1000 { perspective: 1000px; }
-        .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-        .transform-style-3d { transform-style: preserve-3d; -webkit-transform-style: preserve-3d; }
-      `}</style>
     </AppLayout>
   );
 }
