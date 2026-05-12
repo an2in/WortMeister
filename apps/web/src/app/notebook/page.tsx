@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AppLayout } from '@/components/AppLayout';
-import { useVocabulary } from '@/hooks/use-vocabulary';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,18 +14,38 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { augmentNewVocabularyWithAI } from '@/ai/flows/augment-new-vocabulary-with-ai';
-import { generateCustomPronunciation } from '@/ai/flows/generate-custom-pronunciation-flow';
 import { useToast } from '@/hooks/use-toast';
+import { createNotebookEntry, deleteNotebookEntry, getAudioUrl, getNotebookEntries, type NotebookEntry } from '@/lib/api';
 import { GermanGender } from '@/lib/vocabulary';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 
 export default function VisualNotebook() {
-  const { vocabulary, addWord, deleteWord } = useVocabulary();
+  const searchParams = useSearchParams();
+  const highlightedWord = searchParams.get('word')?.toLowerCase() ?? '';
+  const highlightedRef = useRef<HTMLDivElement | null>(null);
+  const [entries, setEntries] = useState<NotebookEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [newWord, setNewWord] = useState('');
   const [newMeaning, setNewMeaning] = useState('');
   const [gender, setGender] = useState<GermanGender | ''>('');
   const [isAdding, setIsAdding] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    getNotebookEntries()
+      .then((response) => setEntries(response.entries))
+      .catch(() => {
+        toast({ title: "Notebook Error", description: "Could not load your notebook.", variant: "destructive" });
+      })
+      .finally(() => setIsLoading(false));
+  }, [toast]);
+
+  useEffect(() => {
+    if (highlightedRef.current) {
+      highlightedRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [highlightedWord, entries]);
 
   const handleAddWord = async () => {
     if (!newWord || !newMeaning) return;
@@ -35,16 +54,14 @@ export default function VisualNotebook() {
       // AI Augmentation: Get POS and Image
       const aiResult = await augmentNewVocabularyWithAI({ word: newWord });
       
-      addWord({
-        id: Date.now().toString(),
+      const entry = await createNotebookEntry({
         word: newWord,
         meaning: newMeaning,
-        gender: gender as GermanGender || undefined,
-        pos: aiResult.partOfSpeech,
-        level: 'A1',
-        imageUrl: aiResult.imageUrl,
+        article: gender || undefined,
+        image_url: aiResult.imageUrl,
       });
 
+      setEntries((current) => [entry, ...current.filter((item) => item.word.toLowerCase() !== entry.word.toLowerCase())]);
       setNewWord('');
       setNewMeaning('');
       setGender('');
@@ -56,10 +73,19 @@ export default function VisualNotebook() {
     }
   };
 
+  const handleDeleteWord = async (word: string) => {
+    try {
+      await deleteNotebookEntry(word);
+      setEntries((current) => current.filter((entry) => entry.word.toLowerCase() !== word.toLowerCase()));
+      toast({ title: "Word Deleted", description: `"${word}" was removed from your notebook.` });
+    } catch (error) {
+      toast({ title: "Delete Failed", description: "Could not delete this word.", variant: "destructive" });
+    }
+  };
+
   const handlePronounce = async (text: string) => {
     try {
-      const { media } = await generateCustomPronunciation({ text });
-      new Audio(media).play();
+      await new Audio(getAudioUrl(text)).play();
     } catch (e) {
       console.error(e);
     }
@@ -128,59 +154,79 @@ export default function VisualNotebook() {
       </Card>
 
       {/* Word Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {vocabulary.map((v) => (
-          <Card key={v.id} className="glass card-hover overflow-hidden group">
-            <div className="aspect-video relative bg-muted overflow-hidden">
-              {v.imageUrl ? (
-                <Image 
-                  src={v.imageUrl} 
-                  alt={v.word} 
-                  fill 
-                  className="object-cover transition-transform group-hover:scale-110" 
-                />
-              ) : (
-                <div className="flex items-center justify-center h-full text-muted-foreground/30">
-                  <ImageIcon size={48} />
+      {isLoading ? (
+        <div className="flex items-center justify-center py-16 text-muted-foreground">
+          <Loader2 className="animate-spin mr-2" /> Loading notebook...
+        </div>
+      ) : entries.length === 0 ? (
+        <Card className="border-dashed">
+          <CardContent className="p-12 text-center text-muted-foreground">
+            <AlertCircle className="mx-auto mb-4 opacity-40" size={40} />
+            <p>Your notebook is empty. Add your first German word above.</p>
+          </CardContent>
+        </Card>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {entries.map((entry) => {
+            const isHighlighted = highlightedWord === entry.word.toLowerCase();
+            return (
+              <Card
+                key={entry.word}
+                ref={isHighlighted ? highlightedRef : undefined}
+                className={`glass card-hover overflow-hidden group ${isHighlighted ? 'ring-2 ring-primary' : ''}`}
+              >
+                <div className="aspect-video relative bg-muted overflow-hidden">
+                  {entry.image_url ? (
+                    <Image
+                      src={entry.image_url}
+                      alt={entry.word}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-muted-foreground/30">
+                      <ImageIcon size={48} />
+                    </div>
+                  )}
+                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button
+                      variant="destructive"
+                      size="icon"
+                      className="h-8 w-8 rounded-full"
+                      onClick={() => handleDeleteWord(entry.word)}
+                    >
+                      <Trash2 size={14} />
+                    </Button>
+                  </div>
                 </div>
-              )}
-              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <Button 
-                  variant="destructive" 
-                  size="icon" 
-                  className="h-8 w-8 rounded-full"
-                  onClick={() => deleteWord(v.id)}
-                >
-                  <Trash2 size={14} />
-                </Button>
-              </div>
-            </div>
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between mb-2">
-                <div>
-                  <h4 className="text-xl font-bold flex items-center gap-2">
-                    {v.gender && <span className="text-xs font-medium text-muted-foreground">{v.gender}</span>}
-                    {v.word}
-                  </h4>
-                  <p className="text-sm text-muted-foreground italic">{v.meaning}</p>
-                </div>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="h-10 w-10 rounded-full text-primary hover:bg-primary/10"
-                  onClick={() => handlePronounce(v.word)}
-                >
-                  <Volume2 size={20} />
-                </Button>
-              </div>
-              <div className="flex items-center gap-2 mt-4">
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold uppercase">{v.pos}</span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-secondary text-muted-foreground font-bold uppercase">{v.level}</span>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <div>
+                      <h4 className="text-xl font-bold flex items-center gap-2">
+                        {entry.article && <span className="text-xs font-medium text-muted-foreground">{entry.article}</span>}
+                        {entry.word}
+                      </h4>
+                      <p className="text-sm text-muted-foreground italic">{entry.meaning}</p>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-10 w-10 rounded-full text-primary hover:bg-primary/10"
+                      onClick={() => handlePronounce(entry.word)}
+                    >
+                      <Volume2 size={20} />
+                    </Button>
+                  </div>
+                  <div className="flex items-center gap-2 mt-4">
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-primary font-bold uppercase">{entry.pos}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-secondary text-muted-foreground font-bold uppercase">Notebook</span>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      )}
     </AppLayout>
   );
 }

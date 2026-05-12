@@ -31,13 +31,13 @@ class NotebookService:
         self._pos_tagger = pos_tagger
         self._image_lookup = image_lookup
 
-    def list_entries(self, pos: str = "") -> NotebookListResponse:
-        entries = [self._to_payload(entry) for entry in self._store.list_entries()]
+    def list_entries(self, user_id: str, pos: str = "") -> NotebookListResponse:
+        entries = [self._to_payload(entry) for entry in self._store.list_entries(user_id)]
         if pos.strip():
             entries = [entry for entry in entries if entry.pos == pos.strip().lower()]
         return NotebookListResponse(entries=entries)
 
-    def grouped_entries(self) -> NotebookGroupResponse:
+    def grouped_entries(self, user_id: str) -> NotebookGroupResponse:
         buckets: dict[str, list[NotebookEntryPayload]] = {
             "noun": [],
             "verb": [],
@@ -45,13 +45,13 @@ class NotebookService:
             "adverb": [],
             "other": [],
         }
-        for entry in self.list_entries().entries:
+        for entry in self.list_entries(user_id).entries:
             buckets.setdefault(entry.pos, []).append(entry)
 
         groups = [NotebookGroup(pos=pos, entries=entries) for pos, entries in buckets.items() if entries]
         return NotebookGroupResponse(groups=groups)
 
-    def upsert_entry(self, request: NotebookUpsertRequest) -> NotebookEntryPayload:
+    def upsert_entry(self, user_id: str, request: NotebookUpsertRequest) -> NotebookEntryPayload:
         word = request.word.strip()
         if not word:
             raise HTTPException(status_code=400, detail="Word is required")
@@ -64,7 +64,7 @@ class NotebookService:
         if pos == "noun" and not article and word[:1].isupper():
             raise HTTPException(status_code=400, detail="German nouns require an article in the notebook")
 
-        existing = self._store.get_entry(word)
+        existing = self._store.get_entry(user_id, word)
         created_at = existing.get("created_at") if existing else datetime.now(UTC).isoformat()
         image_url, image_source = self._image_lookup.resolve_image(word, request.image_url)
 
@@ -79,11 +79,11 @@ class NotebookService:
             "image_source": image_source,
             "created_at": created_at,
         }
-        self._store.upsert_entry(entry)
+        self._store.upsert_entry(user_id, entry)
         return self._to_payload(entry)
 
-    def delete_entry(self, word: str) -> NotebookDeleteResponse:
-        if not self._store.delete_entry(word):
+    def delete_entry(self, user_id: str, word: str) -> NotebookDeleteResponse:
+        if not self._store.delete_entry(user_id, word):
             raise HTTPException(status_code=404, detail="Notebook word not found")
         return NotebookDeleteResponse(success=True, word=word)
 

@@ -47,6 +47,10 @@ class SRSStatsResponse(BaseModel):
     due_cards: int
     learned_cards: int
     next_due: float | None = None
+    current_streak_days: int = 0
+    longest_streak_days: int = 0
+    last_activity_date: str | None = None
+    streak_last_7_days: list[bool] = Field(default_factory=list)
 
 
 class TranslationRequest(BaseModel):

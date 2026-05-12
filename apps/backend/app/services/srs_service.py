@@ -20,6 +20,7 @@ class SRSService:
 
     def get_stats(self, user_id: str) -> SRSStatsResponse:
         cards = self._load_user_cards(user_id)
+        progress = self._user_state_store.load_learning_progress(user_id)
         now = time.time()
         due_times = [card.due for card in cards.values()]
         next_due = min(due_times) if due_times else None
@@ -28,6 +29,10 @@ class SRSService:
             due_cards=sum(1 for card in cards.values() if card.due <= now),
             learned_cards=sum(1 for card in cards.values() if card.repetitions > 2),
             next_due=next_due,
+            current_streak_days=progress["current_streak_days"],
+            longest_streak_days=progress["longest_streak_days"],
+            last_activity_date=progress["last_activity_date"],
+            streak_last_7_days=progress["streak_last_7_days"],
         )
 
     def get_next_card(self, user_id: str, lang: str) -> FlashcardResponse:
@@ -71,6 +76,7 @@ class SRSService:
 
         self._apply_sm2(card, request.quality)
         self._user_state_store.save_srs_cards(user_id, cards)
+        self._user_state_store.record_learning_activity(user_id)
 
         due_str = datetime.datetime.fromtimestamp(card.due).strftime("%Y-%m-%d %H:%M")
         return UpdateCardResponse(

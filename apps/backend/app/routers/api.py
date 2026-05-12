@@ -190,40 +190,49 @@ def maze_move(
 @router.get("/api/notebook", response_model=NotebookListResponse)
 def notebook_list(
     pos: str = Query("", description="Optional POS filter"),
+    user_id: str = Depends(get_user_id),
     container: ServiceContainer = Depends(get_container),
 ) -> NotebookListResponse:
-    return container.notebook.list_entries(pos)
+    return container.notebook.list_entries(user_id, pos)
 
 
 @router.get("/api/notebook/groups", response_model=NotebookGroupResponse)
 def notebook_groups(
+    user_id: str = Depends(get_user_id),
     container: ServiceContainer = Depends(get_container),
 ) -> NotebookGroupResponse:
-    return container.notebook.grouped_entries()
+    return container.notebook.grouped_entries(user_id)
 
 
 @router.post("/api/notebook", response_model=NotebookEntryPayload)
 def notebook_create(
     request: NotebookUpsertRequest,
+    user_id: str = Depends(get_user_id),
     container: ServiceContainer = Depends(get_container),
 ) -> NotebookEntryPayload:
-    return container.notebook.upsert_entry(request)
+    entry = container.notebook.upsert_entry(user_id, request)
+    container.user_state_store.record_learning_activity(user_id)
+    return entry
 
 
 @router.put("/api/notebook/{word}", response_model=NotebookEntryPayload)
 def notebook_update(
     word: str,
     request: NotebookUpsertRequest,
+    user_id: str = Depends(get_user_id),
     container: ServiceContainer = Depends(get_container),
 ) -> NotebookEntryPayload:
     if word.strip().lower() != request.word.strip().lower():
         raise HTTPException(status_code=400, detail="Path word must match payload word")
-    return container.notebook.upsert_entry(request)
+    entry = container.notebook.upsert_entry(user_id, request)
+    container.user_state_store.record_learning_activity(user_id)
+    return entry
 
 
 @router.delete("/api/notebook/{word}", response_model=NotebookDeleteResponse)
 def notebook_delete(
     word: str,
+    user_id: str = Depends(get_user_id),
     container: ServiceContainer = Depends(get_container),
 ) -> NotebookDeleteResponse:
-    return container.notebook.delete_entry(word)
+    return container.notebook.delete_entry(user_id, word)

@@ -59,6 +59,35 @@ export type SRSStatsResponse = {
   due_cards: number;
   learned_cards: number;
   next_due: number | null;
+  current_streak_days: number;
+  longest_streak_days: number;
+  last_activity_date: string | null;
+  streak_last_7_days: boolean[];
+};
+
+export type NotebookEntry = {
+  word: string;
+  meaning: string;
+  meaning_en: string;
+  example: string;
+  article: string;
+  pos: string;
+  image_url: string;
+  image_source: string;
+  created_at: string;
+};
+
+export type NotebookListResponse = {
+  entries: NotebookEntry[];
+};
+
+export type NotebookUpsertRequest = {
+  word: string;
+  meaning: string;
+  meaning_en?: string;
+  example?: string;
+  article?: string;
+  image_url?: string;
 };
 
 export type MazePositionPayload = {
@@ -110,6 +139,35 @@ export function updateCard(word: string, quality: number) {
     method: 'POST',
     headers: userHeaders(),
     body: JSON.stringify({ word, quality }),
+  });
+}
+
+export function getNotebookEntries() {
+  return request<NotebookListResponse>('/api/notebook', {
+    headers: userHeaders(),
+  });
+}
+
+export function createNotebookEntry(entry: NotebookUpsertRequest) {
+  return request<NotebookEntry>('/api/notebook', {
+    method: 'POST',
+    headers: userHeaders(),
+    body: JSON.stringify(entry),
+  });
+}
+
+export function updateNotebookEntry(word: string, entry: NotebookUpsertRequest) {
+  return request<NotebookEntry>(`/api/notebook/${encodeURIComponent(word)}`, {
+    method: 'PUT',
+    headers: userHeaders(),
+    body: JSON.stringify(entry),
+  });
+}
+
+export function deleteNotebookEntry(word: string) {
+  return request<{ success: boolean; word: string }>(`/api/notebook/${encodeURIComponent(word)}`, {
+    method: 'DELETE',
+    headers: userHeaders(),
   });
 }
 

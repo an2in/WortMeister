@@ -10,7 +10,7 @@ import {
   analyzeCustomTextForVocabulary, 
   AnalyzeCustomTextForVocabularyOutput 
 } from '@/ai/flows/analyze-custom-text-for-vocabulary';
-import { generateCustomPronunciation } from '@/ai/flows/generate-custom-pronunciation-flow';
+import { getAudioUrl } from '@/lib/api';
 import { Loader2, BookOpen, Volume2, Highlighter } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -44,8 +44,7 @@ export default function ContextReader() {
 
   const handlePronounce = async (text: string) => {
     try {
-      const { media } = await generateCustomPronunciation({ text });
-      const audio = new Audio(media);
+      const audio = new Audio(getAudioUrl(text));
       await audio.play();
     } catch (error) {
       toast({ title: "Audio Error", description: "Could not play pronunciation.", variant: "destructive" });

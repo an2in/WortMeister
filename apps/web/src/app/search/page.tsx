@@ -7,8 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Search, Volume2, Plus, Check } from 'lucide-react';
-import { generateCustomPronunciation } from '@/ai/flows/generate-custom-pronunciation-flow';
+import { getAudioUrl } from '@/lib/api';
 import { getFullWordDisplay } from '@/lib/vocabulary';
+import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 
 export default function VocabularyLookup() {
@@ -29,13 +30,12 @@ export default function VocabularyLookup() {
   const handlePronounce = async (text: string) => {
     try {
       setIsPronouncing(text);
-      const { media } = await generateCustomPronunciation({ text });
-      const audio = new Audio(media);
+      const audio = new Audio(getAudioUrl(text));
       await audio.play();
     } catch (error) {
       toast({
         title: "Pronunciation Error",
-        description: "Failed to generate audio. Please try again.",
+        description: "Failed to play audio from the Python TTS service.",
         variant: "destructive"
       });
     } finally {
@@ -118,5 +118,3 @@ export default function VocabularyLookup() {
     </AppLayout>
   );
 }
-
-import { cn } from '@/lib/utils';

@@ -2,29 +2,38 @@
 
 import { useEffect, useState } from 'react';
 import { AppLayout } from '@/components/AppLayout';
-import { useVocabulary } from '@/hooks/use-vocabulary';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { getSrsStats, type SRSStatsResponse } from '@/lib/api';
+import { getNotebookEntries, getSrsStats, type NotebookEntry, type SRSStatsResponse } from '@/lib/api';
 import { cn } from '@/lib/utils';
 import { Layers, Zap, Trophy, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Dashboard() {
-  const { vocabulary } = useVocabulary();
   const [srsStats, setSrsStats] = useState<SRSStatsResponse | null>(null);
+  const [notebookEntries, setNotebookEntries] = useState<NotebookEntry[]>([]);
   const [isStatsLoading, setIsStatsLoading] = useState(true);
+  const [isNotebookLoading, setIsNotebookLoading] = useState(true);
 
   useEffect(() => {
     getSrsStats()
       .then(setSrsStats)
       .finally(() => setIsStatsLoading(false));
+
+    getNotebookEntries()
+      .then((response) => setNotebookEntries(response.entries))
+      .finally(() => setIsNotebookLoading(false));
   }, []);
 
   const dueCount = srsStats?.due_cards ?? 0;
   const learnedCount = srsStats?.learned_cards ?? 0;
   const totalCount = srsStats?.total_cards ?? 0;
+  const currentStreak = srsStats?.current_streak_days ?? 0;
+  const streakDays = srsStats?.streak_last_7_days ?? Array.from({ length: 7 }, () => false);
   const masteredPercent = totalCount > 0 ? (learnedCount / totalCount) * 100 : 0;
+  const recentWords = [...notebookEntries]
+    .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at))
+    .slice(0, 4);
 
   return (
     <AppLayout>
@@ -71,10 +80,10 @@ export default function Dashboard() {
             <Zap className="text-primary fill-primary" size={20} />
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold">5 Days</div>
+            <div className="text-3xl font-bold">{isStatsLoading ? '...' : `${currentStreak} ${currentStreak === 1 ? 'Day' : 'Days'}`}</div>
             <p className="text-xs text-muted-foreground mt-1">Keep it up! Consistency is key.</p>
             <div className="flex gap-1 mt-4">
-              {[1, 2, 3, 4, 5, 0, 0].map((active, i) => (
+              {streakDays.map((active, i) => (
                 <div key={i} className={cn("h-6 flex-1 rounded-sm", active ? "bg-primary" : "bg-secondary")} />
               ))}
             </div>
@@ -117,17 +126,25 @@ export default function Dashboard() {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {vocabulary.slice(-4).reverse().map((v) => (
-                <div key={v.id} className="flex items-center gap-3 p-2 rounded-md hover:bg-secondary/30 transition-colors">
+              {isNotebookLoading ? (
+                <p className="text-sm text-muted-foreground italic">Loading notebook...</p>
+              ) : recentWords.length === 0 ? (
+                <p className="text-sm text-muted-foreground italic">No notebook words yet. Add your first word to see it here.</p>
+              ) : recentWords.map((entry) => (
+                <Link
+                  key={entry.word}
+                  href={`/notebook?word=${encodeURIComponent(entry.word)}`}
+                  className="flex items-center gap-3 p-2 rounded-md hover:bg-secondary/30 transition-colors"
+                >
                   <div className="h-10 w-10 bg-primary/10 rounded flex items-center justify-center font-bold text-primary">
-                    {v.word[0].toUpperCase()}
+                    {entry.word[0].toUpperCase()}
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium text-sm">{v.word}</p>
-                    <p className="text-xs text-muted-foreground">{v.meaning}</p>
+                    <p className="font-medium text-sm">{entry.word}</p>
+                    <p className="text-xs text-muted-foreground">{entry.meaning}</p>
                   </div>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-secondary text-muted-foreground uppercase">{v.pos}</span>
-                </div>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-secondary text-muted-foreground uppercase">{entry.pos}</span>
+                </Link>
               ))}
             </div>
             <Button asChild variant="ghost" className="w-full mt-4 text-xs">

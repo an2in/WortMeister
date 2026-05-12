@@ -23,7 +23,7 @@ class ServiceContainer:
         self.settings = settings
         self.store = VocabularyStore(settings.data_file)
         self.user_state_store = UserStateStore(settings.user_state_dir)
-        self.notebook_store = NotebookStore(settings.notebook_data_file)
+        self.notebook_store = NotebookStore(settings.user_state_dir)
 
         self.search = SearchService(self.store)
         self.srs = SRSService(self.store, self.user_state_store)
@@ -38,6 +38,5 @@ class ServiceContainer:
         self.maze = MazeService(settings.maze_default_size)
 
     def load(self) -> None:
-        """Load persistent dataset into the in-memory store."""
+        """Load persistent seed datasets into memory."""
         self.store.load()
-        self.notebook_store.load()
