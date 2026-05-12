@@ -6,7 +6,10 @@ T = TypeVar("T")
 
 
 class ArrayQueue(Generic[T]):
+    """FIFO queue backed by a list and moving head index."""
+
     def __init__(self, values: list[T] | None = None) -> None:
+        """Create a queue from optional initial values."""
         self._items = list(values or [])
         self._head = 0
 
@@ -14,9 +17,11 @@ class ArrayQueue(Generic[T]):
         return self._head < len(self._items)
 
     def push(self, value: T) -> None:
+        """Append a value to the back of the queue."""
         self._items.append(value)
 
     def pop(self) -> T:
+        """Remove and return the front queue value."""
         if not self:
             raise IndexError("pop from empty queue")
 

@@ -5,12 +5,15 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class TextToken:
+    """Token text with original start and end offsets."""
+
     text: str
     start: int
     end: int
 
 
 def scan_word_tokens(text: str) -> list[TextToken]:
+    """Scan German word-like tokens without regular expressions."""
     tokens: list[TextToken] = []
     index = 0
 
@@ -28,6 +31,7 @@ def scan_word_tokens(text: str) -> list[TextToken]:
 
 
 def contains_whole_word(text: str, target: str) -> bool:
+    """Check whether target appears as a complete token."""
     normalized_target = target.casefold()
     for token in scan_word_tokens(text):
         if token.text.casefold() == normalized_target:
@@ -36,6 +40,7 @@ def contains_whole_word(text: str, target: str) -> bool:
 
 
 def compact_whitespace(value: str) -> str:
+    """Collapse repeated whitespace after lowercasing text."""
     parts: list[str] = []
     current: list[str] = []
 
@@ -54,6 +59,7 @@ def compact_whitespace(value: str) -> str:
 
 
 def is_safe_identifier(value: str, min_length: int = 8, max_length: int = 64) -> bool:
+    """Validate an ASCII identifier used for per-user state paths."""
     if len(value) < min_length or len(value) > max_length:
         return False
     for char in value:

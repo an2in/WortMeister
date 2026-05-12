@@ -8,6 +8,7 @@ K = TypeVar("K")
 
 
 def merge_sort(items: Sequence[T], key: Callable[[T], K] | None = None) -> list[T]:
+    """Return a stable merge-sorted copy of the input sequence."""
     values = list(items)
     if len(values) <= 1:
         return values

@@ -235,6 +235,7 @@ class MazeService:
         return selected
 
     def _bfs_distances(self, start: MazePosition, grid: list[list[MazeCell]]) -> dict[tuple[int, int], int]:
+        """Compute shortest grid distance from start to each reachable cell."""
         queue = ArrayQueue([(start.row, start.col, 0)])
         visited = {(start.row, start.col)}
         distances: dict[tuple[int, int], int] = {(start.row, start.col): 0}
@@ -255,6 +256,7 @@ class MazeService:
         return distances
 
     def _shortest_path(self, start: MazePosition, goal: MazePosition, grid: list[list[MazeCell]]) -> list[MazePosition]:
+        """Reconstruct the shortest path from start to goal using BFS parents."""
         start_key = (start.row, start.col)
         goal_key = (goal.row, goal.col)
         queue = ArrayQueue([start_key])
