@@ -17,6 +17,7 @@ export default function VocabularyMaze() {
   const [isBusy, setIsBusy] = useState(false);
   const [error, setError] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
+  const [showHint, setShowHint] = useState(false);
 
   const initGame = useCallback(async () => {
     const randomWord = vocabulary[Math.floor(Math.random() * vocabulary.length)]?.word;
@@ -28,6 +29,7 @@ export default function VocabularyMaze() {
     setIsBusy(true);
     setError('');
     setStatusMessage('');
+    setShowHint(false);
     try {
       const session = await startMaze(randomWord);
       window.localStorage.setItem(MAZE_SESSION_STORAGE_KEY, session.session_id);
@@ -47,6 +49,7 @@ export default function VocabularyMaze() {
     setError('');
     try {
       const response = await moveMaze(mazeSession.session_id, direction);
+      setShowHint(false);
       window.localStorage.setItem(MAZE_SESSION_STORAGE_KEY, response.state.session_id);
       setMazeSession(response.state);
       setStatusMessage(response.message);
@@ -92,7 +95,7 @@ export default function VocabularyMaze() {
 
   const targetWord = mazeSession?.target_word ?? '';
   const collectedLetters = mazeSession?.collected_letters ?? [];
-  const hintPath = new Set((mazeSession?.next_target_path ?? []).map((position) => `${position.row}-${position.col}`));
+  const hintPath = new Set(showHint ? (mazeSession?.next_target_path ?? []).map((position) => `${position.row}-${position.col}`) : []);
   const gridSize = mazeSession?.cells.length ?? 0;
 
   if (gameStatus === 'start') {
@@ -192,6 +195,14 @@ export default function VocabularyMaze() {
               <Button size="icon" onClick={() => move('down')} disabled={isBusy}><ArrowBigDown /></Button>
               <Button size="icon" onClick={() => move('right')} disabled={isBusy}><ArrowBigRight /></Button>
             </div>
+            <Button
+              variant={showHint ? 'default' : 'outline'}
+              size="sm"
+              className="w-full mt-4"
+              onClick={() => setShowHint((current) => !current)}
+            >
+              {showHint ? 'Hide Hint' : 'Show Hint'}
+            </Button>
             <p className="text-[10px] text-muted-foreground mt-4 text-center">Use Arrow keys or buttons to move</p>
           </div>
 
