@@ -108,24 +108,3 @@ This starts:
 - Next.js web UI: http://localhost:9002
 
 The dev script also warms common Next.js routes so first navigation feels faster during development.
-
-## Useful commands
-
-```bash
-npm run dev
-npm run dev:backend
-npm run dev:web
-npm run typecheck
-```
-
-Backend compile check:
-
-```bash
-apps/backend/.venv/bin/python -m py_compile $(find apps/backend/app -name '*.py') apps/backend/main.py
-```
-
-Audit backend algorithm-helper usage:
-
-```bash
-grep -RInE '(^|[^A-Za-z_])(heapq|bisect|sorted\(|\.sort\(|random\.shuffle|random\.choice|deque\(|re\.)' apps/backend/app || true
-```
