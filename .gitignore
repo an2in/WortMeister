@@ -38,6 +38,10 @@ yarn-error.log*
 .genkit/
 apps/web/.genkit/
 apps/backend/user_state/
+apps/web/.gitignore
+apps/web/apphosting.yaml
+apps/web/.idx/
+apps/web/.agents/
 
 # IDE / editor
 .vscode/
@@ -45,8 +49,6 @@ apps/backend/user_state/
 *.swp
 *.swo
 *~
-.agents
-.idx
 
 # OS
 .DS_Store
