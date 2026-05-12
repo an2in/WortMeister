@@ -45,6 +45,8 @@ apps/backend/user_state/
 *.swp
 *.swo
 *~
+.agents
+.idx
 
 # OS
 .DS_Store
