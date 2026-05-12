@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import hashlib
-import re
 from pathlib import Path
 
 import edge_tts
@@ -41,7 +40,25 @@ class AudioService:
     @staticmethod
     def _normalize_text(text: str) -> str:
         """Normalize user text before hashing and synthesis."""
-        compact = re.sub(r"\s+", " ", text.strip())
+        compact = _compact_spaces(text)
         if not compact:
             raise RuntimeError("Text is required for TTS generation")
         return compact
+
+
+def _compact_spaces(text: str) -> str:
+    parts: list[str] = []
+    current: list[str] = []
+
+    for char in text.strip():
+        if char.isspace():
+            if current:
+                parts.append("".join(current))
+                current = []
+        else:
+            current.append(char)
+
+    if current:
+        parts.append("".join(current))
+
+    return " ".join(parts)

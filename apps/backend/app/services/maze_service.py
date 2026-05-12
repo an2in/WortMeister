@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-import random
-from collections import deque
 from uuid import uuid4
 
 from fastapi import HTTPException
 
+from app.dsa.queue import ArrayQueue
+from app.dsa.randomized import choose_one, shuffle_in_place
 from app.models.domain import MazeCell, MazePosition, MazeSession
 from app.models.schemas import (
     MazeCellPayload,
@@ -135,7 +135,7 @@ class MazeService:
             current = stack[-1]
             neighbors: list[tuple[MazePosition, MazePosition]] = []
             directions = list(self._DIRECTIONS.values())
-            random.shuffle(directions)
+            shuffle_in_place(directions)
 
             for delta_row, delta_col in directions:
                 next_row = current.row + delta_row * 2
@@ -152,7 +152,7 @@ class MazeService:
                 stack.pop()
                 continue
 
-            wall, target = random.choice(neighbors)
+            wall, target = choose_one(neighbors)
             grid[wall.row][wall.col].kind = "path"
             grid[target.row][target.col].kind = "path"
             stack.append(target)
@@ -205,7 +205,7 @@ class MazeService:
                 return positions
 
         shuffled = candidates[:]
-        random.shuffle(shuffled)
+        shuffle_in_place(shuffled)
         return shuffled[: len(target_word)]
 
     def _try_choose_spread_positions(
@@ -216,7 +216,7 @@ class MazeService:
         threshold: int,
     ) -> list[MazePosition]:
         pool = candidates[:]
-        random.shuffle(pool)
+        shuffle_in_place(pool)
         selected: list[MazePosition] = []
         selected_distances: list[dict[tuple[int, int], int]] = []
 
@@ -227,7 +227,7 @@ class MazeService:
             ]
             if not valid:
                 break
-            choice = random.choice(valid)
+            choice = choose_one(valid)
             selected.append(choice)
             selected_distances.append(self._bfs_distances(choice, grid))
             pool = [position for position in pool if position != choice]
@@ -235,12 +235,12 @@ class MazeService:
         return selected
 
     def _bfs_distances(self, start: MazePosition, grid: list[list[MazeCell]]) -> dict[tuple[int, int], int]:
-        queue = deque([(start.row, start.col, 0)])
+        queue = ArrayQueue([(start.row, start.col, 0)])
         visited = {(start.row, start.col)}
         distances: dict[tuple[int, int], int] = {(start.row, start.col): 0}
 
         while queue:
-            row, col, distance = queue.popleft()
+            row, col, distance = queue.pop()
             for delta_row, delta_col in self._DIRECTIONS.values():
                 next_row = row + delta_row
                 next_col = col + delta_col
@@ -251,17 +251,17 @@ class MazeService:
                     continue
                 visited.add((next_row, next_col))
                 distances[(next_row, next_col)] = distance + 1
-                queue.append((next_row, next_col, distance + 1))
+                queue.push((next_row, next_col, distance + 1))
         return distances
 
     def _shortest_path(self, start: MazePosition, goal: MazePosition, grid: list[list[MazeCell]]) -> list[MazePosition]:
         start_key = (start.row, start.col)
         goal_key = (goal.row, goal.col)
-        queue = deque([start_key])
+        queue = ArrayQueue([start_key])
         parents: dict[tuple[int, int], tuple[int, int] | None] = {start_key: None}
 
         while queue:
-            row, col = queue.popleft()
+            row, col = queue.pop()
             if (row, col) == goal_key:
                 break
             for delta_row, delta_col in self._DIRECTIONS.values():
@@ -272,7 +272,7 @@ class MazeService:
                 if cell is None or cell.kind == "wall":
                     continue
                 parents[next_key] = (row, col)
-                queue.append(next_key)
+                queue.push(next_key)
 
         if goal_key not in parents:
             return []

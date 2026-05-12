@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-import bisect
 from typing import Any
 
+from app.dsa.search import lower_bound
 from app.models.schemas import SearchResponse, WordEntry
 from app.services.vocabulary_store import VocabularyStore
 
@@ -16,7 +16,7 @@ class SearchService:
         if not prefix:
             return SearchResponse(results=[])
 
-        index = bisect.bisect_left(self._store.sorted_words, prefix)
+        index = lower_bound(self._store.sorted_words, prefix)
         results: list[WordEntry] = []
 
         while (

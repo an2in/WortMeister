@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 import datetime
-import heapq
 import time
 from typing import Any
 
 from fastapi import HTTPException
 
+from app.dsa.heap import MinHeap
 from app.models.domain import ReviewCard
 from app.models.schemas import FlashcardResponse, SRSStatsResponse, UpdateCardRequest, UpdateCardResponse
 from app.services.user_state_store import UserStateStore
@@ -41,7 +41,7 @@ class SRSService:
         if not heap:
             raise HTTPException(status_code=404, detail="No cards available")
 
-        due, word = heapq.heappop(heap)
+        due, word = heap.pop()
         if due > time.time():
             raise HTTPException(status_code=404, detail="No cards due")
 
@@ -91,10 +91,8 @@ class SRSService:
         return self._user_state_store.load_srs_cards(user_id, self._store.vocabulary)
 
     @staticmethod
-    def _build_heap(cards: dict[str, ReviewCard]) -> list[tuple[float, str]]:
-        heap = [(card.due, word) for word, card in cards.items()]
-        heapq.heapify(heap)
-        return heap
+    def _build_heap(cards: dict[str, ReviewCard]) -> MinHeap[tuple[float, str]]:
+        return MinHeap([(card.due, word) for word, card in cards.items()])
 
     @staticmethod
     def _resolve_meaning(entry: dict[str, Any], lang: str) -> str:

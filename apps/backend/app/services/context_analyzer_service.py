@@ -1,18 +1,16 @@
 from __future__ import annotations
 
-import re
 from typing import Any
 
 from fastapi import HTTPException
 
+from app.dsa.text_scan import scan_word_tokens
 from app.models.schemas import ContextAnalyzeRequest, ContextAnalyzeResponse, ContextToken
 from app.services.vocabulary_store import VocabularyStore
 
 
 class ContextAnalyzerService:
     """Analyze custom German text and locate known vocabulary in context."""
-
-    _TOKEN_PATTERN = re.compile(r"[A-Za-zÄÖÜäöüß-]+", re.UNICODE)
 
     def __init__(self, store: VocabularyStore) -> None:
         self._store = store
@@ -31,13 +29,12 @@ class ContextAnalyzerService:
         matches: list[ContextToken] = []
         seen: set[tuple[int, int, str]] = set()
 
-        for token in self._TOKEN_PATTERN.finditer(text):
-            surface = token.group(0)
-            entry = self._store.get_entry(surface)
+        for token in scan_word_tokens(text):
+            entry = self._store.get_entry(token.text)
             if entry is None:
                 continue
 
-            key = (token.start(), token.end(), entry["word"])
+            key = (token.start, token.end, entry["word"])
             if key in seen:
                 continue
             seen.add(key)
@@ -45,8 +42,8 @@ class ContextAnalyzerService:
             matches.append(
                 ContextToken(
                     word=entry["word"],
-                    start=token.start(),
-                    end=token.end(),
+                    start=token.start,
+                    end=token.end,
                     meaning=self._resolve_meaning(entry, lang),
                     meaning_en=entry.get("meaning_en", ""),
                     example=entry.get("example", ""),

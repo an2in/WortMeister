@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import datetime
 import json
-import re
 import time
 from dataclasses import asdict
 from pathlib import Path
@@ -10,12 +9,12 @@ from typing import Any
 
 from fastapi import HTTPException
 
+from app.dsa.sort import merge_sort
+from app.dsa.text_scan import is_safe_identifier
 from app.models.domain import ReviewCard
 
 
 class UserStateStore:
-    _USER_ID_PATTERN = re.compile(r"^[A-Za-z0-9_-]{8,64}$")
-
     def __init__(self, state_dir: Path) -> None:
         self._state_dir = state_dir
 
@@ -50,7 +49,7 @@ class UserStateStore:
         path.parent.mkdir(parents=True, exist_ok=True)
         payload = {
             "updated_at": time.time(),
-            "cards": {word: asdict(card) for word, card in sorted(cards.items())},
+            "cards": {word: asdict(card) for word, card in merge_sort(list(cards.items()), key=lambda item: item[0])},
         }
         self._write_json(path, payload)
 
@@ -69,7 +68,7 @@ class UserStateStore:
         progress = self.load_learning_progress(user_id)
         dates = set(progress["activity_dates"])
         dates.add((activity_date or datetime.date.today()).isoformat())
-        progress = self._build_learning_progress(sorted(dates))
+        progress = self._build_learning_progress(merge_sort(list(dates)))
         payload = {
             "updated_at": time.time(),
             "activity_dates": progress["activity_dates"],
@@ -84,7 +83,7 @@ class UserStateStore:
         return self._user_dir(user_id) / "learning_progress.json"
 
     def _user_dir(self, user_id: str) -> Path:
-        if not self._USER_ID_PATTERN.fullmatch(user_id):
+        if not is_safe_identifier(user_id):
             raise HTTPException(status_code=400, detail="Invalid user id")
         return self._state_dir / user_id
 
@@ -97,7 +96,7 @@ class UserStateStore:
 
     @staticmethod
     def _build_learning_progress(activity_dates: list[str]) -> dict[str, Any]:
-        parsed_dates = sorted({datetime.date.fromisoformat(day) for day in activity_dates})
+        parsed_dates = merge_sort(list({datetime.date.fromisoformat(day) for day in activity_dates}))
         today = datetime.date.today()
         activity_set = set(parsed_dates)
 

@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-import re
-
 from fastapi import HTTPException
 
+from app.dsa.text_scan import contains_whole_word
 from app.models.schemas import TranslationRequest, TranslationResponse
 
 
@@ -18,10 +17,7 @@ class TranslationService:
                 detail="Both target_word and user_sentence are required",
             )
 
-        pattern = r"\b" + re.escape(target) + r"\b"
-        match = re.search(pattern, sentence, re.IGNORECASE | re.UNICODE)
-
-        if match:
+        if contains_whole_word(sentence, target):
             return TranslationResponse(
                 correct=True,
                 target_word=target,

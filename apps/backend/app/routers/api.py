@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import re
-
 from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import FileResponse
 
@@ -152,7 +150,7 @@ async def audio_text(
 @router.get("/api/audio/file/{filename}")
 def audio_file(filename: str) -> FileResponse:
     """Serve generated TTS files by cache filename."""
-    if not re.fullmatch(r"[a-f0-9]{32}\.mp3", filename):
+    if not _is_audio_cache_filename(filename):
         raise HTTPException(status_code=400, detail="Invalid filename")
 
     file_path = settings.audio_cache_dir / filename
@@ -160,6 +158,15 @@ def audio_file(filename: str) -> FileResponse:
         raise HTTPException(status_code=404, detail="Audio file not found")
 
     return FileResponse(path=str(file_path), media_type="audio/mpeg", filename=filename)
+
+
+def _is_audio_cache_filename(filename: str) -> bool:
+    if len(filename) != 36 or not filename.endswith(".mp3"):
+        return False
+    for char in filename[:32]:
+        if char not in "0123456789abcdef":
+            return False
+    return True
 
 
 @router.post("/api/maze/start", response_model=MazeSessionResponse)

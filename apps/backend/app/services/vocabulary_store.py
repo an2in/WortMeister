@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-import heapq
 import json
 from pathlib import Path
 from typing import Any
 
+from app.dsa.heap import MinHeap
+from app.dsa.sort import merge_sort
 from app.models.domain import DrillCard, ReviewCard
 
 
@@ -17,10 +18,10 @@ class VocabularyStore:
         self.sorted_words: list[str] = []
         self.word_index: dict[str, dict[str, Any]] = {}
 
-        self.srs_heap: list[tuple[float, str]] = []
+        self.srs_heap: MinHeap[tuple[float, str]] = MinHeap()
         self.srs_cards: dict[str, ReviewCard] = {}
 
-        self.drill_heap: list[tuple[float, str]] = []
+        self.drill_heap: MinHeap[tuple[float, str]] = MinHeap()
         self.drill_cards: dict[str, DrillCard] = {}
 
     def load(self) -> None:
@@ -34,14 +35,14 @@ class VocabularyStore:
         if not isinstance(raw_vocabulary, list):
             raise RuntimeError("Vocabulary dataset must be a list of entries")
 
-        self.vocabulary = sorted(raw_vocabulary, key=lambda entry: entry["word"].lower())
+        self.vocabulary = merge_sort(raw_vocabulary, key=lambda entry: entry["word"].lower())
         self.sorted_words = []
         self.word_index = {}
 
-        self.srs_heap = []
+        self.srs_heap = MinHeap()
         self.srs_cards = {}
 
-        self.drill_heap = []
+        self.drill_heap = MinHeap()
         self.drill_cards = {}
 
         for entry in self.vocabulary:
@@ -53,7 +54,7 @@ class VocabularyStore:
             if article in {"der", "die", "das"}:
                 drill_card = DrillCard()
                 self.drill_cards[normalized_word] = drill_card
-                heapq.heappush(self.drill_heap, (drill_card.due, normalized_word))
+                self.drill_heap.push((drill_card.due, normalized_word))
 
     def get_entry(self, word: str) -> dict[str, Any] | None:
         """Return a vocabulary entry by normalized word key."""

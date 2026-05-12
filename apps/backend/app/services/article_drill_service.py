@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-import heapq
-import re
 import time
+
+from app.dsa.text_scan import compact_whitespace
 
 from fastapi import HTTPException
 
@@ -24,7 +24,7 @@ class ArticleDrillService:
         if not self._store.drill_heap:
             raise HTTPException(status_code=404, detail="No drill cards available")
 
-        _, word = heapq.heappop(self._store.drill_heap)
+        _, word = self._store.drill_heap.pop()
         entry = self._store.get_entry(word)
         if entry is None:
             raise HTTPException(status_code=404, detail=f"Word '{word}' not found")
@@ -69,7 +69,7 @@ class ArticleDrillService:
         correct = article_correct and plural_correct
 
         self._update_schedule(card, correct)
-        heapq.heappush(self._store.drill_heap, (card.due, word_key))
+        self._store.drill_heap.push((card.due, word_key))
 
         next_due_in_minutes = max(0.0, (card.due - time.time()) / 60)
         message = "Richtig! Great reflex." if correct else "Incorrect. This noun will appear more frequently."
@@ -112,9 +112,7 @@ class ArticleDrillService:
     @staticmethod
     def _normalize_plural(value: str) -> str:
         """Normalize plural text for tolerant comparison."""
-        compact = value.strip().lower()
-        compact = re.sub(r"\s+", " ", compact)
-        return compact
+        return compact_whitespace(value)
 
     @staticmethod
     def _check_plural_answer(mode: str, expected_plural: str, plural_answer: str) -> bool:
