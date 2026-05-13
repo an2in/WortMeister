@@ -6,10 +6,19 @@ T = TypeVar("T")
 
 
 class ArrayQueue(Generic[T]):
-    """FIFO queue backed by a list and moving head index."""
+    """FIFO queue backed by a list and moving head index.
+
+    Attributes:
+        _items: Internal array storing queued values.
+        _head: Index of the next value to remove.
+    """
 
     def __init__(self, values: list[T] | None = None) -> None:
-        """Create a queue from optional initial values."""
+        """Initialize the queue from optional starting values.
+
+        Args:
+            values: Optional values to enqueue during construction.
+        """
         self._items = list(values or [])
         self._head = 0
 
@@ -17,11 +26,22 @@ class ArrayQueue(Generic[T]):
         return self._head < len(self._items)
 
     def push(self, value: T) -> None:
-        """Append a value to the back of the queue."""
+        """Append a value to the back of the queue.
+
+        Args:
+            value: Value to enqueue.
+        """
         self._items.append(value)
 
     def pop(self) -> T:
-        """Remove and return the front queue value."""
+        """Remove and return the front queue value.
+
+        Returns:
+            The oldest value still stored in the queue.
+
+        Raises:
+            IndexError: If the queue is empty.
+        """
         if not self:
             raise IndexError("pop from empty queue")
 

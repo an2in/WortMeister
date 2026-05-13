@@ -5,7 +5,13 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class TextToken:
-    """Token text with original start and end offsets."""
+    """Token text with original start and end offsets.
+
+    Attributes:
+        text: Token substring copied from the source text.
+        start: Inclusive start offset in the source text.
+        end: Exclusive end offset in the source text.
+    """
 
     text: str
     start: int
@@ -13,7 +19,14 @@ class TextToken:
 
 
 def scan_word_tokens(text: str) -> list[TextToken]:
-    """Scan German word-like tokens without regular expressions."""
+    """Scan German word-like tokens without regular expressions.
+
+    Args:
+        text: Source text to scan.
+
+    Returns:
+        Tokens with their original source offsets.
+    """
     tokens: list[TextToken] = []
     index = 0
 
@@ -31,7 +44,15 @@ def scan_word_tokens(text: str) -> list[TextToken]:
 
 
 def contains_whole_word(text: str, target: str) -> bool:
-    """Check whether target appears as a complete token."""
+    """Check whether a target appears as a complete token.
+
+    Args:
+        text: Source text to search.
+        target: Word that must match one complete token.
+
+    Returns:
+        True if the target appears as a full token, otherwise False.
+    """
     normalized_target = target.casefold()
     for token in scan_word_tokens(text):
         if token.text.casefold() == normalized_target:

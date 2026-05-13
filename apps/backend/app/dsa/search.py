@@ -8,7 +8,16 @@ K = TypeVar("K")
 
 
 def lower_bound(items: Sequence[T], target: K, key: Callable[[T], K] | None = None) -> int:
-    """Return the first index whose value is not less than target."""
+    """Find the first index whose value is not less than the target.
+
+    Args:
+        items: Sorted sequence to search.
+        target: Boundary value to locate.
+        key: Optional function that maps each item to its comparable key.
+
+    Returns:
+        The insertion index that keeps the sequence sorted.
+    """
     left = 0
     right = len(items)
 

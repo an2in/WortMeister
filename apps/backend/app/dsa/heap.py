@@ -6,10 +6,18 @@ T = TypeVar("T")
 
 
 class MinHeap(Generic[T]):
-    """Array-backed min heap used by scheduling services."""
+    """Array-backed min heap for comparable values.
+
+    Attributes:
+        _items: Internal array storing the heap tree in level order.
+    """
 
     def __init__(self, values: list[T] | None = None) -> None:
-        """Build a heap from optional initial values."""
+        """Initialize the heap and restore heap order for initial values.
+
+        Args:
+            values: Optional values to insert into the heap during construction.
+        """
         self._items = list(values or [])
         self._heapify()
 
@@ -20,12 +28,23 @@ class MinHeap(Generic[T]):
         return bool(self._items)
 
     def push(self, value: T) -> None:
-        """Insert a value while preserving the heap invariant."""
+        """Insert a value and preserve the min-heap invariant.
+
+        Args:
+            value: Comparable value to add to the heap.
+        """
         self._items.append(value)
         self._sift_up(len(self._items) - 1)
 
     def pop(self) -> T:
-        """Remove and return the smallest value."""
+        """Remove and return the smallest value in the heap.
+
+        Returns:
+            The minimum value currently stored in the heap.
+
+        Raises:
+            IndexError: If the heap is empty.
+        """
         if not self._items:
             raise IndexError("pop from empty heap")
 
