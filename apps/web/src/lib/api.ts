@@ -35,9 +35,22 @@ function getUserId(): string {
   const existingUserId = window.localStorage.getItem(USER_ID_STORAGE_KEY);
   if (existingUserId) return existingUserId;
 
-  const generatedUserId = `user_${crypto.randomUUID().replaceAll('-', '')}`;
+  const generatedUserId = `user_${generateClientId()}`;
   window.localStorage.setItem(USER_ID_STORAGE_KEY, generatedUserId);
   return generatedUserId;
+}
+
+function generateClientId(): string {
+  const randomUuid = window.crypto?.randomUUID?.();
+  if (randomUuid) return randomUuid.replaceAll('-', '');
+
+  const bytes = new Uint8Array(16);
+  window.crypto?.getRandomValues?.(bytes);
+  if (bytes.some((byte) => byte !== 0)) {
+    return Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');
+  }
+
+  return `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 18)}`;
 }
 
 export type FlashcardResponse = {

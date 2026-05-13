@@ -1,6 +1,7 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ['10.97.156.140'],
   devIndicators: false,
   typescript: {
     ignoreBuildErrors: true,
