@@ -11,6 +11,12 @@ DSA_BTL/
 │   │   ├── app/
 │   │   │   ├── core/          # Backend settings and configuration
 │   │   │   ├── dsa/           # Manual Python DSA primitives
+│   │   │   │   ├── heap.py        # Array-backed Min Heap for scheduling
+│   │   │   │   ├── queue.py       # Array-backed FIFO Queue for BFS
+│   │   │   │   ├── randomized.py  # Fisher-Yates Shuffle and random selection
+│   │   │   │   ├── search.py      # Binary Search (lower_bound)
+│   │   │   │   ├── sort.py        # Stable Merge Sort
+│   │   │   │   └── text_scan.py   # Manual Token Scanner
 │   │   │   ├── models/        # Domain models and API schemas
 │   │   │   ├── routers/       # FastAPI route/controller layer
 │   │   │   └── services/      # OOP application services
